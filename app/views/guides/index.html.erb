@@ -1,0 +1,14 @@
+<h1>Guides Search Page</h1>
+
+<% @guides.each do |guide| %>
+  <% link_to guide_path(guide) do %>
+    <h3><%= guide.title %></h3>
+  <% end %>
+  <p>Location: <%= guide.location %></p>
+  <p>Overview: <%= guide.overview %></p>
+  <p>Distance: <%= guide.distance %> km </p>
+  <p>Duration <%= guide.duration %> hs</p>
+  <p>Category: <%= guide.category %> </p>
+  <p>Created by: <%= guide.user.full_name %></p>
+  <%= link_to "Buy Now"%>
+<% end %>
