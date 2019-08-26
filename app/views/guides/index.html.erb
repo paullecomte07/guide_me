@@ -1,7 +1,7 @@
 <h1>Guides Search Page</h1>
 
 <% @guides.each do |guide| %>
-  <% link_to guide_path(guide) do %>
+  <%= link_to guide_path(guide) do %>
     <h3><%= guide.title %></h3>
   <% end %>
   <p>Location: <%= guide.location %></p>

@@ -13,7 +13,7 @@ mohammad = User.create!(
     title: "Street Art in London",
     user: mohammad,
     duration: 2,
-    overview: "Best street art in central London"
+    overview: "Best street art in central London",
     location: "London",
     distance: 4,
     category: "street art"
