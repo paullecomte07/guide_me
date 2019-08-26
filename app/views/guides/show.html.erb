@@ -1,0 +1,23 @@
+<h1>Guide Show Page</h1>
+
+<h3><%= @guide.title %></h3>
+
+<p>Location: <%= @guide.location %></p>
+
+<p>Overview: <%= @guide.overview %></p>
+
+<p>Distance: <%= @guide.distance %> km </p>
+
+<p>Duration <%= @guide.duration %> hs</p>
+
+<p>Category: <%= @guide.category %> </p>
+
+<p>Created by: <%= @guide.user.full_name %></p>
+
+<% if @guide.user == current_user %>
+  <%= link_to "Edit", edit_guide_path(@guide) %>
+<% else %>
+  <%= link_to "Buy Now"%>
+<% end %>
+
+<%= link_to "Search", guides_path%>
