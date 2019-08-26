@@ -206,7 +206,7 @@ DEPENDENCIES
   pry-byebug
   pry-rails
   puma
-  pundit (~> 2.1)
+  pundit
   rails (= 5.2.3)
   redis
   sassc-rails
