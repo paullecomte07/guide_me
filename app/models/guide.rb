@@ -3,5 +3,4 @@ class Guide < ApplicationRecord
   monetize :price_cents
   validates :title, presence: true, uniqueness: true
   validates :location, presence: true
-
 end

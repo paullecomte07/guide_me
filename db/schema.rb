@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2019_08_26_151517) do
   create_table "orders", force: :cascade do |t|
     t.bigint "guide_id"
     t.bigint "user_id"
+    t.string "state"
     t.integer "amount_cents", default: 0, null: false
     t.jsonb "payment"
     t.datetime "created_at", null: false

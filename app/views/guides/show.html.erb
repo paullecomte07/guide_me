@@ -17,7 +17,10 @@
 <% if @guide.user == current_user %>
   <%= link_to "Edit", edit_guide_path(@guide) %>
 <% else %>
-  <%= link_to "Buy Now"%>
+  <%= form_tag orders_path do %>
+    <%= hidden_field_tag 'guide_id', @guide.id %>
+    <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+  <% end %>
 <% end %>
 
 <%= link_to "Search", guides_path%>
