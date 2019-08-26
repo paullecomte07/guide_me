@@ -1,5 +1,13 @@
 <h1>Guides Search Page</h1>
 
+<div
+  id="map"
+  style="width: 100%;
+  height: 300px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>
+
 <% @guides.each do |guide| %>
   <%= link_to guide_path(guide) do %>
     <h3><%= guide.title %></h3>
@@ -12,3 +20,4 @@
   <p>Created by: <%= guide.user.full_name %></p>
   <%= link_to "Buy Now"%>
 <% end %>
+

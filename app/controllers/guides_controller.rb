@@ -2,7 +2,15 @@ class GuidesController < ApplicationController
   before_action :set_guide, only: [:show, :edit, :create, :destroy]
 
   def index
-    @guides = Guide.all
+    # Do not pick guides without latitude and longitude
+    @guides = Guide.where.not(latitude: nil, longitude: nil)
+
+    @markers = @guides.map do |guide|
+      {
+        lat: guide.latitude,
+        lng: guide.longitude
+      }
+    end
   end
 
   def show
