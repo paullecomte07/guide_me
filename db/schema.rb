@@ -10,10 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_26_131816) do
+ActiveRecord::Schema.define(version: 2019_08_26_134723) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "guides", force: :cascade do |t|
+    t.string "title"
+    t.bigint "user_id"
+    t.integer "duration"
+    t.text "overview"
+    t.string "location"
+    t.integer "distance"
+    t.string "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_guides_on_user_id"
+  end
+
+  create_table "stops", force: :cascade do |t|
+    t.bigint "guide_id"
+    t.string "name"
+    t.text "description"
+    t.string "image"
+    t.integer "list_order"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["guide_id"], name: "index_stops_on_guide_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +47,15 @@ ActiveRecord::Schema.define(version: 2019_08_26_131816) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "address"
+    t.string "avatar"
+    t.text "bio"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "guides", "users"
+  add_foreign_key "stops", "guides"
 end
