@@ -3,4 +3,9 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def dashboard
+    @user = current_user
+    # @guides = Guide.where(@user = user_id)
+  end
 end
