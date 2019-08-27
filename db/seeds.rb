@@ -21,6 +21,37 @@ mohammad = User.create!(
     price_cents:200
     )
 
+    stop1 = Stop.create!(
+      guide: london_guide,
+      name: "St Paul cathedral",
+      description: "fake descrition has to be a bit long to test whether everything is well displaied thanks a lot for everything i like guide me app",
+      latitude: 51.513725,
+      longitude: -0.098569,
+      )
+
+    stop2 = Stop.create!(
+      guide: london_guide,
+      name: "Millenium bridge",
+      description: "fake descrition has to be a bit long to test whether everything is well displaied thanks a lot for everything i like guide me app",
+      latitude: 51.510756,
+      longitude: -0.098449,
+      )
+    stop3 = Stop.create!(
+      guide: london_guide,
+      name: "Tower bridge",
+      description: "fake descrition has to be a bit long to test whether everything is well displaied thanks a lot for everything i like guide me app",
+      latitude: 51.506632,
+      longitude: -0.074632,
+      )
+
+    stop4 = Stop.create!(
+      guide: london_guide,
+      name: "Tower of london",
+      description: "fake descrition has to be a bit long to test whether everything is well displaied thanks a lot for everything i like guide me app",
+      latitude: 51.509562,
+      longitude: -0.075151,
+      )
+
 paul = User.create!(
   first_name: "Paul",
   last_name: "Lecomte",
@@ -56,6 +87,9 @@ francesca = User.create!(
     category: "history",
     price_cents:200
     )
+
+
+
 
 
 
