@@ -33,3 +33,5 @@ group :development, :test do
 end
 
 gem "geocoder", "~> 1.5"
+
+gem "pg_search", "~> 2.3"
