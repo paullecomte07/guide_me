@@ -24,3 +24,13 @@
 <% end %>
 
 <%= link_to "Search", guides_path%>
+
+<h1>Reviews</h1>
+<ul>
+  <% @reviews.each do |review| %>
+    <li>
+      <%= review.stars %> | <%= review.user.full_name %>
+      <%= review.content %>
+    </li>
+  <% end %>
+</ul>

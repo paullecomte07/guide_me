@@ -18,6 +18,7 @@ class GuidesController < ApplicationController
   end
 
   def show
+    @reviews = Review.all
   end
 
   def new
