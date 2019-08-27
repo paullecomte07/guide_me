@@ -2,6 +2,7 @@ User.destroy_all
 Guide.destroy_all
 
 
+
 mohammad = User.create!(
   first_name: "Mohammad",
   last_name: "Gholami",

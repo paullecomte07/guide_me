@@ -4,11 +4,14 @@ Rails.application.routes.draw do
 
   resources :orders, only: [:show, :create] do
   resources :payments, only: [:new, :create]
-end
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   get 'dashboard', to: 'pages#dashboard', as: 'dashboard'
 
-  resources :guides
+  resources :guides do
+    resources :stops, only: [:index]
+  end
+
 
 end
