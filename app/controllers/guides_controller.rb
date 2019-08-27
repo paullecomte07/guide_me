@@ -6,7 +6,7 @@ class GuidesController < ApplicationController
     if params[:query].present?
       @guides = Guide.global_search(params[:query])
     else
-      @guides = Guide.all
+      @guides = Guide.where.not(user: current_user)
     end
 
     @markers = @guides.map do |guide|
@@ -18,6 +18,7 @@ class GuidesController < ApplicationController
   end
 
   def show
+    @review = Review.new()
   end
 
   def new

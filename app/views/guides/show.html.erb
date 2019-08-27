@@ -24,3 +24,16 @@
 <% end %>
 
 <%= link_to "Search", guides_path%>
+
+<div id="reviews">
+  <% if @guide.reviews.blank? %>
+    <p>Be the first to leave a review for <%= @guide.title %></p>
+  <% else %>
+  <ul>
+    <% @guide.reviews.each do |review| %>
+      <%= render 'reviews/review', review: review %>
+    <% end %>
+  </ul>
+</div>
+  <% end %>
+  <%= render 'reviews/form' %>

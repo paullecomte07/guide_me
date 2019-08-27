@@ -5,8 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :orders, dependent: :destroy
-
   has_many :guides, dependent: :destroy
+  has_many :reviews, dependent: :destroy
 
   def full_name
     "#{self.first_name} #{self.last_name}"
