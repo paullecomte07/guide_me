@@ -1,5 +1,6 @@
 User.destroy_all
 Guide.destroy_all
+Review.destroy_all
 
 
 mohammad = User.create!(
@@ -56,5 +57,17 @@ francesca = User.create!(
     price_cents:200
     )
 
+mohammad_review = Review.create!(
+  stars: 5,
+  content: "great tour!",
+  user: mohammad,
+  guide: paris_guide
+  )
 
+francesca_review = Review.create!(
+  stars: 4,
+  content: "loved the adventures",
+  user: francesca,
+  guide: paris_guide
+  )
 
