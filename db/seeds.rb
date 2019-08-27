@@ -27,6 +27,8 @@ mohammad = User.create!(
       description: "fake descrition has to be a bit long to test whether everything is well displaied thanks a lot for everything i like guide me app",
       latitude: 51.513725,
       longitude: -0.098569,
+      list_order:1,
+      image: "https://www.theoriginaltour.com/sites/default/files/styles/xs_x1/public/2019-04/Attractions/St%20Paul%27s/Attraction%20-%20St%20Paul%27s%20Cathedral%20-%20Exterior%20Close%20Up.jpg?auto=format&itok=4jHeqAs-"
       )
 
     stop2 = Stop.create!(

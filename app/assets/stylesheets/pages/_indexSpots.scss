@@ -1,0 +1,19 @@
+.preview-picture {
+  position:absolute;
+  background-color: black;
+  height:16vh;
+  width:16vh;
+  bottom: 25px;
+  left: 25px;
+  z-index: 2;
+}
+
+
+#stop {
+  background-color:green;
+
+}
+
+.map-container {
+      position: relative;
+}
