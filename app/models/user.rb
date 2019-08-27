@@ -4,13 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-
   has_many :orders, dependent: :destroy
 
   has_many :guides, dependent: :destroy
 
   def full_name
-    @full_name = "#{@first_name} #{@last_name}"
+    "#{self.first_name} #{self.last_name}"
   end
-
 end

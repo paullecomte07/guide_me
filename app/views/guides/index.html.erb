@@ -1,5 +1,14 @@
 <h1>Guides Search Page</h1>
 
+<%= form_tag guides_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a guide"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
 <div
   id="map"
   style="width: 100%;

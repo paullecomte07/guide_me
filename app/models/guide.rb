@@ -8,7 +8,7 @@ class Guide < ApplicationRecord
                   },
                   :associated_against => {
                     user: [:first_name, :last_name]
-                  }
+                  },
                   using: {
                     tsearch: { prefix: true }
                   }
