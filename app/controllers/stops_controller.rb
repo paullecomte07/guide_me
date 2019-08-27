@@ -13,4 +13,3 @@ class StopsController < ApplicationController
   end
 end
 
-#document.querySelector(".mapboxgl-popup-content")

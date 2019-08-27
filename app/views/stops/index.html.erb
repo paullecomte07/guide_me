@@ -1,7 +1,10 @@
 <div id="spot_page">
 <div class="map-container">
   <div class="preview-picture">
-  g
+    lien
+  </div>
+  <div class="order-counter">
+    <%= @stops.first.list_order.to_s %>
   </div>
   <div
     id="map"
@@ -12,8 +15,8 @@
   ></div>
 </div>
   <div id="stop">
-
-
+    <h1><%= @stops.first.name %></h1>
+    <p> <%= @stops.first.description %></p>
   </div>
 
 </div>

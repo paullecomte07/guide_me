@@ -1,33 +1,28 @@
 const detectPopup = () => {
 
   document.querySelector("#map").addEventListener('click', (event) => {
-  if (document.querySelectorAll("p")) {
-    document.querySelectorAll("p").remove();
-  }
+  let elementStop = document.getElementById("stop");
+  let elementOrder = document.querySelector(".order-counter");
+  let elementImage = document.querySelector(".preview-picture");
+  while (elementStop.firstChild) {
+        elementStop.removeChild(elementStop.firstChild);
+      }
+  if(elementOrder.firstChild) {elementOrder.firstChild.remove()};
+  if(elementImage.firstChild) {elementImage.firstChild.remove()};
+
 
   let contentPopup = document.querySelector(".mapboxgl-popup-content");
 
   if(contentPopup) {
 
-    const name = contentPopup.querySelector('p').querySelector("#stop-name").outerHTML;
-    const description = contentPopup.querySelector('p').querySelector("#stop-description").outerHTML;
-    const image = contentPopup.querySelector('p').querySelector("#stop-image").outerHTML;
-    const order = contentPopup.querySelector('p').querySelector("#stop-order").outerHTML;
-
-    document.querySelector("#stop").insertAdjacentHTML('afterbegin', name )
+    let name = contentPopup.querySelector("#stop-name").outerHTML;
+    let description = contentPopup.querySelector("#stop-description").outerHTML;
+    let image = contentPopup.querySelector("#stop-image").outerHTML;
+    let order = contentPopup.querySelector("#stop-order").outerHTML;
     document.querySelector("#stop").insertAdjacentHTML('afterbegin', description )
-
-
-
-
-
-
-  } else {
-    console.log('there no popup selected')
-
+    document.querySelector("#stop").insertAdjacentHTML('afterbegin', name )
+    document.querySelector(".order-counter").insertAdjacentHTML('afterbegin', order )
   };
-
-
 
 });
 
