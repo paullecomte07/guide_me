@@ -5,4 +5,8 @@ class OrdersController < ApplicationController
     redirect_to new_order_payment_path(order)
   end
 
+  def show
+
+  end
+
 end
