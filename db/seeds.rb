@@ -2,7 +2,7 @@ User.destroy_all
 Guide.destroy_all
 Review.destroy_all
 
-
+puts "Creating users..."
 mohammad = User.create!(
   first_name: "Mohammad",
   last_name: "Gholami",
@@ -57,6 +57,7 @@ francesca = User.create!(
     price_cents:200
     )
 
+puts "Creating reviews..."
 mohammad_review = Review.create!(
   stars: 5,
   content: "great tour!",
@@ -71,3 +72,4 @@ francesca_review = Review.create!(
   guide: paris_guide
   )
 
+puts "Finished!"

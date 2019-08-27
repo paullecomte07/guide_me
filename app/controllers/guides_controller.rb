@@ -18,7 +18,6 @@ class GuidesController < ApplicationController
   end
 
   def show
-    @reviews = Review.where(guide: @guide)
     @review = Review.new()
   end
 

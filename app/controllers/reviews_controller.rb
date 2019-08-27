@@ -4,8 +4,27 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.user = current_user
     @review.guide = @guide
-    @review.save
-    redirect_to guide_path(@guide)
+
+    if @review.save
+      respond_to do |format|
+        format.html { redirect_to guide_path(@guide) }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
+    else
+      respond_to do |format|
+        format.html { render 'guide/show' }
+        format.js  # <-- idem
+      end
+    end
+  end
+
+  def destroy
+    @review = Review.find(params[:id])
+    @review.delete
+    respond_to do |format|
+      format.html { redirect_to guide_path(@guide) }
+      format.js  # <-- will render `app/views/reviews/create.js.erb`
+    end
   end
 
   private

@@ -1,5 +1,5 @@
-<%= simple_form_for [@guide, @review] do |f| %>
+<%= simple_form_for [@guide, Review.new], remote: true do |f| %>
   <%= f.input :stars %>
-  <%= f.input :content %>
+  <%= f.input :content, as: :text %>
   <%= f.button :submit, "Submit" %>
 <% end %>
