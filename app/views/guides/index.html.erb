@@ -18,6 +18,9 @@
   <p>Duration <%= guide.duration %> hs</p>
   <p>Category: <%= guide.category %> </p>
   <p>Created by: <%= guide.user.full_name %></p>
-  <%= link_to "Buy Now"%>
+  <%= form_tag orders_path do %>
+  <%= hidden_field_tag 'guide_id', guide.id %>
+  <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+  <% end %>
 <% end %>
 

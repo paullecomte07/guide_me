@@ -16,7 +16,8 @@ mohammad = User.create!(
     overview: "Best street art in central London",
     location: "London",
     distance: 4,
-    category: "street art"
+    category: "street art",
+    price_cents:200
     )
 
 paul = User.create!(
@@ -33,7 +34,8 @@ paul = User.create!(
     overview: "Discover new adventures in Paris",
     location: "Paris",
     distance: 6,
-    category: "adventure"
+    category: "adventure",
+    price_cents:200
     )
 
 francesca = User.create!(
@@ -50,6 +52,9 @@ francesca = User.create!(
     overview: "Find out about the History of Milan",
     location: "Milan",
     distance: 3,
-    category: "history"
+    category: "history",
+    price_cents:200
     )
+
+
 
