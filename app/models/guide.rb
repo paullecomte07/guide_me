@@ -27,5 +27,6 @@ class Guide < ApplicationRecord
   belongs_to :user
   has_many :reviews, dependent: :destroy
   has_many :stops, dependent: :destroy
-
+  has_many :wishes
+  has_many :guide_tags
 end

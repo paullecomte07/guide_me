@@ -1,7 +1,8 @@
+Wish.destroy_all
 User.destroy_all
 Guide.destroy_all
 Review.destroy_all
-
+Tag.destroy_all
 
 puts "Creating users..."
 
@@ -107,4 +108,26 @@ francesca_review = Review.create!(
   guide: paris_guide
   )
 
+puts "creating tags..."
+fun = Tag.create!(name: "Fun")
+adventures = Tag.create!(name: "adventures")
+touristy = Tag.create!(name: "touristy")
+busy = Tag.create!(name: "busy")
+local = Tag.create!(name: "local")
+family = Tag.create!(name: "family")
+solo = Tag.create!(name: "solo")
+historic = Tag.create!(name: "historic")
+modern = Tag.create!(name: "modern")
+dramatic = Tag.create!(name: "dramatic")
 puts "Finished!"
+
+
+
+
+
+
+
+
+
+
+

@@ -36,6 +36,7 @@
     </ul>
   <% end %>
 </div>
+<%= link_to "Save to wishlist", guide_wishes_path(@guide), method: :post %>
 <div id="new-review">
   <%= link_to "Add a Review", new_guide_review_path(@guide), remote: true %>
 </div>

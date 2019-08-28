@@ -37,6 +37,7 @@ class GuidesController < ApplicationController
   end
 
   def edit
+    @tag = Tag.all
   end
 
   def update

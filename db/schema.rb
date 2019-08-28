@@ -10,12 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2019_08_27_130101) do
-
+ActiveRecord::Schema.define(version: 2019_08_28_104908) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "guide_tags", force: :cascade do |t|
+    t.bigint "tag_id"
+    t.bigint "guide_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["guide_id"], name: "index_guide_tags_on_guide_id"
+    t.index ["tag_id"], name: "index_guide_tags_on_tag_id"
+  end
 
   create_table "guides", force: :cascade do |t|
     t.string "title"
@@ -27,9 +34,9 @@ ActiveRecord::Schema.define(version: 2019_08_27_130101) do
     t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "price_cents", default: 0, null: false
     t.float "latitude"
     t.float "longitude"
+    t.integer "price_cents", default: 0, null: false
     t.index ["user_id"], name: "index_guides_on_user_id"
   end
 
@@ -69,6 +76,12 @@ ActiveRecord::Schema.define(version: 2019_08_27_130101) do
     t.index ["guide_id"], name: "index_stops_on_guide_id"
   end
 
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -86,10 +99,23 @@ ActiveRecord::Schema.define(version: 2019_08_27_130101) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "wishes", force: :cascade do |t|
+    t.bigint "guide_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["guide_id"], name: "index_wishes_on_guide_id"
+    t.index ["user_id"], name: "index_wishes_on_user_id"
+  end
+
+  add_foreign_key "guide_tags", "guides"
+  add_foreign_key "guide_tags", "tags"
   add_foreign_key "guides", "users"
   add_foreign_key "orders", "guides"
   add_foreign_key "orders", "users"
   add_foreign_key "reviews", "guides"
   add_foreign_key "reviews", "users"
   add_foreign_key "stops", "guides"
+  add_foreign_key "wishes", "guides"
+  add_foreign_key "wishes", "users"
 end
