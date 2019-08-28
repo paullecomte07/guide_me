@@ -1,11 +1,11 @@
 <% if user_signed_in? %>
   <div id="phone-container">
     <div id="nav-container">
-      <div class="outer-nav-item">
-        <%= link_to dashboard_path do %>
+     <!--  <div class="outer-nav-item">
+        <%= link_to dashboard_path  %>
           <img src="https://image.flaticon.com/icons/svg/34/34097.svg">
-         <% end %>
-      </div>
+         < end %>
+      </div> -->
 
       <div id="nav" class="closed">
 
@@ -29,11 +29,11 @@
           <%= link_to image_tag('https://image.flaticon.com/icons/svg/771/771605.svg'),edit_user_registration_path %>
         </div>
       </div>
-      <div class="outer-nav-item">
+    <!--   <div class="outer-nav-item">
         <a href="#">
           <img src="https://image.flaticon.com/icons/svg/1152/1152935.svg">
         </a>
-      </div>
+      </div> -->
     </div>
     <% else %>
     <% end %>
