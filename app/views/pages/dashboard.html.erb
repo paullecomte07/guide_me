@@ -2,8 +2,24 @@
   <h3 class="center-title"><%= current_user.last_name%>'s dashboard</h3>
   <br>
 
-  <h4 class="left-title">Your guides</h4>
-  <div class="guides">
+  <div class="cards-grid">
+    <h4 class="left-title">Your guides</h4>
+    <% @guides.each do |guide| %>
+      <div class="cards">
+        <%= guide.title %>
+      <p>Location: <%= guide.location %></p>
+      <p>Overview: <%= guide.overview %></p>
+      <p>Distance: <%= guide.distance %> km </p>
+      <p>Duration <%= guide.duration %> hs</p>
+      <p>Category: <%= guide.category %> </p>
+      <p>Created by: <%= guide.user.full_name %></p>
+      <p><%= pluralize guide.reviews.size, "review" %></p>
+      <%= link_to "Edit", edit_guide_path(guide) %>
+      </div>
+    <% end %>
+  </div>
+
+<!--   <div class="guides">
     <div class="cards">
       <h5>Card one</h5>
     </div>
@@ -65,7 +81,7 @@
       <h5>Card one</h5>
     </div>
 
-  </div>
+  </div> -->
 
 
 </div>
