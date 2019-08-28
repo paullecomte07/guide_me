@@ -7,14 +7,12 @@
     <% @guides.each do |guide| %>
       <div class="cards">
         <%= guide.title %>
-      <p>Location: <%= guide.location %></p>
-      <p>Overview: <%= guide.overview %></p>
-      <p>Distance: <%= guide.distance %> km </p>
-      <p>Duration <%= guide.duration %> hs</p>
-      <p>Category: <%= guide.category %> </p>
-      <p>Created by: <%= guide.user.full_name %></p>
-      <p><%= pluralize guide.reviews.size, "review" %></p>
-      <%= link_to "Edit", edit_guide_path(guide) %>
+        <p>Location: <%= guide.location %></p>
+        <p>Distance: <%= guide.distance %> km </p>
+        <p>Duration <%= guide.duration %> hs</p>
+        <p>Category: <%= guide.category %> </p>
+        <p><%= pluralize guide.reviews.size, "review" %></p>
+        <%= link_to "Edit", edit_guide_path(guide) %>
       </div>
     <% end %>
   </div>

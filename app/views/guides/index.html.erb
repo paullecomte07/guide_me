@@ -9,14 +9,6 @@
   <%= submit_tag "Search", class: "btn btn-primary" %>
 <% end %>
 
-<div
-  id="map"
-  style="width: 100%;
-  height: 300px;"
-  data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-></div>
-
 <% @guides.each do |guide| %>
   <%= link_to guide_path(guide) do %>
     <h3><%= guide.title %></h3>
