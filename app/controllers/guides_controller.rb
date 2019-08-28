@@ -3,7 +3,11 @@ class GuidesController < ApplicationController
 
   def index
     # Do not pick guides without latitude and longitude
-    @guides = Guide.where.not(latitude: nil, longitude: nil)
+    if params[:query].present?
+      @guides = Guide.global_search(params[:query])
+    else
+      @guides = Guide.where.not(user: current_user)
+    end
 
     @markers = @guides.map do |guide|
       {
@@ -14,6 +18,7 @@ class GuidesController < ApplicationController
   end
 
   def show
+    @review = Review.new()
   end
 
   def new

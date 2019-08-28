@@ -1,17 +1,17 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#home'
-
-  resources :orders, only: [:show, :create] do
-  resources :payments, only: [:new, :create]
-  end
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
+  root to:'pages#home'
+  
   get 'dashboard', to: 'pages#dashboard', as: 'dashboard'
 
-  resources :guides do
-    resources :stops, only: [:index]
+  resources :orders, only: [:show, :create] do
+    resources :payments, only: [:new, :create]
   end
 
-
+  resources :guides do
+    resources :reviews, only: [:create]
+    resources :stops, only: [:index]
+  end
+  resources :reviews, only: [:destroy]
+  
 end

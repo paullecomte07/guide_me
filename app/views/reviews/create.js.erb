@@ -1,0 +1,23 @@
+
+  // let reviewHTML = "<li><%= @review.content %></li>";
+  // let reviews = document.querySelector('#reviews ul');
+  // reviews.insertAdjacentHTML('beforeend', reviewHTML);
+
+  // let inputRatings = document.getElementById('review_stars');
+  // inputRatings.value = "";
+  // let inputBox = document.getElementById('review_content');
+  // inputBox.value = "";
+
+
+function refreshForm(innerHTML) {
+  const newReviewForm = document.getElementById('new_review');
+  newReviewForm.innerHTML = innerHTML;
+}
+
+function addReview(reviewHTML) {
+  const reviews = document.querySelector('#reviews ul');
+  reviews.insertAdjacentHTML('beforeend', reviewHTML);
+}
+
+addReview('<%= j render "reviews/review", guide: @guide, review: @review %>');
+refreshForm('<%= j render "reviews/form", guide: @guide, review: Review.new %>');
