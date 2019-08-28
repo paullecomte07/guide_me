@@ -14,7 +14,7 @@ urlCoordinates = urlCoordinates.slice(0,-1)
 
 fetch(`https://api.mapbox.com/directions/v5/mapbox/cycling/${urlCoordinates}?access_token=${process.env.MAPBOX_API_KEY}&geometries=geojson`)
     .then(response => response.json())
-    .then(data => data["routes"]["0"]["geometry"])
+    .then(data => data["routes"])
     .then(geometry =>
           map.on('load', function () {
             map.addLayer({
@@ -25,7 +25,7 @@ fetch(`https://api.mapbox.com/directions/v5/mapbox/cycling/${urlCoordinates}?acc
                 "data": {
                   "type": "Feature",
                   "properties": {},
-                  "geometry": geometry
+                  "geometry": geometry["0"]["geometry"]
                   }
                 },
                 "layout": {
@@ -38,7 +38,11 @@ fetch(`https://api.mapbox.com/directions/v5/mapbox/cycling/${urlCoordinates}?acc
               }
             });
           })
+
+
     );
+
+    //want to add [geometry["0"]["distance"],geometry["0"]["duration"]]
 
 }
 export { traceLineMap };

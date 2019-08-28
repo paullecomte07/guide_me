@@ -22,6 +22,7 @@ const detectPopup = () => {
     document.querySelector("#stop").insertAdjacentHTML('afterbegin', description )
     document.querySelector("#stop").insertAdjacentHTML('afterbegin', name )
     document.querySelector(".order-counter").insertAdjacentHTML('afterbegin', order )
+    document.querySelector(".preview-picture").insertAdjacentHTML('afterbegin', image )
   };
 
 });
