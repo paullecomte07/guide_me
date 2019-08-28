@@ -23,17 +23,19 @@
   <% end %>
 <% end %>
 
-<%= link_to "Search", guides_path%>
+<%= link_to "Search", guides_path %>
 
 <div id="reviews">
   <% if @guide.reviews.blank? %>
     <p>Be the first to leave a review for <%= @guide.title %></p>
   <% else %>
-  <ul>
-    <% @guide.reviews.each do |review| %>
-      <%= render 'reviews/review', review: review %>
-    <% end %>
-  </ul>
-</div>
+    <ul>
+      <% @reviews.each do |review| %>
+        <%= render 'reviews/review', review: review %>
+      <% end %>
+    </ul>
   <% end %>
-  <%= render 'reviews/form' %>
+</div>
+<div id="new-review">
+  <%= link_to "Add a Review", new_guide_review_path(@guide), remote: true %>
+</div>

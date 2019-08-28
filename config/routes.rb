@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :guides do
-    resources :reviews, only: [:create]
+    resources :reviews, only: [:new, :create]
     resources :stops, only: [:index]
   end
   resources :reviews, only: [:destroy]

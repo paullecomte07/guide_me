@@ -1,10 +1,14 @@
 class ReviewsController < ApplicationController
+  def new
+    @guide = Guide.find(params[:guide_id])
+    @review = Review.new
+  end
+
   def create
     @guide = Guide.find(params[:guide_id])
     @review = Review.new(review_params)
     @review.user = current_user
     @review.guide = @guide
-
     if @review.save
       respond_to do |format|
         format.html { redirect_to guide_path(@guide) }
@@ -20,10 +24,10 @@ class ReviewsController < ApplicationController
 
   def destroy
     @review = Review.find(params[:id])
-    @review.delete
+    @review.destroy
     respond_to do |format|
       format.html { redirect_to guide_path(@guide) }
-      format.js  # <-- will render `app/views/reviews/create.js.erb`
+      format.js  # <-- will render `app/views/reviews/destroy.js.erb`
     end
   end
 
