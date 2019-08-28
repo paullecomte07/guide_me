@@ -25,9 +25,9 @@ ActiveRecord::Schema.define(version: 2019_08_27_130101) do
     t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "price_cents", default: 0, null: false
     t.float "latitude"
     t.float "longitude"
-    t.integer "price_cents", default: 0, null: false
     t.index ["user_id"], name: "index_guides_on_user_id"
   end
 

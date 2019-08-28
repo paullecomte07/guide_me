@@ -1,0 +1,7 @@
+
+function displayReviewForm(innerHTML) {
+  let newReview = document.getElementById('new-review');
+  newReview.insertAdjacentHTML('beforeend', innerHTML);
+}
+
+displayReviewForm("<%= j render 'reviews/form', guide: @guide, review: @review %>");
