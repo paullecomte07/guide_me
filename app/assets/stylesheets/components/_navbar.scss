@@ -9,20 +9,21 @@
   justify-content:space-around;
   align-items:center;
   &.active {
-    .outer-nav-item {
-      &:first-of-type {
-        left:-40px;
-        img {
-          transform:rotate(-180deg);
-        }
-      }
-      &:last-of-type {
-        right:-40px;
-        img {
-          transform:rotate(180deg);
-        }
-      }
-    }
+    // .outer-nav-item {
+    //   display: none;
+    //   &:first-of-type {
+    //     left:-40px;
+    //     img {
+    //       transform:rotate(-180deg);
+    //     }
+    //   }
+    //   &:last-of-type {
+    //     right:-40px;
+    //     img {
+    //       transform:rotate(180deg);
+    //     }
+    //   }
+    // }
     #nav {
       width:95%;
       border-radius:25px;
