@@ -1,5 +1,6 @@
 import 'mapbox-gl/dist/mapbox-gl.css';
 import mapboxgl from 'mapbox-gl';
+import { traceLineMap } from './GeoJSON_line';
 
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
@@ -10,6 +11,17 @@ const initMapbox = () => {
       container: 'map',
       style: 'mapbox://styles/mapbox/streets-v10'
     });
+
+
+
+    //process.env.MAPBOX_API_KEY
+
+
+
+
+
+
+    traceLineMap(map)
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
       const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
