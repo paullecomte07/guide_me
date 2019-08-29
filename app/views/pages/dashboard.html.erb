@@ -1,85 +1,20 @@
 <div class="container">
-  <h3 class="center-title"><%= current_user.last_name%>'s dashboard</h3>
+  <h3 class="left-title">Hi, <span id="user-name"><%=current_user.first_name%></span> !</h3>
   <br>
-
-  <div class="cards-grid">
-    <h4 class="left-title">Your guides</h4>
+  <h4 class="left-title">Your guides</h4>
+  <div class="card-container">
     <% @guides.each do |guide| %>
-      <div class="cards">
-        <%= guide.title %>
-        <p>Location: <%= guide.location %></p>
-        <p>Distance: <%= guide.distance %> km </p>
-        <p>Duration <%= guide.duration %> hs</p>
-        <p>Category: <%= guide.category %> </p>
-        <p><%= pluralize guide.reviews.size, "review" %></p>
-        <%= link_to "Edit", edit_guide_path(guide) %>
+      <div class="card-box">
+        <div class="contentz">
+         <%= link_to guide.title , guide_path(guide), class: "card-title-class"%>
+          <p>Location: <%= guide.location %>, Distance <%= guide.distance %> km, Duration: <%= guide.duration %> hs </p>
+          <%= link_to "Edit", edit_guide_path(guide), class: 'name' %>
+        </div>
+        <div class="image">
+          <img src="https://picsum.photos/id/377/80/80" alt="test image">
+          <p>£ 1.99</p>
+        </div>
       </div>
     <% end %>
   </div>
-
-<!--   <div class="guides">
-    <div class="cards">
-      <h5>Card one</h5>
-    </div>
-    <div class="cards">
-      <h5>Card one</h5>
-    </div>
-    <div class="cards">
-      <h5>Card one</h5>
-    </div>
-    <div class="cards">
-      <h5>Card one</h5>
-    </div>
-  </div>
-    <br>
-    <br>
-  <h4 class="left-title">Guides you modified</h4>
-  <div class="guides">
-    <div class="cards">
-      <h5>Card one</h5>
-    </div>
-    <div class="cards">
-      <h5>Card one</h5>
-    </div>
-    <div class="cards">
-      <h5>Card one</h5>
-    </div>
-
-  <h4 class="left-title">Guides you might enjoy</h4>
-  <div class="guides">
-    <div class="cards">
-      <h5>Card one</h5>
-    </div>
-    <div class="cards">
-      <h5>Card one</h5>
-    </div>
-    <div class="cards">
-      <h5>Card one</h5>
-    </div>
-
-  <h4 class="left-title">Saved guides</h4>
-  <div class="guides">
-    <div class="cards">
-      <h5>Card one</h5>
-    </div>
-    <div class="cards">
-      <h5>Card one</h5>
-    </div>
-    <div class="cards">
-      <h5>Card one</h5>
-    </div>
-
-<h4 class="left-title">Saved guides</h4>
-  <div class="guides">
-
-    <div class="cards">
-      <h5>Card one</h5>
-    </div>
-    <div class="cards">
-      <h5>Card one</h5>
-    </div>
-
-  </div> -->
-
-
 </div>
