@@ -42,7 +42,7 @@ class GuidesController < ApplicationController
 
   def update
     if @guide.update(guide_params)
-      redirect_to dashboard_path
+      redirect_to guide_path(@guide)
     else
       render :edit
     end

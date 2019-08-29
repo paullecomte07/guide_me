@@ -6,7 +6,8 @@ class OrdersController < ApplicationController
   end
 
   def show
-
+    @order = Order.find(params[:id])
+    @guide = @order.guide
   end
 
 end

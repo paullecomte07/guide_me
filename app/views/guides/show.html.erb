@@ -14,29 +14,9 @@
 
 <p>Created by: <%= @guide.user.full_name %></p>
 
-<% if @guide.user == current_user %>
-  <%= link_to "Edit", edit_guide_path(@guide) %>
-<% else %>
-  <%= form_tag orders_path do %>
-    <%= hidden_field_tag 'guide_id', @guide.id %>
-    <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
-  <% end %>
-<% end %>
 
-<%= link_to "Search", guides_path %>
+<%= link_to "Edit", edit_guide_path(@guide) %>
+<%= link_to "Delete", guide_path(@guide), method: :delete,
+    data: { confirmation: "are you sure?"} %>
 
-<div id="reviews">
-  <% if @guide.reviews.blank? %>
-    <p>Be the first to leave a review for <%= @guide.title %></p>
-  <% else %>
-    <ul>
-      <% @reviews.each do |review| %>
-        <%= render 'reviews/review', review: review %>
-      <% end %>
-    </ul>
-  <% end %>
-</div>
 <%= link_to "Save to wishlist", guide_wishes_path(@guide), method: :post %>
-<div id="new-review">
-  <%= link_to "Add a Review", new_guide_review_path(@guide), remote: true %>
-</div>

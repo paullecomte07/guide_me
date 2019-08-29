@@ -1,6 +1,10 @@
 <div class="container">
   <h3 class="left-title">Hi, <span id="user-name"><%=current_user.first_name%></span> !</h3>
   <br>
+
+  <%= link_to "Create a new guide", new_guide_path(@guide) %>
+  <%= link_to "Search for guides", guides_path %>
+
   <h4 class="left-title">Your guides</h4>
   <div class="card-container">
     <% @guides.each do |guide| %>
@@ -9,11 +13,30 @@
          <%= link_to guide.title , guide_path(guide), class: "card-title-class"%>
           <p>Location: <%= guide.location %>, Distance <%= guide.distance %> km, Duration: <%= guide.duration %> hs </p>
           <%= link_to "Edit", edit_guide_path(guide), class: 'name' %>
+          <%= link_to "Itinerary", guide_stops_path(guide) %>
         </div>
         <div class="image">
           <img src="https://picsum.photos/id/377/80/80" alt="test image">
           <p>£ 1.99</p>
         </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="cards-grid">
+    <h4 class="left-title">Your purchases</h4>
+    <% @orders.each do |order| %>
+      <div class="cards">
+        <%= link_to order_path(order) do %>
+          <%= order.guide.title %>
+        <% end %>
+        <p>Location: <%= order.guide.location %></p>
+        <p>Distance: <%= order.guide.distance %> km </p>
+        <p>Duration <%= order.guide.duration %> hs</p>
+        <p>Category: <%= order.guide.category %> </p>
+        <p><%= pluralize order.guide.reviews.size, "review" %></p>
+        <%= link_to "Edit", edit_guide_path(order.guide) %>
+        <%= link_to "Itinerary", guide_stops_path(order.guide) %>
       </div>
     <% end %>
   </div>
