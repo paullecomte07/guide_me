@@ -9,5 +9,6 @@ class WishesController < ApplicationController
   def destroy
     @wish = Wish.find(params[:id])
     @wish.destroy
+    redirect_to dashboard_path
   end
 end

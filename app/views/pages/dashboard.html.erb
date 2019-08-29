@@ -1,43 +1,106 @@
 <div class="container">
-  <h3 class="left-title">Hi, <span id="user-name"><%=current_user.first_name%></span> !</h3>
-  <br>
-
-  <%= link_to "Create a new guide", new_guide_path(@guide) %>
-  <%= link_to "Search for guides", guides_path %>
-
-  <h4 class="left-title">Your guides</h4>
+  <h3 class="left-title" id="head-name">Hi, <span id="user-name"><%=current_user.first_name%></span> !</h3>
+  <div class="dash-links">
+    <a href="#ur-purchases">purchased</a> |
+    <a href="#ur-suggestions">wishlist</a> |
+    <a href="#ur-suggestions">suggestions</a> |
+    <a href="#u-create">create</a>
+  </div>
+  <h4 class="left-title">You made these guides</h4>
   <div class="card-container">
     <% @guides.each do |guide| %>
       <div class="card-box">
         <div class="contentz">
          <%= link_to guide.title , guide_path(guide), class: "card-title-class"%>
           <p>Location: <%= guide.location %>, Distance <%= guide.distance %> km, Duration: <%= guide.duration %> hs </p>
-          <%= link_to "Edit", edit_guide_path(guide), class: 'name' %>
-          <%= link_to "Itinerary", guide_stops_path(guide) %>
+          <%= link_to "Edit", edit_guide_path(guide), class: 'name' %> <span id="link-spacer">|</span>
+          <%= link_to "View Itinerary", guide_stops_path(guide), class: 'name' %>
         </div>
         <div class="image">
           <img src="https://picsum.photos/id/377/80/80" alt="test image">
-          <p>£ 1.99</p>
+          <p><%= guide.price_cents %></p>
         </div>
       </div>
     <% end %>
   </div>
-
-  <div class="cards-grid">
-    <h4 class="left-title">Your purchases</h4>
-    <% @orders.each do |order| %>
-      <div class="cards">
-        <%= link_to order_path(order) do %>
-          <%= order.guide.title %>
-        <% end %>
-        <p>Location: <%= order.guide.location %></p>
-        <p>Distance: <%= order.guide.distance %> km </p>
-        <p>Duration <%= order.guide.duration %> hs</p>
-        <p>Category: <%= order.guide.category %> </p>
-        <p><%= pluralize order.guide.reviews.size, "review" %></p>
-        <%= link_to "Edit", edit_guide_path(order.guide) %>
-        <%= link_to "Itinerary", guide_stops_path(order.guide) %>
+<br>
+<h4 class="left-title" id="ur-purchases">Your purchases</h4>
+<div class="card-container">
+  <% @orders.each do |order| %>
+    <div class="card-box">
+      <div class="contentz">
+        <%= link_to order.guide.title , order_path(order), class: "card-title-class"%>
+        <p>Location: <%= order.guide.location %>, Duration <%= order.guide.duration %> hs, Category: <%= order.guide.category %> </p>
+        <%= link_to "Modify Guide", edit_guide_path(order.guide), class: 'name' %> <span id="link-spacer">|</span>
+        <%= link_to "Browse your Itinerary", guide_stops_path(order.guide), class: 'name' %>
+        <div class="image">
+          <img src="https://picsum.photos/id/377/80/80" alt="test image">
+          <p>Paid</p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+<br>
+<% if current_user.wished_guides.empty? %>
+  <h4 class="left-title" id="ur-wish-empty">Wishlist is empty</h4>
+  <br>
+  <%= link_to guides_path do %>
+    <div class="button-to-browse" id="ur-wish">Browse</div>
+  <% end %>
+<% else %>
+<h4 class="left-title">Wishlist</h4>
+  <div class="card-container" id="wishlist">
+    <% current_user.wished_guides.each do |guide| %>
+      <div class="card-box">
+        <div class="contentz">
+          <%= link_to guide.title , order_path(guide), class: "card-title-class"%>
+          <p>Location: <%= guide.location %>, Duration <%= guide.duration %> hs, Category: <%= guide.category %> </p>
+          <% wish = guide.wishes.where(user: current_user).first %>
+          <%= link_to "Remove from wishlist", guide_wish_path(guide, wish), method: :delete, class: 'name' %>
+          <div class="heart"></div>
+          <div class="image">
+            <img src="https://picsum.photos/id/377/80/80" alt="test image">
+            <p><%= guide.price_cents %></p>
+          </div>
+        </div>
       </div>
     <% end %>
   </div>
+<% end %>
+<br>
+<h4 class="left-title" id="ur-suggestions">Guides you might like</h4>
+<div class="card-container">
+  <% collection = Guide.first(4) %>
+  <% collection.each do |suggestion| %>
+    <div class="card-box">
+      <div class="contentz">
+        <%= link_to suggestion.title , order_path(suggestion), class: "card-title-class"%>
+        <p>Location: <%= suggestion.location %>, Duration <%= suggestion.duration %> hs, Category: <%= suggestion.category %> </p>
+        <%= link_to "Modify", edit_guide_path(suggestion), class: 'name' %> <span id="link-spacer">|</span>
+        <%= link_to "Browse your Itinerary", guide_stops_path(suggestion), class: 'name' %>
+        <div class="image">
+          <img src="https://picsum.photos/id/377/80/80" alt="test image">
+          <p><%= suggestion.price_cents %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
+<br>
+  <h4 class="left-title" id="u-create">Become a Creator</h4>
+  <%= link_to new_guide_path do  %>
+  <div class="card-container">
+      <div class="card-box" id="make-new">
+        <div class="contentz">
+          <div class="card-title-class">My card</div>
+          <p>Earn money by making guides</p>
+          <div class="image">
+            <img src="https://cdn0.iconfinder.com/data/icons/social-messaging-ui-color-shapes/128/add-circle-blue-512.png" alt="test image">
+            <p></p>
+          </div>
+        </div>
+      </div>
+  </div>
+  <% end %>
+
