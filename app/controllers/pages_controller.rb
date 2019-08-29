@@ -7,5 +7,6 @@ class PagesController < ApplicationController
   def dashboard
     @user = current_user
     @guides = Guide.where(user: current_user)
+    @orders = current_user.orders
   end
 end

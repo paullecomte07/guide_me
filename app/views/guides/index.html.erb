@@ -9,10 +9,10 @@
   <%= submit_tag "Search", class: "btn btn-primary" %>
 <% end %>
 
+<p><%= pluralize @guides.count, "guide" %> found </p>
+
 <% @guides.each do |guide| %>
-  <%= link_to guide_path(guide) do %>
-    <h3><%= guide.title %></h3>
-  <% end %>
+  <h3><%= guide.title %></h3>
   <p>Location: <%= guide.location %></p>
   <p>Overview: <%= guide.overview %></p>
   <p>Distance: <%= guide.distance %> km </p>
@@ -21,8 +21,8 @@
   <p>Created by: <%= guide.user.full_name %></p>
   <p><%= pluralize guide.reviews.size, "review" %></p>
   <%= form_tag orders_path do %>
-  <%= hidden_field_tag 'guide_id', guide.id %>
-  <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+    <%= hidden_field_tag 'guide_id', guide.id %>
+    <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
   <% end %>
 <% end %>
 

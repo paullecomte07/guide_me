@@ -1,12 +1,37 @@
-<!-- app/views/payments/new.html.erb -->
-<h1>Purchase of guide <%= @order.guide.title %></h1>
+<h1>Guide Show Page</h1>
+
+<h3><%= @order.guide.title %></h3>
+
+<p>Location: <%= @order.guide.location %></p>
+
+<p>Overview: <%= @order.guide.overview %></p>
+
+<p>Distance: <%= @order.guide.distance %> km </p>
+
+<p>Duration <%= @order.guide.duration %> hs</p>
+
+<p>Category: <%= @order.guide.category %> </p>
+
+<p>Created by: <%= @order.guide.user.full_name %></p>
+
+<div id="reviews">
+  <% if @order.guide.reviews.blank? %>
+    <p>There are no reviews yet for <%= @order.guide.title %></p>
+  <% else %>
+    <ul>
+      <% @order.guide.reviews.each do |review| %>
+        <%= render 'reviews/review', review: review %>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+
 <%= form_tag order_payments_path(@order) do %>
   <article>
     <label class="amount">
       <span>Amount: <%= humanized_money_with_symbol(@order.amount) %></span>
     </label>
   </article>
-
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
     data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
