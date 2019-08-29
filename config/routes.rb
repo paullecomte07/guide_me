@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   resources :guides do
     resources :reviews, only: [:new, :create]
     resources :stops, only: [:index]
+    resources :wishes, only: [:create, :destroy ]
+    resources :guide_tags, only: [:create, :destroy ]
   end
   resources :reviews, only: [:destroy]
 

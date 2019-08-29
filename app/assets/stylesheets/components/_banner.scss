@@ -31,10 +31,12 @@
     color: white;
     font-size: 60px;
     font-weight: bold;
+
   }
   & p{
     color: white;
   }
+
 }
 
 .color-btn{
@@ -68,6 +70,42 @@
   text-align: center;
 }
 
+#plane {
+  position: absolute;
+  top: 400px;
+  left: 0;
+  opacity: 0;
+  color: white;
+  animation: fly 8s infinite;
+}
+#car {
+  position: absolute;
+  top: 200px;
+  left: 0;
+  opacity: 0;
+  color: white;
+  animation: drive 10s infinite forwards;
+}
+
+@keyframes drive {
+  5% {
+    opacity: 1;
+  }
+  48% {opacity: 1;}
+  50% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+@keyframes fly {
+  5% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+    left: 100%;
+  }
+}
 
 
 
