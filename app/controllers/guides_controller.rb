@@ -1,5 +1,5 @@
 class GuidesController < ApplicationController
-  before_action :set_guide, only: [:show, :edit, :create, :destroy]
+  before_action :set_guide, only: [:show, :edit, :update, :destroy]
 
   def index
     # Do not pick guides without latitude and longitude
@@ -42,7 +42,7 @@ class GuidesController < ApplicationController
 
   def update
     if @guide.update(guide_params)
-      redirect_to guide_path(@guide)
+      redirect_to dashboard_path
     else
       render :edit
     end

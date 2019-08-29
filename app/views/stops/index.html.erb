@@ -1,7 +1,7 @@
 <div id="spot_page">
 <div class="map-container">
   <div class="preview-picture">
-    lien
+
   </div>
   <div class="order-counter">
     <%= @stops.first.list_order.to_s %>
@@ -14,9 +14,13 @@
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
   ></div>
 </div>
+
+<%= link_to root_path do %>
   <div id="stop">
     <h1><%= @stops.first.name %></h1>
-    <p> <%= @stops.first.description %></p>
+    <p><%= @stops.first.description %></p>
   </div>
+<% end %>
 
 </div>
+<p id="marker-not-display"> <%= @stopsMarker %> </p>

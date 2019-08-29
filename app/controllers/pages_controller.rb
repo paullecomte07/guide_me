@@ -6,6 +6,6 @@ class PagesController < ApplicationController
 
   def dashboard
     @user = current_user
-    # @guides = Guide.where(@user = user_id)
+    @guides = Guide.where(user: current_user)
   end
 end
