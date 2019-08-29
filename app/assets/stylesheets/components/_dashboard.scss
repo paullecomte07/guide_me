@@ -4,10 +4,13 @@ body {
 .center-title{
   font-family: 'Roboto', sans-serif;
   text-align: center;
+  color: $action-dark;
 }
 .left-title{
   font-family: 'Roboto', sans-serif;
   text-align: left;
+  margin: 0 0 0 12px;
+  color: $action-dark;
 }
 .guides {
   display: flex;
@@ -19,3 +22,65 @@ body {
   border-radius: 5px;
 }
 
+#head-name{
+  margin: 12px;
+}
+.button-to-browse {
+  text-align: center;
+ background-color: $action-light;
+  padding: 10px;
+  width: 200px;
+  margin: 0 auto;
+  color: white;
+  border-radius: 10px;
+}
+
+.heart,
+.heart:before,
+.heart:after {
+  width: 10px;
+  height: 10px;
+}
+
+.heart {
+  background: white;
+  position: absolute;
+  top: 0px;
+  right: 18px;
+  z-index: 1;
+  animation-name: pulse;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  transform: rotate(45deg);
+
+  &:after,
+  &:before {
+    content: "";
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+  }
+
+  &:before {
+    left: -50%;
+  }
+
+  &:after {
+    top: -50%;
+  }
+}
+
+@keyframes pulse {
+  0% {  transform: rotate(45deg) scale(1)}
+  50% {  transform: rotate(45deg) scale(1.3)}
+  100% {  transform: rotate(45deg) scale(1)}
+}
+#make-new{
+  background-color: skyblue;
+}
+.dash-links{
+  margin: 10px;
+}

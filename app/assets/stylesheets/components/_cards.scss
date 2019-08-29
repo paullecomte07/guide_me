@@ -6,33 +6,24 @@ body {
 }
 .card-container {
   width: auto;
-  height: 300px;
+  height: auto;
 }
-.center-title{
-  font-family: 'Poppins', sans-serif;
-  text-align: center;
-}
-.left-title{
-  font-family: 'Poppins', sans-serif;
-  text-align: left;
-  font-weight: lighter;
-  margin-left: 8px;
-}
+
 * {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   font-weight: lighter;
 }
 .card-box {
-  margin:  15px 8px;
+  margin:  15px 10px;
   display: flex;
   justify-content: space-between;
   position: relative;
   padding: 10px;
-  background-color: #4396F1;
+  background-color: $action-light;
   border-radius: 7px;
   height: 100px;
-  box-shadow: 9px 7px 32px -7px rgba(0,0,0,0.55)
+  box-shadow: 9px 7px 32px -19px rgba(0,0,0,0.55)
 }
 .image {
   position: absolute;
@@ -44,17 +35,18 @@ body {
     height: 80px;
   }
    & p {
-     color: lightgrey;
+     color: $light-gray;
      text-align: center;
     font-size: 12px;
   }
 }
 .contentz {
-  width: 200px;
+  width: 230px;
   & .name {
     margin-top: 15px;
     font-size: 10px;
     color: white;
+    text-decoration: underline;
   }
   & .card-title-class {
     font-size: 16px;
@@ -64,6 +56,37 @@ body {
   & p {
     font-size: 12px;
     margin:0;
-    color: lightgrey;
+    color: $light-gray;
   }
 }
+#link-spacer {
+  font-size: 15px;
+    color: white;
+    margin: 0 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
