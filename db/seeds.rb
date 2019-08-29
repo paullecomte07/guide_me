@@ -1,7 +1,8 @@
+Wish.destroy_all
 User.destroy_all
 Guide.destroy_all
 Review.destroy_all
-
+Tag.destroy_all
 
 puts "Creating users..."
 
@@ -30,7 +31,7 @@ mohammad = User.create!(
       latitude: 51.513725,
       longitude: -0.098569,
       list_order:1,
-      image: "https://www.theoriginaltour.com/sites/default/files/styles/xs_x1/public/2019-04/Attractions/St%20Paul%27s/Attraction%20-%20St%20Paul%27s%20Cathedral%20-%20Exterior%20Close%20Up.jpg?auto=format&itok=4jHeqAs-"
+      image: "https://images.pexels.com/photos/1796715/pexels-photo-1796715.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
       )
 
     stop2 = Stop.create!(
@@ -107,4 +108,16 @@ francesca_review = Review.create!(
   guide: paris_guide
   )
 
+
+puts "creating tags..."
+fun = Tag.create!(name: "Fun")
+adventures = Tag.create!(name: "adventures")
+touristy = Tag.create!(name: "touristy")
+busy = Tag.create!(name: "busy")
+local = Tag.create!(name: "local")
+family = Tag.create!(name: "family")
+solo = Tag.create!(name: "solo")
+historic = Tag.create!(name: "historic")
+modern = Tag.create!(name: "modern")
+dramatic = Tag.create!(name: "dramatic")
 puts "Finished!"

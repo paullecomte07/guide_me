@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_many :orders, dependent: :destroy
   has_many :guides, dependent: :destroy
   has_many :reviews, dependent: :destroy
+  has_many :wishes, dependent: :destroy
+  has_many :wished_guides, through: :wishes, source: :guide
 
   def full_name
     "#{self.first_name} #{self.last_name}"

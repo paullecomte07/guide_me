@@ -12,17 +12,9 @@ const initMapbox = () => {
       style: 'mapbox://styles/mapbox/streets-v10'
     });
 
-
-
-    //process.env.MAPBOX_API_KEY
-
-
-
-
-
-
     traceLineMap(map)
     const markers = JSON.parse(mapElement.dataset.markers);
+
     markers.forEach((marker) => {
       const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
 
@@ -30,9 +22,6 @@ const initMapbox = () => {
       .setLngLat([marker.lng, marker.lat])
       .setPopup(popup)
       .addTo(map);
-
-
-
 
 
     });

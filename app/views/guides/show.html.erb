@@ -19,3 +19,4 @@
 <%= link_to "Delete", guide_path(@guide), method: :delete,
     data: { confirmation: "are you sure?"} %>
 
+<%= link_to "Save to wishlist", guide_wishes_path(@guide), method: :post %>
