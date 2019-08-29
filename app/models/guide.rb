@@ -30,4 +30,5 @@ class Guide < ApplicationRecord
   has_many :stops, dependent: :destroy
   has_many :wishes
   has_many :guide_tags, dependent: :destroy
+  has_many :orders, dependent: :destroy
 end
