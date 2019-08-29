@@ -1,9 +1,13 @@
-<%= render 'form', guide: @guide %>
-<% @tag.each do |t| %>
-<%= link_to t.name, guide_guide_tags_path(@guide, :tag_id => t.id), method: :post  %>
-<% end %>
-<br>
-<br>
-<br>
-<br>
-<br>
+
+<div class="padding">
+  <%= render 'form', guide: @guide %>
+<div class="tags">
+    <% @tag.each do |t| %>
+      <%= link_to t.name,  guide_guide_tags_path(@guide, :tag_id => t.id), method: :post, class: "tag" %>
+
+
+
+    <% end %>
+  </div>
+</div>
+
