@@ -25,6 +25,7 @@ class Guide < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_location?
 
   belongs_to :user
+  has_many :orders, dependent: :destroy
   has_many :reviews, dependent: :destroy
   has_many :stops, dependent: :destroy
   has_many :wishes
