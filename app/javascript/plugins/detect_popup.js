@@ -1,5 +1,5 @@
 const detectPopup = () => {
-
+  if(document.querySelector("#map")){
   document.querySelector("#map").addEventListener('click', (event) => {
     let elementStop = document.getElementById("stop");
     let elementOrder = document.querySelector(".order-counter");
@@ -28,7 +28,7 @@ const detectPopup = () => {
   });
 
 
+  }
 }
-
 
 export { detectPopup };

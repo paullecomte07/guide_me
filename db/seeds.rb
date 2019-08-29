@@ -1,5 +1,6 @@
 User.destroy_all
 Guide.destroy_all
+Wish.destroy_all
 Review.destroy_all
 Wish.destroy_all
 Tag.destroy_all
