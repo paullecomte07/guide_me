@@ -30,5 +30,4 @@ const detectPopup = () => {
 
 }
 
-
-export { detectPopup };
+detectPopup();
