@@ -1,28 +1,37 @@
-<h1>Guides Search Page</h1>
 
+
+<div class="ind-div-container">
+  <h4>View Guides</h4>
 <%= form_tag guides_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a guide"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
-
-<p><%= pluralize @guides.count, "guide" %> found </p>
-
-<% @guides.each do |guide| %>
-  <h3><%= guide.title %></h3>
-  <p>Location: <%= guide.location %></p>
-  <p>Overview: <%= guide.overview %></p>
-  <p>Distance: <%= guide.distance %> km </p>
-  <p>Duration <%= guide.duration %> hs</p>
-  <p>Category: <%= guide.category %> </p>
-  <p>Created by: <%= guide.user.full_name %></p>
-  <p><%= pluralize guide.reviews.size, "review" %></p>
-  <%= form_tag orders_path do %>
-    <%= hidden_field_tag 'guide_id', guide.id %>
-    <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "searchTerm",
+      placeholder: "Search guides"%>
+    <%= button_tag type: :submit, class: "searchButton" do %>
+      <i class="fa fa-search"></i>
+    <% end %>
   <% end %>
-<% end %>
+</div>
+
+
+
+<div class="card-container">
+  <% @guides.each do |guide| %>
+    <div class="card-box">
+      <div class="contentz">
+        <%= link_to guide.title , guide_path(guide), class: "card-title-class"%>
+        <p>Location: <%= guide.location %>, Duration <%= guide.duration %> hs, Category: <%= guide.category %> </p>
+        <%= link_to "Modify", edit_guide_path(guide), class: 'name' %> <span id="link-spacer">|</span>
+        <%= link_to "Browse your Itinerary", guide_stops_path(guide), class: 'name' %>
+        <div class="image">
+          <img src="https://picsum.photos/id/377/80/80" alt="test image">
+          <p><%= guide.price_cents %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+
 

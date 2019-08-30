@@ -3,7 +3,14 @@
   <br>
   <br>
   <div class="image-and-title">
-    <h3><%= @guide.title %></h3>
+    <div class="sh-purchase">
+      <h3><%= @guide.title %></h3>
+      <%= form_tag orders_path do %>
+   <%= hidden_field_tag "guide_id", @guide.id %>
+   <%= submit_tag "Purchase", class: "whiter" %>
+ <% end %>
+  </div>
+
     <div class="sho-line-container">
         <p id="sho-location">Paris</p>
       </div>
