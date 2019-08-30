@@ -49,7 +49,7 @@ class GuidesController < ApplicationController
   end
 
   def destroy
-    @guide.delete
+    @guide.destroy
     redirect_to dashboard_path
   end
 
