@@ -3,7 +3,7 @@ const detectPopup = () => {
   document.querySelector("#map").addEventListener('click', (event) => {
     let elementStop = document.getElementById("stop");
     let elementOrder = document.querySelector(".order-counter");
-    let elementImage = document.querySelector(".preview-picture");
+    let elementImage = document.querySelector(".preview-picture #stop-image");
 
 
     let contentPopup = document.querySelector(".mapboxgl-popup-content");

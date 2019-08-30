@@ -1,6 +1,6 @@
 .preview-picture {
   position:absolute;
-  background-color: black;
+  background-color: #DCDBDB;
   height:16vh;
   width:16vh;
   bottom: 25px;
@@ -96,4 +96,8 @@ display:none;
 #content-display{
 display:initial;
 
+}
+
+#stop-order {
+  padding-top: 17px;
 }

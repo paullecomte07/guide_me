@@ -22,13 +22,28 @@
     position: absolute;
     min-width: 250px;
     max-width: 250px;
-    // min-height: 100vh;
+    background-color: #DCDBDB;
+    opacity: 0.98;
+    opacity: 0.98;
+    right: 0px;
+    padding: 12px;
+    border-bottom-left-radius: 6px;
+    border-top-left-radius: 6px;
+    transition:1s;
+    transform: translateY(6px);
+
 }
+
 
 #sidebar.active {
-    margin-left: -250px;
+  right: -250px;
+  transition:1s;
 }
 
+
+.nav-items {
+  list-style-type: none;
+}
 // .overlay {
 //     display: none;
 //     position: fixed;

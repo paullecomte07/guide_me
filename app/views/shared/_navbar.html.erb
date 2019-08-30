@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light sticky-top">
-  <%= link_to "#", class: "navbar-brand" do %>
+  <%= link_to dashboard_path, class: "navbar-brand" do %>
     <%= image_tag "logo.png" %>
   <% end %>
 
@@ -9,7 +9,7 @@
 
   <div class="wrapper">
     <nav id="sidebar" class="active">
-        <h3>Username</h3>
+        <h3> <%= current_user.first_name %>     </h3>
         <ul class="nav-items">
           <li>
             <%= link_to "Home", "#", class: "nav-link" %>
