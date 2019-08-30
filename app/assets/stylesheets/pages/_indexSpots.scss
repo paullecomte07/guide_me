@@ -11,6 +11,7 @@
   border-color: white;
   overflow: hidden;
 
+
 }
 
 .order-counter {
@@ -27,6 +28,18 @@
   align-items: center;
   justify-content: center;
   font-size: 4vh;
+}
+
+#distance-time {
+  position:absolute;
+  background-color: black;
+  width: fit-content;
+  top: 25px;
+  left: 25px;
+  z-index: 2;
+  border-radius: 10px;
+
+
 }
 
 #stop {
@@ -55,3 +68,23 @@
   margin-left: 20px;
 }
 
+.stops-popup-page {
+  transform: translateY(-62vh);
+  height: -webkit-fill-available;
+  z-index: 23;
+  position: absolute;
+  border-top-left-radius: 19px;
+  border-top-right-radius: 19px;
+  }
+
+
+#content-not-display{
+display:none;
+
+}
+
+
+#content-display{
+display:initial;
+
+}

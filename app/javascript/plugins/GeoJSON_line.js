@@ -38,8 +38,8 @@ fetch(`https://api.mapbox.com/directions/v5/mapbox/cycling/${urlCoordinates}?acc
           }
         });
       })
-      const moreInfo = `<p>Distance: ${(geometry["0"]["distance"]/1000).toFixed(2)} km, Duration: ${Math.round(geometry["0"]["duration"]/60)} min</p>`
-      document.querySelector("#stop").insertAdjacentHTML("beforeend", moreInfo)
+      const moreInfo = `Distance: ${(geometry["0"]["distance"]/1000).toFixed(2)} km, Duration: ${Math.round(geometry["0"]["duration"]/60)} `
+      document.querySelector("#distance-time").insertAdjacentHTML("beforeend", moreInfo)
     });
 
 }
