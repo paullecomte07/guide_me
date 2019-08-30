@@ -9,10 +9,8 @@ const disableButton = () => {
     link.addEventListener('click',(event) => {
       event.currentTarget.remove()
       })
-
     }
   )
-
 }
 }
 

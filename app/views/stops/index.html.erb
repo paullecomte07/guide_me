@@ -1,5 +1,8 @@
 <div id="spot_page">
 <div class="map-container">
+  <div id="distance-time">
+
+  </div>
   <div class="preview-picture">
 
   </div>
@@ -15,15 +18,16 @@
   ></div>
 </div>
 
-<%= link_to root_path do %>
-  <div id="stop">
+
+  <div id="stop" class="stops-popup-page">
     <h1><%= @stops.first.name %></h1>
     <p><%= @stops.first.description %></p>
   </div>
-<% end %>
+
 
 </div>
 <p id="marker-not-display"> <%= @stopsMarker %> </p>
 <%= content_for(:after_js) do %>
   <%= javascript_pack_tag 'plugins/detect_popup' %>
+  <%= javascript_pack_tag 'plugins/redirect_stop' %>
 <% end %>

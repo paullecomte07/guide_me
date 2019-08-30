@@ -1,8 +1,0 @@
-
-const redirectStop = () => {
-
-
-}
-
-
-export { redirectStop };

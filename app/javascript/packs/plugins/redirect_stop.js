@@ -1,10 +1,8 @@
 
-// const redirectStop = () => {
+const redirectStop = () => {
+  document.getElementById("stop").addEventListener("click", (event)=> {event.currentTarget.classList.toggle("stops-popup-page")})
+}
 
-//   document.querySelector("#id").addEventListener('click', (event) => {
-
-//   });
-// };
+redirectStop();
 
 
-// export { redirectStop };

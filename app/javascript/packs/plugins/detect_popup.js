@@ -4,16 +4,16 @@ const detectPopup = () => {
     let elementStop = document.getElementById("stop");
     let elementOrder = document.querySelector(".order-counter");
     let elementImage = document.querySelector(".preview-picture");
-    while (elementStop.firstChild) {
-          elementStop.removeChild(elementStop.firstChild);
-        }
-    if(elementOrder.firstChild) {elementOrder.firstChild.remove()};
-    if(elementImage.firstChild) {elementImage.firstChild.remove()};
 
 
     let contentPopup = document.querySelector(".mapboxgl-popup-content");
 
     if(contentPopup) {
+    while (elementStop.firstChild) {
+          elementStop.removeChild(elementStop.firstChild);
+        }
+    if(elementOrder.firstChild) {elementOrder.firstChild.remove()};
+    if(elementImage.firstChild) {elementImage.firstChild.remove()};
 
       let name = contentPopup.querySelector("#stop-name").outerHTML;
       let description = contentPopup.querySelector("#stop-description").outerHTML;
