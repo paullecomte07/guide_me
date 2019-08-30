@@ -56,7 +56,7 @@
   <% collection.each do |suggestion| %>
     <div class="card-box">
       <div class="contentz">
-        <%= link_to suggestion.title , order_path(suggestion), class: "card-title-class"%>
+        <%= link_to suggestion.title , guide_path(suggestion), class: "card-title-class"%>
         <p>Location: <%= suggestion.location %>, Duration <%= suggestion.duration %> hs, Category: <%= suggestion.category %> </p>
         <%= link_to "Modify", edit_guide_path(suggestion), class: 'name' %> <span id="link-spacer">|</span>
         <%= link_to "Browse your Itinerary", guide_stops_path(suggestion), class: 'name' %>
@@ -81,7 +81,7 @@
     <% current_user.wished_guides.each do |guide| %>
       <div class="card-box">
         <div class="contentz">
-          <%= link_to guide.title , order_path(guide), class: "card-title-class"%>
+          <%= link_to guide.title , guide_path(guide), class: "card-title-class"%>
           <p>Location: <%= guide.location %>, Duration <%= guide.duration %> hs, Category: <%= guide.category %> </p>
           <% wish = guide.wishes.where(user: current_user).first %>
           <%= link_to "Remove from wishlist", guide_wish_path(guide, wish), method: :delete, class: 'name' %>

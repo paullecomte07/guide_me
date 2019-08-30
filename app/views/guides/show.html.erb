@@ -1,16 +1,49 @@
-<div class="container">
-  <a href="#">back</a>
-  <div class="sho-title">
+<div class="sho-container">
+  <a href="#">Back</a>
+  <br>
+  <br>
+  <div class="image-and-title">
     <h3><%= @guide.title %></h3>
-    <p>in <%= @guide.location %></p>
+    <div class="sho-line-container">
+        <p id="sho-location">Paris</p>
+      </div>
   </div>
-  <p>Overview: <%= @guide.overview %></p>
-  <p>Distance: <%= @guide.distance %> km </p>
-  <p>Duration <%= @guide.duration %> hs</p>
-  <p>Category: <%= @guide.category %> </p>
-  <p>Created by: <%= @guide.user.full_name %></p>
-  <%= link_to "Edit", edit_guide_path(@guide) %>
-  <%= link_to "Delete", guide_path(@guide), method: :delete,
+
+  <div class="sho-image">
+    <img class='photo'  src="http://farm9.staticflickr.com/8320/8035372009_7075c719d9.jpg" alt="" />
+    <img class='photo'  src="http://farm9.staticflickr.com/8517/8562729616_35b1384aa1.jpg" alt="" />
+    <img class='photo'  src="http://farm9.staticflickr.com/8465/8113424031_72048dd887.jpg" alt="" />
+    <img class='photo'  src="http://farm9.staticflickr.com/8241/8562523343_9bb49b7b7b.jpg" alt="" />
+    </div>
+  <div class="sho-content">
+    <div class="sho-overview">
+      <p><%= @guide.overview %></p>
+    </div>
+    <div class="sho-box-view">
+      <div class="sho-box-item">
+        <h5><%= @guide.distance %> KM</h5>
+        <span class="sho-icon"><i class="fas fa-route"></i></span>
+      </div>
+      <div class="sho-box-item">
+        <h5><%= @guide.duration %> KM</h5>
+        <span class="sho-icon"><i class="far fa-clock"></i></span>
+      </div>
+      <div class="sho-box-item">
+        <h5><%= @guide.category %></h5>
+        <span class="sho-icon"><i class="fas fa-mountain"></i></span>
+      </div>
+      <div class="sho-box-item">
+        <h5><%= @guide.user.full_name %></h5>
+        made this guide
+      </div>
+    </div>
+  </div>
+  <br>
+  <%= link_to "Edit", edit_guide_path(@guide), class: "myButton"%>
+  <%= link_to "Delete", guide_path(@guide), method: :delete, class: "myButton",
       data: { confirmation: "are you sure?"} %>
-  <%= link_to "Save to wishlist", guide_wishes_path(@guide), method: :post %>
+  <%= link_to guide_wishes_path(@guide), method: :post do %>
+  <i class="fas fa-heart" id="sho-heart"></i>
+  <% end %>
 </div>
+
