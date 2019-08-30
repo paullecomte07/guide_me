@@ -46,7 +46,20 @@
   background-color: rgb(238, 238, 238);
   padding: 13px 13px 0px 13px;
   height:100%;
+  transform: translateY(-62vh);
+  height: -webkit-fill-available;
+  z-index: 23;
+  position: absolute;
+  border-top-left-radius: 19px;
+  border-top-right-radius: 19px;
+}
 
+.stops-popup-page {
+  transform: translateY(0vh) !important;
+  // overflow: hidden !important;
+  height: 26vh !important;
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
 }
 
 .map-container {
@@ -67,16 +80,6 @@
 #top-description{
   margin-left: 20px;
 }
-
-.stops-popup-page {
-  transform: translateY(-62vh);
-  height: -webkit-fill-available;
-  z-index: 23;
-  position: absolute;
-  border-top-left-radius: 19px;
-  border-top-right-radius: 19px;
-  }
-
 
 #content-not-display{
 display:none;

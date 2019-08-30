@@ -19,7 +19,7 @@
 </div>
 
 
-  <div id="stop">
+  <div id="stop" class="stops-popup-page">
     <h1><%= @stops.first.name %></h1>
     <p><%= @stops.first.description %></p>
   </div>
@@ -29,4 +29,5 @@
 <p id="marker-not-display"> <%= @stopsMarker %> </p>
 <%= content_for(:after_js) do %>
   <%= javascript_pack_tag 'plugins/detect_popup' %>
+  <%= javascript_pack_tag 'plugins/redirect_stop' %>
 <% end %>
