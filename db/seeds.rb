@@ -18,10 +18,10 @@ mohammad = User.create!(
   london_guide = Guide.create!(
     title: "One Day Tour of London",
     user: mohammad,
-    duration: 2,
+    duration: 0.5,
     overview: "Only one day in London? This walking tour explores the most important and historic attractions in the city, only takes a few hours, and offers you a chance to catch a glimpse of what makes this ancient metropolis so great.",
     location: "London",
-    distance: 4,
+    distance: 5,
     category: "history",
     price_cents:200
     )
@@ -51,7 +51,7 @@ mohammad = User.create!(
     stop2 = Stop.create!(
       guide: london_guide,
       name: "Tower Bridge",
-      list_order: 2,
+      list_order: 4,
       description: "An iconic London landmark and one of Britain's best loved historic sites, Tower Bridge is open to the public 363 days a year.
                     Within the Bridge's iconic structure and magnificent Victorian Engine rooms, the Tower Bridge Exhibition is the best way of exploring the most famous bridge in the world!
                     Come learn about this incredible feat of Victorian engineering, discover how the Bridge is raised and enjoy stunning panoramic views across London from our high-level walkways, 42 metres above the River Thames.
@@ -83,7 +83,7 @@ mohammad = User.create!(
                     There are mesmerising 360-degree views of the capital laid out before you - London’s most famous landmarks and up to 40km out of the city to Windsor Castle on a clear day.",
       latitude: 51.509562,
       longitude: -0.075151,
-      image: "https://images.unsplash.com/photo-1470016342826-876ea880d0be?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+      image: "https://images.unsplash.com/photo-1546885692-8e7c1b59da2c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80",
       content: "The London Eye is a cantilevered observation wheel on the South Bank of the River Thames in London. It is Europe's tallest cantilevered observation wheel,[10] and is the most popular paid tourist attraction in the United Kingdom with over 3.75 million visitors annually, and has made many appearances in popular culture.
                 The structure is 135 metres (443 ft) tall and the wheel has a diameter of 120 metres (394 ft). When it opened to the public in 2000 it was the world's tallest Ferris wheel. Its height was surpassed by the 160-metre (525 ft) Star of Nanchang in 2006, the 165-metre (541 ft) Singapore Flyer in 2008, and the 167-metre-tall (547.9 ft) High Roller (Las Vegas) in 2014.
                 Supported by an A-frame on one side only, unlike the taller Nanchang and Singapore wheels, the Eye is described by its operators as 'the world\'s tallest cantilevered observation wheel'.
@@ -94,7 +94,7 @@ mohammad = User.create!(
     stop4 = Stop.create!(
       guide: london_guide,
       name: "Big Ben",
-      list_order: 4,
+      list_order: 2,
       description: "This place is temporarily closed. Elizabeth Tower is the name of the famous clock tower which stands at the Houses of Parliament.
                     The name Big Ben is often used to describe the tower, the clock and the bell but the name was first given to the Great Bell.
                     The Elizabeth Tower was completed in 1859 and the Great Clock started on 31 May. The Great Bell's strikes were heard for the first time on 11 July and the quarter bells first chimed on 7 September.
@@ -103,7 +103,7 @@ mohammad = User.create!(
                     Visitors can still book tickets for a number of other tours at the Houses of Parliament which take place on Saturdays throughout the year and on weekdays during Parliamentary recesses.",
       latitude: 51.510756,
       longitude: -0.098449,
-      image: "https://images.unsplash.com/photo-1481014472607-f71254019973?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
+      image: "https://images.unsplash.com/photo-1500380804539-4e1e8c1e7118?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
       content: "Big Ben is the nickname for the Great Bell of the clock at the north end of the Palace of Westminster in London and is usually extended to refer to both the clock and the clock tower.
                 The official name of the tower in which Big Ben is located was originally the Clock Tower, but it was renamed Elizabeth Tower in 2012 to mark the Diamond Jubilee of Elizabeth II.
                 The tower was designed by Augustus Pugin in a neo-Gothic style. When completed in 1859, its clock was the largest and most accurate four-faced striking and chiming clock in the world.

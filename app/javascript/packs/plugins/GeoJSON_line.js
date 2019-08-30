@@ -38,7 +38,7 @@ fetch(`https://api.mapbox.com/directions/v5/mapbox/cycling/${urlCoordinates}?acc
           }
         });
       })
-      const moreInfo = `Distance: ${(geometry["0"]["distance"]/1000).toFixed(2)} km, Duration: ${Math.round(geometry["0"]["duration"]/60)} `
+      const moreInfo = `Distance: ${(geometry["0"]["distance"]/1000).toFixed(2)} km, Duration: ${Math.round(geometry["0"]["duration"]/60)*1.5} min `
       document.querySelector("#distance-time").insertAdjacentHTML("beforeend", moreInfo)
     });
 
