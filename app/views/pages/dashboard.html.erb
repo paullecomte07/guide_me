@@ -24,18 +24,45 @@
     <% end %>
   </div>
 <br>
-<h4 class="left-title" id="ur-purchases">Your purchases</h4>
+<% if current_user.orders.empty? %>
+  <h4 class="left-title" id="ur-wish-empty">No purchases made</h4>
+  <br>
+  <%= link_to guides_path do %>
+    <div class="button-to-browse" id="ur-wish">Browse</div>
+  <% end %>
+<% else %>
+  <h4 class="left-title" id="ur-purchases">Your purchases</h4>
+  <div class="card-container">
+    <% @orders.each do |order| %>
+      <div class="card-box">
+        <div class="contentz">
+          <%= link_to order.guide.title , order_path(order), class: "card-title-class"%>
+          <p>Location: <%= order.guide.location %>, Duration <%= order.guide.duration %> hs, Category: <%= order.guide.category %> </p>
+          <%= link_to "Modify Guide", edit_guide_path(order.guide), class: 'name' %> <span id="link-spacer">|</span>
+          <%= link_to "Browse your Itinerary", guide_stops_path(order.guide), class: 'name' %>
+          <div class="image">
+            <img src="https://picsum.photos/id/377/80/80" alt="test image">
+            <p>Paid</p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+<br>
+<h4 class="left-title" id="ur-suggestions">Guides you might like</h4>
 <div class="card-container">
-  <% @orders.each do |order| %>
+  <% collection = Guide.first(4) %>
+  <% collection.each do |suggestion| %>
     <div class="card-box">
       <div class="contentz">
-        <%= link_to order.guide.title , order_path(order), class: "card-title-class"%>
-        <p>Location: <%= order.guide.location %>, Duration <%= order.guide.duration %> hs, Category: <%= order.guide.category %> </p>
-        <%= link_to "Modify Guide", edit_guide_path(order.guide), class: 'name' %> <span id="link-spacer">|</span>
-        <%= link_to "Browse your Itinerary", guide_stops_path(order.guide), class: 'name' %>
+        <%= link_to suggestion.title , order_path(suggestion), class: "card-title-class"%>
+        <p>Location: <%= suggestion.location %>, Duration <%= suggestion.duration %> hs, Category: <%= suggestion.category %> </p>
+        <%= link_to "Modify", edit_guide_path(suggestion), class: 'name' %> <span id="link-spacer">|</span>
+        <%= link_to "Browse your Itinerary", guide_stops_path(suggestion), class: 'name' %>
         <div class="image">
           <img src="https://picsum.photos/id/377/80/80" alt="test image">
-          <p>Paid</p>
+          <p><%= suggestion.price_cents %></p>
         </div>
       </div>
     </div>
@@ -69,26 +96,7 @@
   </div>
 <% end %>
 <br>
-<h4 class="left-title" id="ur-suggestions">Guides you might like</h4>
-<div class="card-container">
-  <% collection = Guide.first(4) %>
-  <% collection.each do |suggestion| %>
-    <div class="card-box">
-      <div class="contentz">
-        <%= link_to suggestion.title , order_path(suggestion), class: "card-title-class"%>
-        <p>Location: <%= suggestion.location %>, Duration <%= suggestion.duration %> hs, Category: <%= suggestion.category %> </p>
-        <%= link_to "Modify", edit_guide_path(suggestion), class: 'name' %> <span id="link-spacer">|</span>
-        <%= link_to "Browse your Itinerary", guide_stops_path(suggestion), class: 'name' %>
-        <div class="image">
-          <img src="https://picsum.photos/id/377/80/80" alt="test image">
-          <p><%= suggestion.price_cents %></p>
-        </div>
-      </div>
-    </div>
-  <% end %>
-</div>
-<br>
-  <h4 class="left-title" id="u-create">Become a Creator</h4>
+  <h4 class="left-title" id="u-create">Create a guide</h4>
   <%= link_to new_guide_path do  %>
   <div class="card-container">
       <div class="card-box" id="make-new">
@@ -103,4 +111,5 @@
       </div>
   </div>
   <% end %>
+
 
