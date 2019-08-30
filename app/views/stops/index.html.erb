@@ -24,3 +24,6 @@
 
 </div>
 <p id="marker-not-display"> <%= @stopsMarker %> </p>
+<%= content_for(:after_js) do %>
+  <%= javascript_pack_tag 'plugins/detect_popup' %>
+<% end %>
