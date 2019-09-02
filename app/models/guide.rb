@@ -17,6 +17,7 @@ class Guide < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_location?
 
   monetize :price_cents
+
   validates :title, presence: true, uniqueness: true
   validates :location, presence: true
 
@@ -27,7 +28,8 @@ class Guide < ApplicationRecord
   belongs_to :user
   has_many :orders, dependent: :destroy
   has_many :reviews, dependent: :destroy
-  has_many :stops, dependent: :destroy
   has_many :wishes, dependent: :destroy
   has_many :guide_tags, dependent: :destroy
+  has_many :itineraries, dependent: :destroy
+  has_many :stops, through: :itineraries
 end

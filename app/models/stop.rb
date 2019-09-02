@@ -1,3 +1,4 @@
 class Stop < ApplicationRecord
-  belongs_to :guide
+  has_many :itineraries
+  has_many :guides, through: :itineraries
 end

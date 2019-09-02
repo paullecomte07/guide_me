@@ -1,6 +1,8 @@
+
 body {
 background-color: #f1f1f1;
 }
+
 #user-name {
   font-weight: bold;
 }
@@ -9,12 +11,14 @@ background-color: #f1f1f1;
   height: auto;
 }
 
+
 * {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   font-weight: lighter;
   color: $action-dark;
 }
+
 .card-box {
      margin: 15px 10px;
     display: flex;

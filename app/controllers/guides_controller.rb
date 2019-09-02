@@ -20,6 +20,7 @@ class GuidesController < ApplicationController
   def show
     @reviews = Review.all
     @review = Review.new()
+    @average = Review.ratings.sum.to_f / @reviews.count
   end
 
   def new
@@ -31,6 +32,7 @@ class GuidesController < ApplicationController
     @guide.user = current_user
     if @guide.save
       redirect_to guide_path(@guide)
+      # redirect_to new_guide_itinerary_path(@guide)
     else
       render :new
     end
