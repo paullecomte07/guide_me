@@ -1,5 +1,5 @@
 body {
-  background-color: white;
+  background-color: #f8f9fa;
 }
 .center-title{
   font-family: 'Roboto', sans-serif;
@@ -45,8 +45,8 @@ body {
 .heart {
   background: white;
   position: absolute;
-  top: 0px;
-  right: 18px;
+  top: 21px;
+  left: 64px;
   z-index: 1;
   animation-name: pulse;
   animation-duration: 3s;
@@ -80,6 +80,14 @@ body {
 }
 #make-new{
   background-color: skyblue;
+  margin-left: 10px ;
+  & img {
+     position: absolute;
+    top: 1px;
+    left: 15px;
+    width: 100px;
+    height: 100px;
+  }
 }
 .dash-links{
   margin: 10px;
