@@ -1,1 +1,23 @@
 
+<h1>Choose your stops</h1>
+
+<div>
+  <ul>
+    <% @stops.each do |stop| %>
+      <li>
+        <%= stop.name %>
+        <%= simple_form_for([@guide, stop, @itinerary], remote: true) do |f| %>
+          <%= hidden_field_tag "guide_id", @guide.id %>
+          <%= hidden_field_tag "stop_id", stop.id %>
+          <%= f.submit "Add" %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<div id="stops">
+  <ul>
+
+  </ul>
+</div>

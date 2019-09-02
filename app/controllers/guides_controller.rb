@@ -31,8 +31,7 @@ class GuidesController < ApplicationController
     @guide = Guide.new(guide_params)
     @guide.user = current_user
     if @guide.save
-      redirect_to guide_path(@guide)
-      # redirect_to new_guide_itinerary_path(@guide)
+      redirect_to guide_stops_path(@guide)
     else
       render :new
     end
