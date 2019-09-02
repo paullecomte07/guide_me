@@ -1,3 +1,8 @@
+
+body {
+background-color: #f1f1f1;
+}
+
 #user-name {
   font-weight: bold;
 }
@@ -6,49 +11,60 @@
   height: auto;
 }
 
+
+* {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: lighter;
+  color: $action-dark;
+}
+
 .card-box {
-  margin:  15px 10px;
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  padding: 10px;
-  background-color: $action-light;
-  border-radius: 7px;
-  height: 100px;
-  box-shadow: 9px 7px 32px -19px rgba(0,0,0,0.55)
+     margin: 15px 10px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 10px;
+    background-color: white;
+    border-radius: 7px;
+    height: 130px;
+    box-shadow: 9px 7px 32px -19px rgba(0, 0, 0, 0.55);
+    margin-left: 30px;
 }
 .image {
-  position: absolute;
-  top: -8px;
-  right: 10px;
+    position: absolute;
+    top: 10px;
+    left: -15px;
   & img {
     border-radius: 5px;
-    width: 80px;
-    height: 80px;
-  }
+    width: 100px;
+    height: 110px;
+}
    & p {
-     color: $light-gray;
+    position: absolute;
+    top: 0;
+    right: -230px;
+     color: $action-dark;
      text-align: center;
     font-size: 12px;
   }
 }
 .contentz {
-  width: 230px;
+   width: 200px;
+   margin-left: 90px;
   & .name {
     margin-top: 15px;
     font-size: 10px;
-    color: white;
-    text-decoration: underline;
   }
   & .card-title-class {
     font-size: 16px;
     font-weight: lighter;
-    color: white;
+    color: $action-dark;
   }
   & p {
     font-size: 12px;
     margin:0;
-    color: $light-gray;
+    color: $action-dark;
   }
 }
 #link-spacer {
@@ -56,9 +72,17 @@
     color: white;
     margin: 0 5px;
 }
-
-
-
+.links-container {
+  position: absolute;
+  bottom: 10px;
+  & .name {
+    padding: 5px;
+    background-color: skyblue;
+    color: $action-dark;
+    border-radius: 5px;
+    opacity: 0.6;
+  }
+}
 
 
 

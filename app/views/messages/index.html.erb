@@ -1,0 +1,23 @@
+<% if @over_ten %>
+   <%= link_to 'Show Previous', '?m=all' %>
+<% end %>
+
+
+  <% @messages.each do |message| %>
+    <% if message.body %>
+      <% user = User.find(message.user_id) %>
+          <div class="header"><strong><%= user.first_name %></strong> <%= message.message_time %></div>
+            <%= message.body %>
+    <% end %>
+  <% end %>
+
+
+<%= form_for [@conversation, @message] do |f| %>
+    <%= f.text_area :body, class: "form-control" %>
+  </div>
+    <%= f.text_field :user_id, value: current_user.id, type: "hidden"  %>
+  <div>
+    <%= f.submit "Add Reply", class: "ui blue labeled submit icon button" %>
+  </div>
+
+<% end %>

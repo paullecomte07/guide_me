@@ -14,15 +14,22 @@
 </div>
 
 
-
 <div class="card-container">
   <% @guides.each do |guide| %>
+
     <div class="card-box">
       <div class="contentz">
         <%= link_to guide.title , guide_path(guide), class: "card-title-class"%>
-        <p>Location: <%= guide.location %>, Duration <%= guide.duration %> hs, Category: <%= guide.category %> </p>
-        <%= link_to "Modify", edit_guide_path(guide), class: 'name' %> <span id="link-spacer">|</span>
-        <%= link_to "Browse your Itinerary", guide_stops_path(guide), class: 'name' %>
+        <p>Location: <%= guide.location %></p>
+        <div class="links-container">
+          <%= link_to "Browse your Itinerary", guide_stops_path(guide), class: 'name' %>
+          <% if guide.user_id != current_user.id %> <%= link_to 'Message', conversations_path(sender_id: current_user.id, recipient_id: guide.user_id), class: "name", method: :post %>
+      </div>
+        <% end %>
+
+
+
+
         <div class="image">
           <img src="https://picsum.photos/id/377/80/80" alt="test image">
           <p><%= guide.price_cents %></p>
