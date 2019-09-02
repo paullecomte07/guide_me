@@ -1,26 +1,10 @@
-
-body {
-background-color: #f8f9fa;
-}
-
-#user-name {
-  font-weight: bold;
-}
-.card-container {
+.cards-container {
   width: auto;
   height: auto;
 }
 
-
-* {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  font-weight: lighter;
-  color: $action-dark;
-}
-
 .card-box {
-     margin: 15px 10px;
+    margin: 15px 10px;
     display: flex;
     justify-content: space-between;
     position: relative;
@@ -40,45 +24,42 @@ background-color: #f8f9fa;
     width: 100px;
     height: 110px;
 }
-   & p {
-    position: absolute;
-        top: -6px;
-    right: -240px;
-     color: $action-dark;
-     text-align: center;
-    font-size: 12px;
-  }
 }
+
+.price {
+  position: absolute;
+  top: 92px;
+  right: 9px;
+  color: $action-dark;
+  text-align: center;
+  font-size: 12px;
+}
+
 .contentz {
    width: 200px;
    margin-left: 90px;
-  & .name {
+  & .link {
     margin-top: 15px;
     font-size: 10px;
   }
-  & .card-title-class {
-    font-size: 16px;
-    font-weight: lighter;
-    color: $action-dark;
-  }
-  & p {
-    font-size: 12px;
-    margin:0;
+  & .card-title {
+    text-align: left;
+    font-size: 1rem;
     color: $action-dark;
   }
 }
+
 #link-spacer {
   font-size: 15px;
-    color: white;
-    margin: 0 5px;
+  color: white;
+  margin: 0 5px;
 }
 .links-container {
   position: absolute;
-  bottom: 10px;
-  & .name {
-    padding: 5px;
-    background-color: skyblue;
-    color: $action-dark;
+  & .link {
+    padding: 10px;
+    background-color: $action-light;
+    color: $white;
     border-radius: 5px;
     opacity: 0.6;
   }
