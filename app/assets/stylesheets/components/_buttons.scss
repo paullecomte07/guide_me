@@ -28,6 +28,11 @@
   #heart-icon {
     color: $red;
     font-size: 22px;
+    transition: all 0.2s ease;
   }
+}
+
+.bigger-heart {
+  font-size: 26px !important;
 }
 

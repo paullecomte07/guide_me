@@ -1,0 +1,5 @@
+meta_product_name: "Guide Meta"
+meta_title: "Guide Me - irreplacabley good!"
+meta_description: "Guide me provides the most recent and up to date guides made by experts in the field"
+meta_image: "meta-image.gif" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
