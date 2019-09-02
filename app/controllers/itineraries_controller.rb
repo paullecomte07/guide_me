@@ -1,10 +1,8 @@
 class ItinerariesController < ApplicationController
-  def new
-  end
 
   def create
-  end
-
-  def path
+    @guide = Guide.find(params[:guide_id])
+    @stop = Stop.find(params[:stop_id])
+    @itinerary = Itinerary.create!(guide: @guide, stop: @stop)
   end
 end
