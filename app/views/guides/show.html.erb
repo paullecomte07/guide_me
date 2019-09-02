@@ -11,7 +11,17 @@
 <div class="show-container">
 
   <div class="reviews">
-    <p><%= @average %>(<%= @reviews.count %>)</p>
+    <% if @reviews == [] %>
+      <p>There are no reviews yet for this guide</p>
+    <% else %>
+      <% @average.to_i.times do %>
+        <span><i class="fas fa-star"></i></span>
+      <% end %>
+      <% (5 - @average.to_i).times do %>
+        <span><i class="far fa-star"></i></span>
+      <% end %>
+      <span><%= @average %>(<%= @reviews.count %>)</span>
+    <% end %>
   </div>
 
   <div class="show-title">
@@ -42,16 +52,18 @@
       </div>
     </div>
 
-  <div class="btn-large btn-dark">
-    <%= form_tag orders_path do %>
-      <%= hidden_field_tag "guide_id", @guide.id %>
-      <%= submit_tag "Purchase", class: "whiter" %>
-    <% end %>
-  </div>
+  <% if @guide.user == current_user  %>
+    <%= link_to "Edit", edit_guide_path(@guide), class: "myButton"%>
+    <%= link_to "Delete", guide_path(@guide), method: :delete, class: "myButton",
+        data: { confirmation: "Are you sure?"} %>
+  <% else %>
+    <div class="btn-large btn-dark">
+      <%= form_tag orders_path do %>
+        <%= hidden_field_tag "guide_id", @guide.id %>
+        <%= submit_tag "Purchase", class: "whiter" %>
+      <% end %>
+    </div>
+  <% end %>
 
-  <br>
-  <%= link_to "Edit", edit_guide_path(@guide), class: "myButton"%>
-  <%= link_to "Delete", guide_path(@guide), method: :delete, class: "myButton",
-      data: { confirmation: "Are you sure?"} %>
 </div>
 

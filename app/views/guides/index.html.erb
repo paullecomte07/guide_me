@@ -1,18 +1,18 @@
 
-
-<div class="ind-div-container">
-  <h4>View Guides</h4>
-<%= form_tag guides_path, method: :get do %>
+<div class="search">
+  <%= form_tag guides_path, method: :get do %>
     <%= text_field_tag :query,
-      params[:query],
-      class: "searchTerm",
-      placeholder: "Search guides"%>
-    <%= button_tag type: :submit, class: "searchButton" do %>
-      <i class="fa fa-search"></i>
-    <% end %>
+        params[:query],
+        class: "searchTerm",
+        placeholder: "Search guides"%>
+      <%= button_tag type: :submit, class: "searchButton" do %>
+        <i class="fa fa-search"></i>
+      <% end %>
   <% end %>
 </div>
 
+<!-- <div class="top-guides">
+</div> -->
 
 <div class="card-container">
   <% @guides.each do |guide| %>
@@ -22,13 +22,9 @@
         <%= link_to guide.title , guide_path(guide), class: "card-title-class"%>
         <p>Location: <%= guide.location %></p>
         <div class="links-container">
-          <%= link_to "Browse your Itinerary", guide_stops_path(guide), class: 'name' %>
-          <% if guide.user_id != current_user.id %> <%= link_to 'Message', conversations_path(sender_id: current_user.id, recipient_id: guide.user_id), class: "name", method: :post %>
-      </div>
-        <% end %>
-
-
-
+          <%= link_to "Show More", guide_path(guide), class: 'name' %>
+          <%= link_to 'Message', conversations_path(sender_id: current_user, recipient_id: guide.user), class: "name", method: :post %>
+        </div>
 
         <div class="image">
           <img src="https://picsum.photos/id/377/80/80" alt="test image">
