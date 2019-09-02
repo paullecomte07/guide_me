@@ -1,0 +1,19 @@
+<div class="cards-container">
+  <% @orders.each do |order| %>
+    <div class="card-box">
+      <div class="contentz">
+        <h3><%= link_to order.guide.title , order_path(order), class: "card-title"%></h3>
+        <p><%= order.guide.location %></p>
+        <div class="links-container">
+            <%= link_to 'Itinerary', guide_path_path(order.guide), class: 'link' %>
+            <%= link_to 'Message', conversations_path(sender_id: current_user, recipient_id: order.guide.user), class: "link", method: :post %>
+
+        </div>
+      </div>
+
+        <div class="image">
+          <img src="https://images.unsplash.com/photo-1448906654166-444d494666b3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="test image">
+        </div>
+    </div>
+  <% end %>
+</div>

@@ -1,59 +1,42 @@
 <div class="container">
 
-  <div class="banner home-banner" style="background-image: url(https://images.pexels.com/photos/2827374/pexels-photo-2827374.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=670&w=536)">
+  <div class="banner home-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/2827380/pexels-photo-2827380.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)">
+
     <div class="button-holder">
       <%= link_to "log in", new_user_session_path, class: "color-btn black"  %>
       <%= link_to "sing up", new_user_registration_path, class: "color-btn black"  %>
     </div>
-    <i class="fas fa-plane" id="plane"></i>
-    <i class="fas fa-car-side" id= "car"></i>
-
 
     <div class="content">
       <h1>Guide Me</h1>
       <p>Simplify your trips</p>
+      <div class="row d-flex justify-content-center">
+        <%= link_to "Explore Now", guides_path, class: "btn-small btn-light whiter col-sm-4 m-3"%>
+      </div>
+      <div class="row d-flex justify-content-center">
+        <%= link_to "log in", new_user_session_path, class: "btn-small btn-light-outline col-sm-4 m-3" %>
+      </div>
     </div>
-
-    <div class="btn-explore btn-large btn-light">
-      <%= link_to "Explore Now", guides_path, class: "whiter"%>
-    </div>
-    <%= link_to "log in", new_user_session_path, class: "btn-login btn-small btn-light-outline" %>
   </div>
 
-  <div class="instruction-container">
+  <div class="row instructions-container">
+      <div class="instruction col-sm-12 col-md-4">
+        <h3>Browse</h3>
+        <img src="">
+        <p>Browse among hundreds of guided tours available</p>
+      </div>
 
-    <div class="instruction">
-      <h4>Simple booking</h4>
-      <img src="https://i.pinimg.com/originals/43/c6/8f/43c68fbe91e9b8a83464d04ddc357fb5.gif" style='width:100px; height: 100px;'>
-      <p>With our advanced methods and technologies you can book your life-changing trips in minutes</p>
-      <a href="#" style="color: blue;">read more</a>
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="instruction">
-      <h4>Adventerous trips</h4>
-      <img src="https://thumbs.gfycat.com/WiltedSnoopyGemsbuck-small.gif" style='width:100px; height: 100px;'>
-      <p>Our perfected matching system provides you with a wide reptoire of adventures</p>
-      <a href="#" style="color: blue;">read more</a>
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="instruction">
-      <h4>Your Security</h4>
-      <img src="http://onetwopixel.com/wp-content/uploads/2018/02/animat-lock-color.gif" style='width:100px; height: 100px;'>
-      <p>Your security is important to us and is protected above and beyond with devise</p>
-      <a href="#" style="color: blue;">read more</a>
-    </div>
+      <div class="instruction col-sm-12 col-md-4">
+        <h3>Create</h3>
+        <img src="">
+        <p>Or create your own personal itinerary</p>
+      </div>
+
+      <div class="instruction col-sm-12 col-md-4">
+        <h3>Share</h3>
+        <img src="">
+        <p>Share it with your friends!</p>
+      </div>
   </div>
 </div>
 

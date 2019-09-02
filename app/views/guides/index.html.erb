@@ -14,26 +14,7 @@
 <!-- <div class="top-guides">
 </div> -->
 
-<div class="card-container">
-  <% @guides.each do |guide| %>
-
-    <div class="card-box">
-      <div class="contentz">
-        <%= link_to guide.title , guide_path(guide), class: "card-title-class"%>
-        <p>Location: <%= guide.location %></p>
-        <div class="links-container">
-          <%= link_to "Show More", guide_path(guide), class: 'name' %>
-          <%= link_to 'Message', conversations_path(sender_id: current_user, recipient_id: guide.user), class: "name", method: :post %>
-        </div>
-
-        <div class="image">
-          <img src="https://picsum.photos/id/377/80/80" alt="test image">
-          <p><%= guide.price_cents %></p>
-        </div>
-      </div>
-    </div>
-  <% end %>
-</div>
+<%= render 'shared/guide_cards' %>
 
 
 

@@ -9,13 +9,6 @@ class GuidesController < ApplicationController
     else
       @guides = Guide.where.not(user: current_user)
     end
-
-    @markers = @guides.map do |guide|
-      {
-        lat: guide.latitude,
-        lng: guide.longitude
-      }
-    end
   end
 
   def show

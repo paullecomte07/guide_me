@@ -1,6 +1,7 @@
 User.destroy_all
 Guide.destroy_all
 Stop.destroy_all
+Order.destroy_all
 Review.destroy_all
 GuideTag.destroy_all
 Tag.destroy_all
@@ -43,6 +44,7 @@ paris_guide = Guide.create!(
   category: "adventure",
   price_cents:200
   )
+
 milan_guide = Guide.create!(
   title: "History of Milan",
   user: francesca,
