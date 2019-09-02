@@ -16,7 +16,6 @@ Rails.application.routes.draw do
     resources :wishes, only: [:create, :destroy ]
     resources :guide_tags, only: [:create, :destroy ]
     get 'path', to: 'guides#path', as: 'path'
-    post
   end
   resources :reviews, only: [:destroy]
 
