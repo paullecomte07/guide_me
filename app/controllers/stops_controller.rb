@@ -10,6 +10,7 @@ class StopsController < ApplicationController
   end
 
   def create
+
   end
 
 end
