@@ -17,6 +17,7 @@ class Guide < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_location?
 
   monetize :price_cents
+
   validates :title, presence: true, uniqueness: true
   validates :location, presence: true
 
