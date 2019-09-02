@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :wishes, dependent: :destroy
   has_many :wished_guides, through: :wishes, source: :guide
+  has_many :conversations, :foreign_key => :sender_id
 
   def full_name
     "#{self.first_name} #{self.last_name}"

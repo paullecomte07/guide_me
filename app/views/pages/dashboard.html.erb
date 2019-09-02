@@ -12,9 +12,11 @@
       <div class="card-box">
         <div class="contentz">
          <%= link_to guide.title , guide_path(guide), class: "card-title-class"%>
-          <p>Location: <%= guide.location %>, Distance <%= guide.distance %> km, Duration: <%= guide.duration %> hs </p>
-          <%= link_to "Edit", edit_guide_path(guide), class: 'name' %> <span id="link-spacer">|</span>
-          <%= link_to "View Itinerary", guide_stops_path(guide), class: 'name' %>
+          <p>Location: <%= guide.location %></p>
+          <div class="links-container">
+            <%= link_to "Edit", edit_guide_path(guide), class: 'name' %>
+            <%= link_to "View Itinerary", guide_stops_path(guide), class: 'name' %>
+          </div>
         </div>
         <div class="image">
           <img src="https://picsum.photos/id/377/80/80" alt="test image">
@@ -37,9 +39,11 @@
       <div class="card-box">
         <div class="contentz">
           <%= link_to order.guide.title , order_path(order), class: "card-title-class"%>
-          <p>Location: <%= order.guide.location %>, Duration <%= order.guide.duration %> hs, Category: <%= order.guide.category %> </p>
-          <%= link_to "Modify Guide", edit_guide_path(order.guide), class: 'name' %> <span id="link-spacer">|</span>
-          <%= link_to "Browse your Itinerary", guide_stops_path(order.guide), class: 'name' %>
+          <p>Location: <%= order.guide.location %></p>
+          <div class="links-container">
+            <%= link_to "Modify Guide", edit_guide_path(order.guide), class: 'name' %>
+            <%= link_to "Browse your Itinerary", guide_stops_path(order.guide), class: 'name' %>
+          </div>
           <div class="image">
             <img src="https://picsum.photos/id/377/80/80" alt="test image">
             <p>Paid</p>
@@ -57,9 +61,11 @@
     <div class="card-box">
       <div class="contentz">
         <%= link_to suggestion.title , guide_path(suggestion), class: "card-title-class"%>
-        <p>Location: <%= suggestion.location %>, Duration <%= suggestion.duration %> hs, Category: <%= suggestion.category %> </p>
-        <%= link_to "Modify", edit_guide_path(suggestion), class: 'name' %> <span id="link-spacer">|</span>
-        <%= link_to "Browse your Itinerary", guide_stops_path(suggestion), class: 'name' %>
+        <p>Location: <%= suggestion.location %></p>
+        <div class="links-container">
+          <%= link_to "Modify", edit_guide_path(suggestion), class: 'name' %>
+          <%= link_to "Browse your Itinerary", guide_stops_path(suggestion), class: 'name' %>
+        </div>
         <div class="image">
           <img src="https://picsum.photos/id/377/80/80" alt="test image">
           <p><%= suggestion.price_cents %></p>
@@ -82,9 +88,12 @@
       <div class="card-box">
         <div class="contentz">
           <%= link_to guide.title , guide_path(guide), class: "card-title-class"%>
-          <p>Location: <%= guide.location %>, Duration <%= guide.duration %> hs, Category: <%= guide.category %> </p>
+          <p>Location: <%= guide.location %></p>
           <% wish = guide.wishes.where(user: current_user).first %>
+          <div class="links-container">
           <%= link_to "Remove from wishlist", guide_wish_path(guide, wish), method: :delete, class: 'name' %>
+
+          </div>
           <div class="heart"></div>
           <div class="image">
             <img src="https://picsum.photos/id/377/80/80" alt="test image">
@@ -111,5 +120,6 @@
       </div>
   </div>
   <% end %>
+
 
 

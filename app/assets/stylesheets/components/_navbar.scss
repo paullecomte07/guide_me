@@ -16,6 +16,7 @@
     display: flex;
     width: 100%;
     align-items: stretch;
+    overflow: hidden;
 }
 
 #sidebar {
@@ -36,8 +37,10 @@
 
 
 #sidebar.active {
+  display: none;
   right: -250px;
   transition:1s;
+
 }
 
 

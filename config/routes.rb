@@ -16,4 +16,7 @@ Rails.application.routes.draw do
   end
   resources :reviews, only: [:destroy]
 
+  resources :conversations do
+    resources :messages
+  end
 end
