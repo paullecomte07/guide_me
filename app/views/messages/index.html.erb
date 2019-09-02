@@ -26,11 +26,18 @@
 
 <% end %>
 </div>
-
-<script>
-  setTimeout(function() {
-    location.reload();
-    window.scrollTo(0,document.body.scrollHeight);
-  }, 2000);
-
-</script>
+<% content_for :after_js do %>
+  <script>
+    App['conversation_<%= @conversation.id %>'] =
+    App.cable.subscriptions.create(
+      { channel: 'ConversationsChannel', id: <%= @conversation.id %> },
+      { received: (data) => {
+          console.log(data)
+          if (data.current_user_id !== <%= current_user.id %>) {
+            document.querySelector(".msg-container").innerHTML += data.message_partial
+          }
+        }
+      }
+    )
+  </script>
+<% end %>
