@@ -1,0 +1,6 @@
+function addStop(stopHTML) {
+  const stops = document.querySelector('#stops ul');
+  stops.insertAdjacentHTML('beforeend', stopHTML);
+}
+
+addStop('<%= j render "itineraries/itinerary", guide: @guide, stop: @stop, itinerary: @itinerary %>');

@@ -1,36 +1,22 @@
+<h1>Choose your stops</h1>
 
-
-<div id="spot_page">
-<div class="map-container">
-  <div id="distance-time">
-
-  </div>
-  <div class="preview-picture">
-    <div id="stop-image"><%= image_tag(@stops.first.image , height: "135") %></div>
-
-  </div>
-  <div class="order-counter">
-    <%= @stops.first.list_order.to_s %>
-  </div>
-  <div
-    id="map"
-    style="width: 100%;
-    height: 67vh;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-  ></div>
+<div>
+  <ul>
+    <% @stops.each do |stop| %>
+      <li>
+        <%= stop.name %>
+        <%= simple_form_for([@guide, stop, @itinerary], remote: true) do |f| %>
+          <%= hidden_field_tag "guide_id", @guide.id %>
+          <%= hidden_field_tag "stop_id", stop.id %>
+          <%= f.submit "Add" %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
 </div>
 
+<div id="stops">
+  <ul>
 
-  <div id="stop" class="stops-popup-page">
-    <h1><%= @stops.first.name %></h1>
-    <p><%= @stops.first.description %></p>
-  </div>
-
-
+  </ul>
 </div>
-<p id="marker-not-display"> <%= @stopsMarker %> </p>
-<%= content_for(:after_js) do %>
-  <%= javascript_pack_tag 'plugins/detect_popup' %>
-  <%= javascript_pack_tag 'plugins/redirect_stop' %>
-<% end %>
