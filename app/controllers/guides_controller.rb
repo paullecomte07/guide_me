@@ -55,6 +55,9 @@ class GuidesController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def path
+  end
+
   private
   def guide_params
     params.require(:guide).permit(:title, :duration, :overview, :location,
