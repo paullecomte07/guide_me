@@ -56,7 +56,8 @@ class GuidesController < ApplicationController
 
   def path
     guide = Guide.find(params[:guide_id])
-    @stops = Stop.where(guide: guide)
+
+    @stops = guide.stops
     @stopsMarker = @stops.map do |stop|
       [stop.longitude, stop.latitude
       ]
