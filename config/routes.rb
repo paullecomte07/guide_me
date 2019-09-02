@@ -10,12 +10,13 @@ Rails.application.routes.draw do
 
   resources :guides do
     resources :reviews, only: [:new, :create]
-    resources :stops, only: [:index] do
+    resources :stops, only: [:index, :new, :create] do
       resources :itineraries, only: [:new, :create]
     end
     resources :wishes, only: [:create, :destroy ]
     resources :guide_tags, only: [:create, :destroy ]
     get 'path', to: 'guides#path', as: 'path'
+    post
   end
   resources :reviews, only: [:destroy]
 
