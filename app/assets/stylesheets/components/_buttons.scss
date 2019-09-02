@@ -1,0 +1,33 @@
+.btn-large {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.btn-dark {
+  background-color: $action-dark;
+  color: $white;
+}
+
+.btn-heart {
+  background-color: $white;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px $gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 279px;
+  left: 306px;
+
+  #heart-icon {
+    color: $red;
+    font-size: 22px;
+  }
+}
+

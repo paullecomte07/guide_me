@@ -1,2 +1,25 @@
-// Specific CSS for your home-page
+body {
+  color: $black;
+  text-align: justify;
+}
+
+h1 {
+  font-size: 1.75rem;
+  font-weight: 800;
+}
+
+h2 {
+  font-size: 1.50rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+p {
+  font-size: 0.75rem;
+  font-weight: 300;
+}
+
 

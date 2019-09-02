@@ -20,6 +20,7 @@ class GuidesController < ApplicationController
   def show
     @reviews = Review.all
     @review = Review.new()
+    @average = Review.ratings.sum.to_f / @reviews.count
   end
 
   def new
