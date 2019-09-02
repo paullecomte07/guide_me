@@ -1,6 +1,6 @@
 <div class="container">
 
-  <div class="banner" style="background-image: url(https://images.pexels.com/photos/2827374/pexels-photo-2827374.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=670&w=536)">
+  <div class="banner home-banner" style="background-image: url(https://images.pexels.com/photos/2827374/pexels-photo-2827374.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=670&w=536)">
     <div class="button-holder">
       <%= link_to "log in", new_user_session_path, class: "color-btn black"  %>
       <%= link_to "sing up", new_user_registration_path, class: "color-btn black"  %>
@@ -13,6 +13,11 @@
       <h1>Guide Me</h1>
       <p>Simplify your trips</p>
     </div>
+
+    <div class="btn-explore btn-large btn-light">
+      <%= link_to "Explore Now", guides_path, class: "whiter"%>
+    </div>
+    <%= link_to "log in", new_user_session_path, class: "btn-login btn-small btn-light-outline" %>
   </div>
 
   <div class="instruction-container">

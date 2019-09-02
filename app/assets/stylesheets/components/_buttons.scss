@@ -3,13 +3,33 @@
   align-items: center;
   justify-content: center;
   height: 45px;
-  width: 100%;
+  width: 80%;
+  border-radius: 12px;
+}
+
+.btn-small {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  width: 40%;
   border-radius: 12px;
 }
 
 .btn-dark {
   background-color: $action-dark;
   color: $white;
+}
+
+.btn-light {
+  background-color: $action;
+  color: $white;
+}
+
+.btn-light-outline {
+  background-color: transparent;
+  color: $white;
+  border: 1px solid $white;
 }
 
 .btn-heart {

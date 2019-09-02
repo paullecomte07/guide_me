@@ -9,5 +9,4 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @guide = @order.guide
   end
-
 end
