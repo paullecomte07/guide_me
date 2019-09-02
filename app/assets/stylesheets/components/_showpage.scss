@@ -1,5 +1,18 @@
-.sho-container{
+.img-container {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.guide-image{
+  height:300px;
+  opacity: 1;
+  background: center;
+}
+
+.show-container {
   padding: 15px;
+  color: $black;
 }
 
 //how many images we have
@@ -13,69 +26,51 @@ $total_animation_time: $time_per_slide * $slides;
 h3, p{
   margin: 0;
 }
-.image-and-title {
-   background-color: $action-light;
-   border-radius: 5px;
-   padding: 5px;
-   color: white;
-}
-.line {
-  border-bottom: 1px solid white;
-  width: 50%;
-  height: 10px;
-  margin-bottom: 8px;
-}
-.sho-line-container {
-  display: flex;
-  position: relative;
-  & #sho-location {
-    margin-right: 15px;
-    margin-bottom: 0;
+
+.show-title {
+  padding-bottom: 10px;
+
+  #location {
+    font-size: 1rem;
   }
 }
 
-.sho-image{
-  margin-top: 8px;
-  width: 100%;
-  height:300px;
-  overflow:hidden;
-  position:relative;
-  opacity: 0.8;
-  border-radius: 5px;
-  background-color: $light-gray;
-}
-.photo{
-  position:absolute;
-  animation:round #{$total_animation_time}s infinite;
-  opacity:0;
+// .line {
+//   border-bottom: 1px solid white;
+//   width: 50%;
+//   height: 10px;
+//   margin-bottom: 8px;
+// }
+// .sho-line-container {
+//   display: flex;
+//   position: relative;
+//   & #sho-location {
+//     margin-right: 15px;
+//     margin-bottom: 0;
+//   }
+// }
 
-}
-@keyframes round{
-  25%{
-    opacity:1;
-  }
-  40%{
-    opacity:0;
-  }
-}
 
-@for $index from 1 to $slides + 1{
-  img:nth-child(#{$index}){
-    animation-delay:#{$total_animation_time - $time_per_slide * $index}s
-  }
-}
+// .photo{
+//   position:absolute;
+//   animation:round #{$total_animation_time}s infinite;
+//   opacity:0;
 
-.sho-content {
+// }
+// @keyframes round{
+//   25%{
+//     opacity:1;
+//   }
+//   40%{
+//     opacity:0;
+//   }
+// }
 
-}
-
-.sho-overview {
- padding: 5px;
- background-color: $light-gray;
- border-radius: 5px;
- margin-top: 8px;
- color: $action-dark;
-}
+// @for $index from 1 to $slides + 1{
+//   img:nth-child(#{$index}){
+//     animation-delay:#{$total_animation_time - $time_per_slide * $index}s
+//   }
+// }
 
 .sho-box-view{
   display: flex;
@@ -110,17 +105,7 @@ h3, p{
   padding:14px 25px;
   margin-right: 5px;
 }
-#sho-heart {
-  border-radius:40%;
 
-  color: $action-dark;
-  font-size:30px;
-  padding:14px 25px;
-  margin-right: 5px;
-
-
-
-}
 
 
 
