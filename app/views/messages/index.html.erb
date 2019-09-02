@@ -2,22 +2,35 @@
    <%= link_to 'Show Previous', '?m=all' %>
 <% end %>
 
-
+<div class="msg-container" id="msg-js-id">
   <% @messages.each do |message| %>
     <% if message.body %>
-      <% user = User.find(message.user_id) %>
-          <div class="header"><strong><%= user.first_name %></strong> <%= message.message_time %></div>
-            <%= message.body %>
+      <% if message.user_id == current_user.id%>
+        <% user = User.find(message.user_id) %>
+          <div class="msg-msg sender"> <%= message.body%></div>
+      <% else %>
+        <% user = User.find(message.user_id) %>
+           <div class="msg-msg reciever"> <%= message.body%></div>
+      <% end %>
     <% end %>
   <% end %>
+</div>
+<div class="msg-reply">
+<%= form_for [@conversation, @message], remote: true do |f| %>
+    <%= f.text_area :body, class: "msg-input" %>
 
-
-<%= form_for [@conversation, @message] do |f| %>
-    <%= f.text_area :body, class: "form-control" %>
-  </div>
     <%= f.text_field :user_id, value: current_user.id, type: "hidden"  %>
-  <div>
-    <%= f.submit "Add Reply", class: "ui blue labeled submit icon button" %>
-  </div>
+
+    <%= f.submit "Add Reply", class: "btn btn-primary" %>
+
 
 <% end %>
+</div>
+
+<script>
+  setTimeout(function() {
+    location.reload();
+    window.scrollTo(0,document.body.scrollHeight);
+  }, 2000);
+
+</script>

@@ -1,0 +1,59 @@
+.convo-title {
+margin: 15px;
+}
+.convo-inbox {
+  margin: 15px;
+  & .convo-convo {
+    & p {
+      & a {color: $action-dark;}
+      padding: 10px;
+      background-color: #def7f778;
+      width: fit-content;
+      border-radius: 5px;
+      margin: 5px;
+    }
+  }
+}
+
+.msg-container {
+  padding: 1rem;
+  background: #def7f778;
+  flex-shrink: 2;
+  overflow-y: auto;
+  box-shadow:
+    inset 0 2rem 2rem -2rem rgba(black, 0.05),
+    inset 0 -2rem 2rem -2rem rgba(black, 0.05);
+
+}
+.msg-input {
+      border: none;
+      background-image: none;
+      background-color: white;
+      padding: 0.5rem 1rem;
+      margin-right: 1rem;
+      border-radius: 1.125rem;
+      flex-grow: 2;
+      box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1), 0rem 1rem 1rem -1rem rgba(0, 0, 0, 0.2);
+      font-weight: 400;
+      letter-spacing: 0.025em;
+    }
+ .msg-msg {
+    box-sizing: border-box;
+      padding: 0.5rem 1rem;
+      margin: 1rem;
+      background: #FFF;
+      border-radius: 1.125rem 1.125rem 1.125rem 0;
+      min-height: 2.25rem;
+      width: fit-content;
+      max-width: 66%;
+  }
+  .sender {
+        margin: 1rem 1rem 1rem auto ;
+        border-radius: 1.125rem 1.125rem 0 1.125rem;
+        background: gray;
+        color: white;
+      }
+.msg-reply {
+  display: flex;
+
+}
