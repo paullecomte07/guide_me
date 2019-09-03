@@ -23,12 +23,12 @@
   <meta name="twitter:description" content="<%= meta_description %>">
   <meta name="twitter:creator" content="<%= DEFAULT_META["twitter_account"] %>">
   <meta name="twitter:image:src" content="<%= meta_image %>">
-
+    <%= favicon_link_tag %>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= stylesheet_pack_tag 'application', media: 'all' %>
-    <link rel='shortcut icon' type='image/x-icon' href='https://banner2.kisspng.com/20180606/bls/kisspng-computer-icons-google-maps-road-map-clip-art-moveable-feast-5b18abc6d6a1d3.5489582415283434948791.jpg' />
+    <!-- <link rel='shortcut icon' type='image/x-icon' href='https://banner2.kisspng.com/20180606/bls/kisspng-computer-icons-google-maps-road-map-clip-art-moveable-feast-5b18abc6d6a1d3.5489582415283434948791.jpg' /> -->
   </head>
   <body>
     <%= render 'shared/navbar' %>
