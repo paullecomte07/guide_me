@@ -7,25 +7,20 @@
 .card-box {
     margin: 15px 10px;
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     position: relative;
-    padding: 10px;
     background-color: white;
     border-radius: 7px;
     height: 130px;
-    box-shadow: 9px 7px 32px -19px rgba(0, 0, 0, 0.55);
-    margin-left: 30px;
+    box-shadow: 4px 6px 19px -10px $gray;
     width: auto;
     height: 150px;
 }
 
 .image {
-    position: absolute;
-    top: 5px;
-    left: -26px;
-    border-radius: 5px;
+    border-radius: 7px;
     width: 120px;
-    height: 140px;
+    height: inherit;
     background-size: cover;
     background-position: center;
 }
@@ -44,8 +39,8 @@
 }
 
 .contentz {
-   width: auto;
-   margin-left: 90px;
+   width: 220px;
+   margin-left: 5px;
   & .link {
     margin-top: 15px;
     font-size: 10px;
@@ -54,6 +49,14 @@
     text-align: left;
     font-size: 1rem;
     color: $action-dark;
+  }
+}
+
+.info {
+  text-align: left;
+
+  p {
+    text-align: justify;
   }
 }
 
@@ -68,20 +71,27 @@
   }
 }
 
+.form-control:focus {
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background-color: $light-gray;
+}
 
+.category-cards-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  margin-left: 10px;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
+.category {
+  border-radius: 7px;
+  width: 160px;
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+}
 
 
 

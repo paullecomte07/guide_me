@@ -5,7 +5,7 @@ class GuidesController < ApplicationController
   def index
     # Do not pick guides without latitude and longitude
     if params[:query].present?
-      @guides = Guide.global_search(params[:query])
+      @guides = Guide.global_search(params[:query]).where.not(user: current_user)
     else
       @guides = Guide.where.not(user: current_user)
     end

@@ -2,15 +2,22 @@
 
   <% @guides.each do |guide| %>
     <div class="card-box">
+
+      <div class="image" style="background-image: url(<%= guide.image %>);">
+      </div>
+
       <div class="contentz">
-        <h3><%= link_to guide.title , guide_path(guide), class: "card-title"%></h3>
-        <p><%= guide.location %></p>
-        <p><%= guide.overview %></p>
+        <div class="info">
+          <h3><%= link_to guide.title , guide_path(guide), class: "card-title"%></h3>
+          <p><%= guide.location %></p>
+          <p><%= guide.overview %></p>
+        </div>
         <div class="links-container">
           <% if current_user == guide.user %>
             <%= link_to "Edit", edit_guide_path(guide), class: 'link' %>
             <%= link_to 'Itinerary', guide_path_path(guide), class: 'link' %>
           <% else %>
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/cveneziani", class: "avatar", alt: "avatar" %>
             <%= link_to conversations_path(sender_id: current_user, recipient_id: guide.user), class: "link", method: :post do %>
               <i class="fas fa-paper-plane"></i>
             <% end %>
@@ -18,14 +25,12 @@
         </div>
       </div>
 
-        <div class="image" style="background-image: url(<%= guide.image %>);">
-        </div>
 
-        <% if current_user != guide.user %>
-          <div class="price">
-            <p><strong><%= humanized_money_with_symbol(guide.price) %></strong></p>
-          </div>
-        <% end %>
+      <% if current_user != guide.user %>
+        <div class="price">
+          <p><strong><%= humanized_money_with_symbol(guide.price) %></strong></p>
+        </div>
+      <% end %>
     </div>
   <% end %>
 </div>

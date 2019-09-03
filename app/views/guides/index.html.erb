@@ -1,19 +1,16 @@
-
-<div class="search">
-  <%= form_tag guides_path, method: :get do %>
-    <%= text_field_tag :query,
-        params[:query],
-        class: "searchTerm",
-        placeholder: "Search guides"%>
-      <%= button_tag type: :submit, class: "searchButton" do %>
-        <i class="fa fa-search"></i>
+<form class="search form-inline md-form form-sm mb-3 ">
+      <i class="fa fa-search" aria-hidden="true"></i>
+      <%= form_tag guides_path, method: :get do %>
+        <%= text_field_tag :query,
+            params[:query],
+            class: "form-control form-control-sm ml-3 w-75",
+            placeholder: "Paris"%>
       <% end %>
-  <% end %>
-</div>
+      <%= button_tag type: :submit, class: "search-button" do %>
+      <% end %>
+</form >
 
-<!-- <div class="top-guides">
-</div> -->
-
+<%= render 'shared/category_cards' %>
 <%= render 'shared/guide_cards' %>
 
 
