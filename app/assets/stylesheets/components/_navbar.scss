@@ -11,7 +11,6 @@
   width: 30px;
 }
 
-
 .wrapper {
     display: flex;
     width: 100%;
@@ -35,7 +34,6 @@
 
 }
 
-
 #sidebar.active {
   display: none;
   right: -250px;
@@ -43,27 +41,28 @@
 
 }
 
-
 .nav-items {
   list-style-type: none;
 }
-// .overlay {
-//     display: none;
-//     position: fixed;
-//     /* full screen */
-//     width: 100vw;
-//     height: 100vh;
-//     /* transparent black */
-//     background: rgba(0, 0, 0, 0.7);
-//     /* middle layer, i.e. appears below the sidebar */
-//     z-index: 998;
-//     opacity: 0;
-//     /* animate the transition */
-//     transition: all 0.5s ease-in-out;
-// }
 
-// /* display .overlay when it has the .active class */
-// .overlay.active {
-//     display: block;
-//     opacity: 1;
-// }
+
+.home-navbar {
+  background-color: transparent;
+  padding: 0;
+}
+
+.button-holder {
+  position: absolute;
+  top: 10px;
+  left: 236px;
+
+  .link-dark {
+    color: $white;
+    padding: 5px;
+
+    a {
+      font-weight: bold;
+      font-size: 1rem;
+    }
+  }
+}
