@@ -32,7 +32,7 @@ francesca = User.create!(
   address: "Milan"
   )
 
-puts "Creating guides to buy..."
+puts "Creating guides..."
 
 paris_guide = Guide.create!(
   title: "Hidden Adventures in Paris",
@@ -42,7 +42,8 @@ paris_guide = Guide.create!(
   location: "Paris",
   distance: 6,
   category: "adventure",
-  price_cents:200
+  price_cents:299,
+  image: "https://images.pexels.com/photos/739407/pexels-photo-739407.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
   )
 
 milan_guide = Guide.create!(
@@ -53,23 +54,23 @@ milan_guide = Guide.create!(
   location: "Milan",
   distance: 3,
   category: "history",
-  price_cents:200
+  price_cents:200,
+  image: "https://images.pexels.com/photos/2097092/pexels-photo-2097092.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
   )
-
-puts "Creating our guides..."
 
 london_guide = Guide.create!(
   title: "One Day Tour of London",
   user: mohammad,
-  overview: "Only one day in London? This walking tour explores the most important and historic attractions in the city, only takes a few hours, and offers you a chance to catch a glimpse of what makes this ancient metropolis so great.",
   location: "London",
+  overview: "Only one day in London? This tour explores the most important and historic attractions in the city",
+  image: "https://images.unsplash.com/photo-1448906654166-444d494666b3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
+  price_cents:199,
   )
 
-puts "Creating our stops"
+puts "Creating our stops..."
 
 stop1 = Stop.create!(
   name: "St Paul cathedral",
-
   description: "Rebuilt by Christopher Wren after the great Fire of 1666, St. Paul's has been the site of many historic state occasions; including Sir Winston Churchill's state funeral and the Royal Wedding of Prince Charles and Lady Diana Spencer.
                 A busy working Christian community with several daily services at which all are welcome. St Paul’s also welcomes visitors with access to five levels of the Cathedral including the Whispering Gallery with its unique acoustics and the Stone and Golden Galleries atop the Dome offering breathtaking panoramic views over London.
                 Multimedia guides in eight languages for adults and children are included with sightseeing admission as well as free guided tours to join upon arrival.",
@@ -113,7 +114,6 @@ stop2 = Stop.create!(
 
 stop3 = Stop.create!(
   name: "London Eye",
-
   description: "A trip on the Coca-Cola London Eye is truly captivating, a ‘must-do’ and has been London’s number one visitor experience for over a decade.
                 Elegantly rotating over the River Thames and less than a five minute stroll from Waterloo station along the beautiful Southbank.
                 Step into your capsule and feel the exhilaration as you rise up over the Thames.
@@ -131,7 +131,6 @@ stop3 = Stop.create!(
 
 stop4 = Stop.create!(
   name: "Big Ben",
-
   description: "This place is temporarily closed. Elizabeth Tower is the name of the famous clock tower which stands at the Houses of Parliament.
                 The name Big Ben is often used to describe the tower, the clock and the bell but the name was first given to the Great Bell.
                 The Elizabeth Tower was completed in 1859 and the Great Clock started on 31 May. The Great Bell's strikes were heard for the first time on 11 July and the quarter bells first chimed on 7 September.
