@@ -1,30 +1,37 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#"><%= image_tag "logo.png" %></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item">
-        <%= link_to "Dashboard", dashboard_path, class: "nav-link"  %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Explore", guides_path, class: "nav-link"  %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Messages", conversations_path, class: "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link">Account</a>
-      </li>
-      <li class="nav-item">
-        <a href="#" class="nav-link">Settings</a>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "nav-link" %>
-      </li>
-    </ul>
-
-  </div>
-</nav>
+  <% if current_user.nil? %>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="button-holder">
+        <%= link_to "log in", new_user_session_path, class: "color-btn black"  %>
+        <%= link_to "sign up", new_user_registration_path, class: "color-btn black"  %>
+      </div>
+    </nav>
+  <% else %>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#"><%= image_tag "logo.png" %></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"  aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item">
+            <%= link_to "Dashboard", dashboard_path, class: "nav-link"  %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Explore", guides_path, class: "nav-link"  %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Messages", conversations_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Account</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Settings</a>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  <% end %>
