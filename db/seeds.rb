@@ -69,7 +69,7 @@ puts "Creating our stops"
 
 stop1 = Stop.create!(
   name: "St Paul cathedral",
-  list_order: 1,
+
   description: "Rebuilt by Christopher Wren after the great Fire of 1666, St. Paul's has been the site of many historic state occasions; including Sir Winston Churchill's state funeral and the Royal Wedding of Prince Charles and Lady Diana Spencer.
                 A busy working Christian community with several daily services at which all are welcome. St Paul’s also welcomes visitors with access to five levels of the Cathedral including the Whispering Gallery with its unique acoustics and the Stone and Golden Galleries atop the Dome offering breathtaking panoramic views over London.
                 Multimedia guides in eight languages for adults and children are included with sightseeing admission as well as free guided tours to join upon arrival.",
@@ -89,7 +89,7 @@ stop1 = Stop.create!(
 
 stop2 = Stop.create!(
   name: "Tower Bridge",
-  list_order: 4,
+
   description: "An iconic London landmark and one of Britain's best loved historic sites, Tower Bridge is open to the public 363 days a year.
                 Within the Bridge's iconic structure and magnificent Victorian Engine rooms, the Tower Bridge Exhibition is the best way of exploring the most famous bridge in the world!
                 Come learn about this incredible feat of Victorian engineering, discover how the Bridge is raised and enjoy stunning panoramic views across London from our high-level walkways, 42 metres above the River Thames.
@@ -113,7 +113,7 @@ stop2 = Stop.create!(
 
 stop3 = Stop.create!(
   name: "London Eye",
-  list_order: 3,
+
   description: "A trip on the Coca-Cola London Eye is truly captivating, a ‘must-do’ and has been London’s number one visitor experience for over a decade.
                 Elegantly rotating over the River Thames and less than a five minute stroll from Waterloo station along the beautiful Southbank.
                 Step into your capsule and feel the exhilaration as you rise up over the Thames.
@@ -131,7 +131,7 @@ stop3 = Stop.create!(
 
 stop4 = Stop.create!(
   name: "Big Ben",
-  list_order: 2,
+
   description: "This place is temporarily closed. Elizabeth Tower is the name of the famous clock tower which stands at the Houses of Parliament.
                 The name Big Ben is often used to describe the tower, the clock and the bell but the name was first given to the Great Bell.
                 The Elizabeth Tower was completed in 1859 and the Great Clock started on 31 May. The Great Bell's strikes were heard for the first time on 11 July and the quarter bells first chimed on 7 September.

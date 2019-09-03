@@ -1,7 +1,7 @@
 
-<h1>Choose your stops</h1>
 
-<div>
+<div class="padding">
+<h1>Choose your stops</h1>
   <ul>
     <% @stops.each do |stop| %>
       <li>
@@ -18,11 +18,7 @@
 
 
 
-<table class="table" id="stops">
-
-
-
-</table>
+<div id="stops"></div>
 
 <%= link_to(guide_path_path(@guide)) do %>
   <div class=".btn-large"> See the itinerary</div>
