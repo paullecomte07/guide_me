@@ -155,7 +155,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
-    redis (4.1.2)
+    redis (3.3.5)
     responders (3.0.0)
       actionpack (>= 5.0)
       railties (>= 5.0)
@@ -225,7 +225,7 @@ DEPENDENCIES
   puma
   pundit
   rails (= 5.2.3)
-  redis
+  redis (~> 3.3)
   sassc-rails
   simple_form
   spring
