@@ -25,59 +25,37 @@ h3, p{
   margin: 0;
 }
 
-.show-title {
-  padding-bottom: 10px;
 
-  #location {
-    font-size: 1rem;
+#location {
+  font-size: 1rem;
+  color: $dark-gray;
+  padding-top: 5px;
+  i {
+    padding-right: 5px;
   }
 }
 
-// .line {
-//   border-bottom: 1px solid white;
-//   width: 50%;
-//   height: 10px;
-//   margin-bottom: 8px;
-// }
-// .sho-line-container {
-//   display: flex;
-//   position: relative;
-//   & #sho-location {
-//     margin-right: 15px;
-//     margin-bottom: 0;
-//   }
-// }
+.user-profile {
+  display: flex;
+  align-items: center;
+  justify-content: start;
 
-
-// .photo{
-//   position:absolute;
-//   animation:round #{$total_animation_time}s infinite;
-//   opacity:0;
-
-// }
-// @keyframes round{
-//   25%{
-//     opacity:1;
-//   }
-//   40%{
-//     opacity:0;
-//   }
-// }
-
-// @for $index from 1 to $slides + 1{
-//   img:nth-child(#{$index}){
-//     animation-delay:#{$total_animation_time - $time_per_slide * $index}s
-//   }
-// }
+  p {
+    padding: 5px;
+  }
+}
 
 .sho-box-view{
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
   justify-content: space-between;
   flex-wrap: wrap;
+  margin-bottom: 10px;
 }
 
 .sho-box-item{
-  width: 48%;
+  width: auto;
   height: 100px;
   background-color: $light-gray;
   margin-top: 8px;
