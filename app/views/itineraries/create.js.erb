@@ -1,12 +1,18 @@
 
-
 function addStop(stopHTML) {
   const stops = document.querySelector('#stops');
   stops.insertAdjacentHTML('beforeend', stopHTML);
 }
 
 
-
+function disableButton() {
+  const input = document.querySelector(".add-input-<%= @stop.id %>");
+  // input.disabled = true;
+  input.remove();
+  // const hiddenInput = document.querySelector(`input[value="<%= @stop.id %>"]`);
+  // const inputHTML = `<input type="submit" name="commit" value="Add" class="add-input-<%= @stop.id %>" data-disable-with="Add" disabled>`;
+  // hiddenInput.insertAdjacentHTML('afterend', inputHTML);
+}
 
 addStop('<%= j render "itineraries/itinerary", guide: @guide, stop: @stop, itinerary: @itinerary %>');
-
+disableButton();
