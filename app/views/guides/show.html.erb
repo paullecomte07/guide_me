@@ -16,31 +16,33 @@
 
   <div class="show-title">
     <h3><%= @guide.title %></h3>
-    <p id="location"><%= @guide.location %></p>
+    <p id="location"><span><i class="fas fa-map-marker-alt"></i></span><%= @guide.location %></p>
   </div>
 
   <div class="show-overview">
     <p><%= @guide.overview %></p>
   </div>
 
-    <div class="sho-box-view">
-      <div class="sho-box-item">
-        <h5><%= @guide.distance %> KM</h5>
-        <span class="sho-icon"><i class="fas fa-route"></i></span>
-      </div>
-      <div class="sho-box-item">
-        <h5><%= @guide.duration %> KM</h5>
-        <span class="sho-icon"><i class="far fa-clock"></i></span>
-      </div>
-      <div class="sho-box-item">
-        <h5><%= @guide.category %></h5>
-        <span class="sho-icon"><i class="fas fa-mountain"></i></span>
-      </div>
-      <div class="sho-box-item">
-        <h5><%= @guide.user.full_name %></h5>
-        made this guide
-      </div>
+  <div class="user-profile">
+    <%= image_tag "https://kitt.lewagon.com/placeholder/users/cveneziani", class: "avatar", alt: "avatar" %>
+    <p>Your guide is <%= @guide.user.full_name %></p>
+  </div>
+
+
+  <div class="sho-box-view">
+    <div class="sho-box-item">
+      <h5><%= @guide.distance %> KM</h5>
+      <span class="sho-icon"><i class="fas fa-route"></i></span>
     </div>
+    <div class="sho-box-item">
+      <h5><%= @guide.duration %> KM</h5>
+      <span class="sho-icon"><i class="far fa-clock"></i></span>
+    </div>
+    <div class="sho-box-item">
+      <h5><%= @guide.category %></h5>
+      <span class="sho-icon"><i class="fas fa-mountain"></i></span>
+    </div>
+  </div>
 
   <% if @guide.user == current_user  %>
     <%= link_to "Edit", edit_guide_path(@guide), class: "myButton"%>
