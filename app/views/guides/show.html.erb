@@ -1,5 +1,5 @@
 <div class="img-container">
-  <div class="banner image-banner", style="background-image: url(https://images.unsplash.com/photo-1448906654166-444d494666b3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);">
+  <div class="banner image-banner", style="background-image: url(<%= @guide.image %>);">
   </div>
   <div class="btn-heart">
       <%= link_to guide_wishes_path(@guide), method: :post, remote: true do %>
