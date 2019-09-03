@@ -1,8 +1,6 @@
-<% if @over_ten %>
-   <%= link_to 'Show Previous', '?m=all' %>
-<% end %>
 
 <div class="msg-container" id="msg-js-id">
+  <h4 style="text-align: center;"><%= @conversation.created_at %></h4>
   <% @messages.each do |message| %>
     <% if message.body %>
       <% if message.user_id == current_user.id%>
