@@ -90,6 +90,7 @@ stop1 = Stop.create!(
 
 stop2 = Stop.create!(
   name: "Tower Bridge",
+
   description: "An iconic London landmark and one of Britain's best loved historic sites, Tower Bridge is open to the public 363 days a year.
                 Within the Bridge's iconic structure and magnificent Victorian Engine rooms, the Tower Bridge Exhibition is the best way of exploring the most famous bridge in the world!
                 Come learn about this incredible feat of Victorian engineering, discover how the Bridge is raised and enjoy stunning panoramic views across London from our high-level walkways, 42 metres above the River Thames.
