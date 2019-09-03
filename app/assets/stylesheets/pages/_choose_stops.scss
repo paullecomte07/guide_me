@@ -1,0 +1,55 @@
+.form-stops {
+  display:flex;
+  justify-content: space-between;
+  height:100px;
+  margin-top: 18px;
+  align-items: center;
+
+}
+
+.description-stops {
+max-width: 75%;
+
+}
+
+.content-stop {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  margin-left: 12px;
+}
+
+.separator{
+
+  background-color: $gray;
+  padding: 0.5px;
+  width: 100%;
+  margin-top: 4px;
+
+}
+
+
+.input {
+  background-color:$action-light !important;
+  border-radius: 2px !important;
+  border: none !important;
+  color:#222E3A !important;
+  font-weight: 500  !important;
+}
+
+.btn-itinerary {
+  background-color: $action;
+  padding: 14px;
+  margin: auto;
+  width: fit-content;
+  border-radius: 3px;
+  color: white;
+  font-weight: bold;
+}
+
+
+
+

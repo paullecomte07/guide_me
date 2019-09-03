@@ -1,25 +1,35 @@
 
 
 <div class="padding">
-<h1>Choose your stops</h1>
-  <ul>
+<h1 style="margin-left:-17px;">Choose your stops</h1>
     <% @stops.each do |stop| %>
-      <li>
-        <%= stop.name %>
-        <%= simple_form_for([@guide, stop, @itinerary], remote: true) do |f| %>
-          <%= hidden_field_tag "guide_id", @guide.id %>
-          <%= hidden_field_tag "stop_id", stop.id %>
-          <%= f.submit "Add" %>
-        <% end %>
-      </li>
+      <div class="form-stops">
+        <div class="description-stops">
+          <h2><%= stop.name %></h2>
+           <p class="content-stop"><%= stop.description %></p>
+        </div>
+
+        <div><%= simple_form_for([@guide, stop, @itinerary], remote: true) do |f| %>
+            <%= hidden_field_tag "guide_id", @guide.id %>
+            <%= hidden_field_tag "stop_id", stop.id %>
+            <%= f.submit "Add", class: "add-input-#{stop.id} input" %>
+          <% end %>
+        </div>
+      </div>
+      <div class="separator">
+
+      </div>
     <% end %>
-  </ul>
 </div>
 
 
 
-<div id="stops"></div>
+
 
 <%= link_to(guide_path_path(@guide)) do %>
-  <div class=".btn-large"> See the itinerary</div>
+  <div class="btn-itinerary"> See the itinerary</div>
 <%  end%>
+
+<div id="stops" style="display:none;">
+
+</div>
