@@ -1,6 +1,57 @@
+function selectCoordinateMatrix(tile){
+  const tileColumn = tile.cellIndex;
+  const tileRow = tile.parentElement.rowIndex;
+  return [tileRow,tileColumn]
+}
+
+
+
 function addStop(stopHTML) {
   const stops = document.querySelector('#stops');
   stops.insertAdjacentHTML('beforeend', stopHTML);
 }
 
+function length() {
+  return document.querySelectorAll('tr').length
+}
+
+function addItinerary() {
+  const array = document.querySelectorAll('tr')
+  const lastTr = array[array.length - 1]
+  lastTr.querySelectorAll('td')
+  .forEach((tile)=>{
+
+    tile.addEventListener('click', (event) =>{
+
+    const coordinates = selectCoordinateMatrix(event.currentTarget)
+    if(coordinates[1] === 1){
+      if(coordinates[0] !== 0){
+        const text = document.querySelectorAll('tr')[coordinates[0]].querySelector('td').innerText
+        let textAbove = document.querySelectorAll('tr')[coordinates[0]-1].querySelector('td').innerText
+        document.querySelectorAll('tr')[coordinates[0]].querySelector('td').innerText = textAbove
+        document.querySelectorAll('tr')[coordinates[0]-1].querySelector('td').innerText = text
+      }
+    }
+    if(coordinates[1] === 2) {
+      if(coordinates[0] !== length()-1) {
+        let text = document.querySelectorAll('tr')[coordinates[0]].querySelector('td').innerText
+        let textBelow = document.querySelectorAll('tr')[coordinates[0]+1].querySelector('td').innerText
+        document.querySelectorAll('tr')[coordinates[0]].querySelector('td').innerText = textBelow
+        document.querySelectorAll('tr')[coordinates[0]+1].querySelector('td').innerText = text
+        console.log(length())
+        console.log(coordinates[0])
+
+      }
+
+    }
+
+
+    })
+      })
+  }
+
+
+
 addStop('<%= j render "itineraries/itinerary", guide: @guide, stop: @stop, itinerary: @itinerary %>');
+
+addItinerary()
