@@ -2,10 +2,10 @@
 // 2 Create HTML element with message text
 // 3 Insert HTML element into messages box
 // 4 Clear input box
-let con = document.querySelector(".msg-container")
+con = document.querySelector(".msg-container")
 con.innerHTML += "<div class='msg-msg sender'> <%= @messagejs %></div>";
 window.scrollTo(0,document.body.scrollHeight);
-var body = document.getElementById("message_body");
+body = document.getElementById("message_body");
 body.value = "";
 
 

@@ -14,4 +14,6 @@ class StopsController < ApplicationController
 
   end
 
+
+
 end

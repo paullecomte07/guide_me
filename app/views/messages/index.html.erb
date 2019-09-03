@@ -1,8 +1,6 @@
-<% if @over_ten %>
-   <%= link_to 'Show Previous', '?m=all' %>
-<% end %>
 
 <div class="msg-container" id="msg-js-id">
+  <h4 style="text-align: center;"><%= @conversation.created_at %></h4>
   <% @messages.each do |message| %>
     <% if message.body %>
       <% if message.user_id == current_user.id%>
@@ -26,11 +24,18 @@
 
 <% end %>
 </div>
-
-<script>
-  setTimeout(function() {
-    location.reload();
-    window.scrollTo(0,document.body.scrollHeight);
-  }, 2000);
-
-</script>
+<% content_for :after_js do %>
+  <script>
+    App['conversation_<%= @conversation.id %>'] =
+    App.cable.subscriptions.create(
+      { channel: 'ConversationsChannel', id: <%= @conversation.id %> },
+      { received: (data) => {
+          console.log(data)
+          if (data.current_user_id !== <%= current_user.id %>) {
+            document.querySelector(".msg-container").innerHTML += data.message_partial
+          }
+        }
+      }
+    )
+  </script>
+<% end %>

@@ -83,6 +83,8 @@ Rails.application.configure do
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
+  config.action_cable.url = "ws://www.guide-me.live/cable"
+  config.action_cable.allowed_request_origins = [ "http://www.guide-me.live", "https://www.guide-me.live" ]
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
