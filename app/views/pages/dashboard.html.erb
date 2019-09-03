@@ -8,11 +8,11 @@
   </div>
 
 
-    <%= link_to new_guide_path do  %>
-      <div class="d-flex justify-content-center m-3">
-        <div class="btn btn-large btn-dark">Create a New Guide</div>
-      </div>
-    <% end %>
+  <%= link_to new_guide_path do  %>
+    <div class="d-flex justify-content-center m-3">
+      <div class="btn btn-large btn-dark">Create a New Guide</div>
+    </div>
+  <% end %>
 
   <div id="guides-section">
     <h3 class="section-title" id="guides-section"><span><i class="fas fa-book-open"></i></span> You made these guides</h3>
@@ -21,7 +21,7 @@
 
   <div id="orders-section">
     <% if current_user.orders.empty? %>
-      <h3><span><i class="fas fa-shopping-cart"></i></span>You haven't purchased any guides yet!</h3>
+      <h3 class="section-title"><span><i class="fas fa-shopping-cart"></i></span>You haven't purchased any guides yet!</h3>
       <%= link_to guides_path do %>
         <div class="btn btn-small btn-light">Browse</div>
       <% end %>
