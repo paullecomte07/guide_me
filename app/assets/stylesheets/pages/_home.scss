@@ -19,7 +19,7 @@ h3 {
 }
 
 p {
-  font-size: 0.75rem;
+  font-size: 1rem;
   font-weight: 300;
 }
 
@@ -36,5 +36,18 @@ p {
   position: absolute;
   top: 537px;
   left: 110px;
+}
+
+.instruction {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  text-align: center;
+
+}
+
+.illustration-image {
+  height: 100px;
+  width: auto;
 }
 
