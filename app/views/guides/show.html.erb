@@ -19,10 +19,11 @@
 
 <div class="show-container">
 
-
+<%= link_to guide_reviews_path(@guide) do %>
   <div class="reviews">
     <%= render 'shared/reviews' %>
   </div>
+<% end %>
 
   <div class="show-title mt-2">
     <h3><%= @guide.title %></h3>

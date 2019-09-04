@@ -1,4 +1,4 @@
-<% if @reviews == [] %>
+<% if @reviews.blank? %>
   <p>There are no reviews yet for this guide</p>
 <% else %>
   <% @average.to_i.times do %>

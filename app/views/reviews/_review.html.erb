@@ -1,5 +1,12 @@
-<li data-review-id="<%= review.id %>">
-  <%= review.stars %>
-  <%= review.content %>
-  <%= link_to "Delete", review, method: :delete, remote: true  %>
+
+<li data-review-id="<%= review.id %>" class="review-list">
+  <% review.stars.times do %>
+    <span><i class="fas fa-star" id="star-icon"></i></span>
+  <% end %>
+  <% (5 - review.stars).times do %>
+    <span><i class="far fa-star" id="star-icon"></i></span>
+  <% end %>
+  <br>
+  <p><strong><%= review.user.full_name %></strong></p>
+  <p><%= review.content %></p>
 </li>
