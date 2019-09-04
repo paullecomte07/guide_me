@@ -37,7 +37,17 @@
       <p> <strong><%= @guide.duration %> hs</strong></p>
     </div>
     <div class="info-item d-flex px-1 py-2">
-      <span class="info-icon px-1"><i class="fas fa-mountain"></i></span>
+      <% if @guide.category == "history" %>
+        <span class="info-icon px-1"><i class="fas fa-landmark"></i></i></span>
+      <% elsif @guide.category == "nature" %>
+        <span class="info-icon px-1"><i class="fas fa-seedling"></i></span>
+      <% elsif @guide.category == "food" %>
+        <span class="info-icon px-1"><i class="fas fa-utensils"></i></span>
+      <% elsif @guide.category == "adventure" %>
+        <span class="info-icon px-1"><i class="fas fa-mountain"></i></span>
+      <% elsif @guide.category == "horror" %>
+        <span class="info-icon px-1"><i class="fas fa-dizzy"></i></span>
+      <% end %>
       <p><strong><%= @guide.category %> </strong></p>
     </div>
   </div>
@@ -49,7 +59,11 @@
 
   <div class="user-profile mt-2">
     <%= image_tag(@guide.user.avatar, class: "avatar", alt: "avatar") %>
-    <p>Your guide is <%= @guide.user.full_name %></p>
+
+      <p>Your guide is <%= link_to conversations_path(sender_id: current_user, recipient_id: @guide.user), class: "link", method: :post do %>
+         <%= @guide.user.full_name %>
+        <% end %>
+      </p>
   </div>
 
   <% if @guide.user == current_user  %>
