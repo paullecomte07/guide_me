@@ -6,7 +6,7 @@
 .section-title {
   text-align: center;
   color: $dark-gray;
-
+  font-size: 1rem;
   i {
     padding: 4px;
   }
@@ -18,7 +18,7 @@
 }
 
 .tab-link {
-  background-color: $gray;
+  background-color: $action-light;
   border-radius: 50%;
   padding: 16px;
   margin: 6px;
@@ -26,6 +26,6 @@
     height: 40px;
 
   i {
-    color: $dark-gray;
+    color: $white;
   }
 }

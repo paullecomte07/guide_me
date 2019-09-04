@@ -6,25 +6,24 @@
     <a href="#wishlist-section" class="tab-link"><i class="fas fa-heart"></i></a>
   </div>
 
-  <h2 class="p-3">Hi, <span><%=current_user.first_name%></span> !</h2>
+  <h2 class="m-3">Hi, <span><%=current_user.first_name%></span> !</h2>
 
 
   <div id="guides-section">
     <h3 class="section-title" id="guides-section"><span><i class="fas fa-book-open"></i></span> You made these guides</h3>
+  <%= link_to new_guide_path do  %>
+    <div class="btn-circle btn-dark mt-3 mb-3"><i class="fas fa-plus"></i></div>
+  <% end %>
     <%= render 'shared/guide_cards', guides: @guides %>
   </div>
 
-  <%= link_to new_guide_path do  %>
-    <div class="d-flex justify-content-center m-3">
-      <div class="btn btn-small btn-dark-outline">Create a New Guide</div>
-    </div>
-  <% end %>
+  <div class="separator mt-3 mb-3"></div>
 
   <div id="orders-section">
     <% if current_user.orders.empty? %>
       <h3 class="section-title"><span><i class="fas fa-shopping-cart"></i></span>You haven't purchased any guides yet!</h3>
       <%= link_to guides_path do %>
-        <div class="btn btn-small btn-light">Browse</div>
+        <div class="btn btn-small btn-light whiter mt-3 mb-3">Explore</div>
       <% end %>
     <% else %>
       <h3 class="section-title"><span><i class="fas fa-shopping-cart"></i></span>Your purchases</h4>
@@ -32,12 +31,11 @@
     <% end %>
   </div>
 
+  <div class="separator mt-3 mb-3"></div>
+
   <div id="wishlist-section">
     <% if current_user.wished_guides.empty? %>
       <h3 class="section-title"><span><i class="fas fa-heart"></i></span>Your wishlist is empty...</h3>
-      <%= link_to guides_path do %>
-        <div class="button-to-browse" id="ur-wish">Browse</div>
-      <% end %>
     <% else %>
       <h3 class="left-title">Saved</h3>
         <div class="card-container" id="wishlist">
@@ -62,6 +60,8 @@
       </div>
     <% end %>
   </div>
+
+  <div class="separator mt-3 mb-3"></div>
 
 <h4 class="left-title" id="ur-suggestions">Guides you might like</h4>
 <div class="card-container">
