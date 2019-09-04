@@ -15,6 +15,7 @@
   width: 50%;
   margin: auto;
   border-radius: 30px;
+  font-weight: 500;
 }
 
 .btn-dark {
@@ -33,6 +34,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
     i {
     color: #fff;
     font-size: 1.75rem;
@@ -53,7 +55,7 @@
   border: 1px solid $action-dark;
 }
 
-.btn-heart {
+.btn-icon {
   background-color: $white;
   width: 46px;
   height: 46px;
@@ -70,6 +72,11 @@
     color: $red;
     font-size: 22px;
     transition: all 0.2s ease;
+  }
+
+  #pen-icon {
+    color: $gray;
+    font-size: 22px;
   }
 }
 .counter{

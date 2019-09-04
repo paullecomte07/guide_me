@@ -18,7 +18,7 @@
 }
 
 .image {
-    border-radius: 7px;
+    border-radius: 7px 0px 0px 7px;
     width: 120px;
     height: inherit;
     background-size: cover;
@@ -31,8 +31,9 @@
     left: 5px;
     color: $action-dark;
     padding-top: 5px;
+    font-size: 0.75rem;
     i {
-    padding-right: 5px;
+      padding-right: 5px;
     }
   }
 }
