@@ -1,8 +1,8 @@
 <% if current_user.nil? %>
   <nav class="navbar home-navbar">
     <div class="button-holder">
-      <%= link_to "log in", new_user_session_path, class: "link link-dark"  %>
-      <%= link_to "sign up", new_user_registration_path, class: "link link-dark"  %>
+      <%= link_to "Log in", new_user_session_path, class: "link link-dark"  %>
+      <%= link_to "Sign up", new_user_registration_path, class: "link link-dark"  %>
     </div>
   </nav>
 <% else %>

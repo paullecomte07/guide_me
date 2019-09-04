@@ -12,14 +12,14 @@
   top: 35%;
   padding: 40px;
   text-align: center;
-  & h1{
+  & h1 {
     color: white;
-    font-size: 60px;
+    font-size: 3.5rem;
     font-weight: bold;
-
   }
-  & p{
+  & p {
     color: white;
+    font-size: 1.25rem;
   }
 
 }
@@ -44,12 +44,8 @@
   margin: 0;
   padding: 0;
 }
-.instruction {
-  width: 100%;
-  height: 100px;
-  padding: 10px;
-  text-align: center;
-}
+
+
 
 
 
