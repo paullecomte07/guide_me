@@ -4,7 +4,7 @@
   justify-content: center;
   height: 45px;
   width: 100%;
-  border-radius: 12px;
+  border-radius: 30px;
 }
 
 .btn-small {
@@ -12,8 +12,8 @@
   align-items: center;
   justify-content: center;
   height: 45px;
-  width: 40%;
-  border-radius: 12px;
+  width: 50%;
+  border-radius: 30px;
 }
 
 .btn-dark {
@@ -30,6 +30,12 @@
   border: 1px solid $white;
 }
 
+.btn-dark-outline {
+  background-color: transparent;
+  color: $action-dark;
+  border: 1px solid $action-dark;
+}
+
 .btn-heart {
   background-color: $white;
   width: 46px;
@@ -41,7 +47,7 @@
   justify-content: center;
   position: absolute;
   top: 279px;
-  left: 306px;
+  left: 350px;
 
   #heart-icon {
     color: $red;

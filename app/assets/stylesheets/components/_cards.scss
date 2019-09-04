@@ -14,7 +14,7 @@
     height: 130px;
     box-shadow: 4px 6px 19px -10px $gray;
     width: auto;
-    height: 150px;
+    height: 130px;
 }
 
 .image {
@@ -23,11 +23,23 @@
     height: inherit;
     background-size: cover;
     background-position: center;
+    position: relative;
+
+  #card-location {
+    position: absolute;
+    top: 0px;
+    left: 5px;
+    color: $action-dark;
+    padding-top: 5px;
+    i {
+    padding-right: 5px;
+    }
+  }
 }
 
 .price {
   position: absolute;
-  top: 115px;
+  top: 100px;
   right: 9px;
   color: $action-dark;
   text-align: center;
@@ -71,12 +83,6 @@
   }
 }
 
-.form-control:focus {
-  border-color: inherit;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  background-color: $light-gray;
-}
 
 .category-cards-container {
   display: grid;

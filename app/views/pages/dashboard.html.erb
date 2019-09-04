@@ -1,5 +1,4 @@
 <div class="dashboard-container">
-  <h2 class="p-3">Hi, <span><%=current_user.first_name%></span> !</h2>
 
   <div class="dash-links">
     <a href="#guides-section" class="tab-link"><i class="fas fa-book-open"></i></a>
@@ -7,17 +6,19 @@
     <a href="#wishlist-section" class="tab-link"><i class="fas fa-heart"></i></a>
   </div>
 
+  <h2 class="p-3">Hi, <span><%=current_user.first_name%></span> !</h2>
 
-  <%= link_to new_guide_path do  %>
-    <div class="d-flex justify-content-center m-3">
-      <div class="btn btn-large btn-dark">Create a New Guide</div>
-    </div>
-  <% end %>
 
   <div id="guides-section">
     <h3 class="section-title" id="guides-section"><span><i class="fas fa-book-open"></i></span> You made these guides</h3>
     <%= render 'shared/guide_cards', guides: @guides %>
   </div>
+
+  <%= link_to new_guide_path do  %>
+    <div class="d-flex justify-content-center m-3">
+      <div class="btn btn-small btn-dark-outline">Create a New Guide</div>
+    </div>
+  <% end %>
 
   <div id="orders-section">
     <% if current_user.orders.empty? %>

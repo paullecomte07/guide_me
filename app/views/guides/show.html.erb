@@ -1,5 +1,6 @@
 <div class="img-container">
   <div class="banner image-banner", style="background-image: url(<%= @guide.image %>);">
+    <p id="show-location"><span><i class="fas fa-map-marker-alt"></i></span><%= @guide.location %></p>
   </div>
   <div class="btn-heart">
       <%= link_to guide_wishes_path(@guide), method: :post, remote: true do %>
@@ -14,16 +15,15 @@
     <%= render 'shared/reviews' %>
   </div>
 
-  <div class="show-title">
+  <div class="show-title mt-2">
     <h3><%= @guide.title %></h3>
-    <p id="location"><span><i class="fas fa-map-marker-alt"></i></span><%= @guide.location %></p>
   </div>
 
-  <div class="show-overview">
+  <div class="show-overview mt-2">
     <p><%= @guide.overview %></p>
   </div>
 
-  <div class="user-profile">
+  <div class="user-profile mt-2">
     <%= image_tag "https://kitt.lewagon.com/placeholder/users/cveneziani", class: "avatar", alt: "avatar" %>
     <p>Your guide is <%= @guide.user.full_name %></p>
   </div>
@@ -52,7 +52,7 @@
     <div class="btn-large btn-dark">
       <%= form_tag orders_path do %>
         <%= hidden_field_tag "guide_id", @guide.id %>
-        <%= submit_tag "Purchase", class: "whiter" %>
+        <%= submit_tag "Purchase", class: "no-input whiter" %>
       <% end %>
     </div>
   <% end %>
