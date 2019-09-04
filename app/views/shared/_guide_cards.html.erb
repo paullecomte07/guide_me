@@ -4,12 +4,12 @@
     <div class="card-box">
 
       <div class="image" style="background-image: url(<%= guide.image %>);">
+        <p id="card-location"><span><i class="fas fa-map-marker-alt"></i></span><%= guide.location %></p>
       </div>
 
       <div class="contentz">
         <div class="info">
           <h3><%= link_to guide.title , guide_path(guide), class: "card-title"%></h3>
-          <p><%= guide.location %></p>
           <p><%= guide.overview %></p>
         </div>
         <div class="links-container">
@@ -24,7 +24,6 @@
           <% end %>
         </div>
       </div>
-
 
       <% if current_user != guide.user %>
         <div class="price">

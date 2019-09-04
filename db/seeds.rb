@@ -5,6 +5,7 @@ Order.destroy_all
 Review.destroy_all
 GuideTag.destroy_all
 Tag.destroy_all
+Wish.destroy_all
 
 puts "Creating users..."
 

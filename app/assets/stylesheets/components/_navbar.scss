@@ -3,14 +3,26 @@
   width: 100%;
   height: auto;
   justify-content: space-between;
-  background: white;
+  background-color: $white;
   margin: 0;
+  padding: 0.25rem 1rem;
 }
 
 .navbar .navbar-brand img {
   width: 30px;
 }
 
+.navbar-toggler {
+  border-style: none;
+}
+
+.navbar-toggler:focus {
+  -webkit-appearance: none;
+  border-color: inherit;
+  box-shadow: none;
+  background-color: inherit;
+  outline: none;
+}
 
 .wrapper {
     display: flex;
@@ -35,7 +47,6 @@
 
 }
 
-
 #sidebar.active {
   display: none;
   right: -250px;
@@ -43,27 +54,30 @@
 
 }
 
-
 .nav-items {
   list-style-type: none;
 }
-// .overlay {
-//     display: none;
-//     position: fixed;
-//     /* full screen */
-//     width: 100vw;
-//     height: 100vh;
-//     /* transparent black */
-//     background: rgba(0, 0, 0, 0.7);
-//     /* middle layer, i.e. appears below the sidebar */
-//     z-index: 998;
-//     opacity: 0;
-//     /* animate the transition */
-//     transition: all 0.5s ease-in-out;
-// }
 
-// /* display .overlay when it has the .active class */
-// .overlay.active {
-//     display: block;
-//     opacity: 1;
-// }
+
+.home-navbar {
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+.button-holder {
+  position: absolute;
+  top: 10px;
+  left: 236px;
+
+  .link-dark {
+    color: $white;
+    padding: 5px;
+
+    a {
+      font-weight: bold;
+      font-size: 1rem;
+    }
+  }
+}
+
