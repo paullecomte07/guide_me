@@ -12,6 +12,11 @@ max-width: 75%;
 
 }
 
+h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
 .content-stop {
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -20,6 +25,8 @@ max-width: 75%;
   text-overflow: ellipsis;
   font-size: 14px;
   margin-left: 12px;
+  margin-bottom: 12px;
+  margin-top: -6px;
 }
 
 .separator{
@@ -34,9 +41,9 @@ max-width: 75%;
 
 .input {
   background-color:$action-light !important;
-  border-radius: 2px !important;
+  border-radius: 38px !important;
   border: none !important;
-  color:#222E3A !important;
+  color:$white !important;
   font-weight: 500  !important;
 }
 
@@ -45,9 +52,11 @@ max-width: 75%;
   padding: 14px;
   margin: auto;
   width: fit-content;
-  border-radius: 3px;
+  border-radius: 45px;
   color: white;
   font-weight: bold;
+  margin-top: 21px;
+  margin-bottom: 23px;
 }
 
 

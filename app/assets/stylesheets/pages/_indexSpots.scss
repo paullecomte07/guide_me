@@ -1,19 +1,3 @@
-.preview-picture {
-  position:absolute;
-  background-color: #DCDBDB;
-  height:16vh;
-  width:16vh;
-  bottom: 25px;
-  left: 25px;
-  z-index: 2;
-  border-radius: 10px;
-  border: 23px;
-  border-color: white;
-  overflow: hidden;
-
-
-}
-
 .order-counter {
   position:absolute;
   background-color: rgba(218, 218, 218, 0.9);
@@ -32,44 +16,82 @@
 
 #distance-time {
   position:absolute;
-  background-color: #dee2e6;
+  background-color: black;
+  color: white;
   width: fit-content;
-  top: 25px;
-  left: 25px;
+  width: 100%;
+  top: 0;
+  left: 0;
   z-index: 2;
-  border-radius: 10px;
-  border-radius: 10px;
+  border-radius: 0;
   padding: 3px 15px;
-  opacity: 0.96;
-  top: 11px;
-  left: 9px;
+  box-shadow: 0px 3px 4px -1px rgba(163,163,163,0.46);
 
 }
 
 #stop {
-  background-color: rgb(238, 238, 238);
-  padding: 13px 13px 0px 13px;
-  height:100%;
-  transform: translateY(-57vh);
-  height: -webkit-fill-available;
-  z-index: 23;
   position: absolute;
+  background-color: white;
+  padding: 30px 20px;
+  height:20vh;
+  max-height:20vh;
+  z-index: 23;
+  bottom: 0;
   border-top-left-radius: 19px;
   border-top-right-radius: 19px;
-  transition: 1s;
+  transition: 0.8s ease;
+
+  .preview-picture {
+    position: relative;
+    top: -160px;
+    margin-bottom: -120px;
+    background-color: #DCDBDB;
+    height:110px;
+    width:110px;
+    z-index: 2;
+    border-radius: 10px;
+    border: 23px;
+    border-color: white;
+    overflow: hidden;
+    transition: 0.8s ease;
+
+    #stop-image img {
+      object-fit: cover;
+      width: 100%;
+    }
+
+
+  }
+
+p {
+      font-size: 1.05rem;
+      font-weight: 300;
+    }
+  .preview-picture.open {
+    top: -90px;
+    margin-bottom: -70px;
+  }
+
+  h1 {
+    text-align: left;
+  }
 }
 
 .stops-popup-page {
-  transform: translateY(0vh) !important;
-  transition: 1s;
+  background-color: rgb(238, 238, 238);
+  // transform: translateY(0vh) !important;
+  // transition: 1s;
   // overflow: hidden !important;
-  height: 100vh !important;
+  height: 80vh !important;
+  max-height: 80vh !important;
   border-top-left-radius: 0px !important;
   border-top-right-radius: 0px !important;
+
 }
 
 .map-container {
-      position: relative;
+  position: relative;
+  height: 100vh;
 }
 .mapboxgl-popup {
   display: none !important;
@@ -88,13 +110,13 @@
 }
 
 #content-not-display{
-display:none;
+  display:none;
 
 }
 
 
 #content-display{
-display:initial;
+  display:initial;
 
 }
 

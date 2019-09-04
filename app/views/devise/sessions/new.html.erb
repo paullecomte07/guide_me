@@ -1,8 +1,9 @@
 <div class="login-container">
 
-<div class="center">
-<h2 class="mb-3">Please Sign in</h2>
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="center">
+  <h2 class="mb-3">Sign in</h2>
+  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
 
 <%= f.input :email, required: false, autofocus: true%>
 <%= f.input :password, required: false %>
@@ -11,10 +12,9 @@
 <%= link_to "Forgot you password", new_user_password_path, class: "dfbdb" %>
 
 
-        <div class="bottom-text">
-          Don't have an account? <%= link_to "Sign Up", new_user_registration_path %>
-        </div>
-      </form>
+    <div class="bottom-text">
+      Don't have an account? <%= link_to "Sign Up", new_user_registration_path %>
+    </div>
 
 <% end %>
 </div>

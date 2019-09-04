@@ -60,7 +60,7 @@
   }
   & .card-title {
     text-align: left;
-    font-size: 1rem;
+    font-size: 0.75rem;
     color: $action-dark;
   }
 }
@@ -70,6 +70,13 @@
 
   p {
     text-align: justify;
+    font-size: 0.75rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 97%;
   }
 }
 
@@ -113,7 +120,7 @@
    &:after {
     content: '';
     position: absolute;
-    width: 50px;
+    width: 63px;
     height: 100%;
     left: calc(100% - 49px);
     top: 0;

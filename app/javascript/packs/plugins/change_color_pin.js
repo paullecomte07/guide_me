@@ -11,7 +11,7 @@ const colorPin = () => {
           element.querySelector("g").children[1].setAttribute(`fill`, `#3FB1CE`)
         })
 
-        event.currentTarget.querySelector("g").children[1].setAttribute(`fill`, `red`)
+        event.currentTarget.querySelector("g").children[1].setAttribute(`fill`, `#F07265`)
 
 
 

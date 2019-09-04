@@ -20,7 +20,7 @@ class Guide < ApplicationRecord
 
   validates :title, presence: true, uniqueness: true
   validates :location, presence: true
-  validates :overview, length: { maximum: 100 }
+  validates :overview, length: { maximum: 200 }
 
   has_many :stops, dependent: :destroy
   geocoded_by :location
