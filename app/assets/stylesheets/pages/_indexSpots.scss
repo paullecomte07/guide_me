@@ -32,17 +32,20 @@
 
 #distance-time {
   position:absolute;
-  background-color: #dee2e6;
+  background-color: white;
   width: fit-content;
   top: 25px;
   left: 25px;
   z-index: 2;
   border-radius: 10px;
-  border-radius: 10px;
+  border-radius: 48px;
   padding: 3px 15px;
-  opacity: 0.96;
+  opacity: 0.9;
   top: 11px;
   left: 9px;
+  -webkit-box-shadow: 0px 3px 4px -1px rgba(163,163,163,0.46);
+  -moz-box-shadow: 0px 3px 4px -1px rgba(163,163,163,0.46);
+  box-shadow: 0px 3px 4px -1px rgba(163,163,163,0.46);
 
 }
 
