@@ -47,12 +47,19 @@
   justify-content: center;
   position: absolute;
   top: 279px;
-  left: 350px;
+  right: 10px;
+  & span {
+    position: relative;
+  }
 
   #heart-icon {
     color: $red;
     font-size: 22px;
     transition: all 0.2s ease;
+    font-weight: 100;
+    position:absolute;
+    top: -10px;
+    right: -11px;
   }
 }
 .counter{
@@ -61,7 +68,13 @@
 }
 
 .bigger-heart {
-  font-size: 26px !important;
+  font-weight: 900 !important;
+  animation: beating 0.5s;
+}
+@keyframes beating {
+    from {font-size: 22px;}
+    50% {font-size: 30px;} /* ignored */
+    to {font-size: 22px;}
 }
 
 .whiter {
