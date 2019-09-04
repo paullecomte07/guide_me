@@ -17,7 +17,7 @@
             <%= link_to "Edit", edit_guide_path(guide), class: 'link' %>
             <%= link_to 'Itinerary', guide_path_path(guide), class: 'link' %>
           <% else %>
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/cveneziani", class: "avatar", alt: "avatar" %>
+          <%= image_tag(guide.user.avatar, class: "avatar", alt: "avatar") %>
             <%= link_to conversations_path(sender_id: current_user, recipient_id: guide.user), class: "link", method: :post do %>
               <i class="fas fa-paper-plane"></i>
             <% end %>
