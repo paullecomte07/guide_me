@@ -141,7 +141,7 @@ london_guide = Guide.create!(
   )
 
 rome_guide = Guide.create!(
-  title: "Ancient Rome: Colosseum Gladiator's Gate & Roman Forum",
+  title: "Colosseum Gladiator's Gate",
   user: alex,
   duration: 3,
   distance: 4,
