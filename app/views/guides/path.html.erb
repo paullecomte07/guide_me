@@ -1,32 +1,28 @@
-
 <div id="spot_page">
-<div class="map-container">
-  <div id="distance-time">
+  <div class="map-container">
+    <div id="distance-time"></div>
 
+    <div id="stop" class="">
+      <div class="preview-picture">
+        <div id="stop-image">
+          <%= image_tag(@stops.first.image , height: "135") %>
+        </div>
+      </div>
+      <h1><%= @stops.first.name %></h1>
+      <p><%= @stops.first.description %></p>
+    </div>
+
+    <div
+      id="map"
+      style="width: 100%; height: 100%;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    ></div>
   </div>
-  <div class="preview-picture">
-    <div id="stop-image"><%= image_tag(@stops.first.image , height: "135") %></div>
-
-  </div>
-
-  <div
-    id="map"
-    style="width: 100%;
-    height: 67vh;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-  ></div>
 </div>
 
-
-  <div id="stop" class="stops-popup-page">
-    <h1><%= @stops.first.name %></h1>
-    <p><%= @stops.first.description %></p>
-  </div>
-
-
-</div>
 <p id="marker-not-display"> <%= @stopsMarker %> </p>
+
 <%= content_for(:after_js) do %>
   <%= javascript_pack_tag 'plugins/detect_popup' %>
   <%= javascript_pack_tag 'plugins/redirect_stop' %>

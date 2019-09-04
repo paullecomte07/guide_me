@@ -118,6 +118,18 @@ milan_guide = Guide.create!(
   price_cents:200,
   image: "https://images.pexels.com/photos/2097092/pexels-photo-2097092.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
   )
+porto_guide = Guide.create!(
+  title: "History of Porto",
+  user: paul,
+  duration: 2,
+  overview: "Get a great dose of culture, architecture and top-notch food.",
+  location: "Porto",
+  distance: 3,
+  category: "history",
+  price_cents:200,
+  image: "https://images.pexels.com/photos/2097092/pexels-photo-2097092.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  )
+
 
 london_guide = Guide.create!(
   title: "One Day Tour of London",
@@ -237,18 +249,88 @@ stop4 = Stop.create!(
             The clock tower has been part of a Grade I listed building since 1970 and a UNESCO World Heritage Site since 1987.",
   )
 
+stop5 = Stop.create!(
+  name: "Millennium Bridge",
+  content: "The Millennium Bridge was the first new bridge to be built over the Thames in London for more than 100 years. Usually, all new bridges across the Thames require an Act of Parliament to be passed.",
+  latitude: 51.510760,
+  longitude: -0.098336,
+  image: "https://images.unsplash.com/photo-1550611030-c85cadc4a67d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1655&q=80",
+  description:"The Millennium Bridge, officially known as the London Millennium Footbridge, is a steel suspension bridge for pedestrians crossing the River Thames in London, linking Bankside with the City of London. It is located between Southwark Bridge and Blackfriars Railway Bridge. It is owned and maintained by Bridge House Estates, a charitable trust overseen by the City of London Corporation. Construction began in 1998, and it initially opened in June 2000.
+
+Londoners nicknamed the bridge the 'Wobbly Bridge' after pedestrians experienced an alarming swaying motion. The bridge was closed later on opening day and, after two days of limited access, for almost two years while modifications were made to eliminate the motion. It reopened in February 2002.
+The design of the bridge was the subject of a competition organised in 1996 by Southwark council and RIBA Competitions. The winning entry was an innovative 'blade of light' effort from Arup Group, Foster and Partners, and Sir Anthony Caro. "
+
+
+  )
+
+stop6 = Stop.create!(
+  name: "Tate Modern",
+  content: "Tate Modern is a modern art gallery located in London .It is one of the largest museums of modern and contemporary art in the world .The gallery is a highly visited museum, pulling in approximately 5.8 million visitors in 2019",
+  latitude: 51.506961,
+  longitude: -0.097865,
+  image: "https://upload.wikimedia.org/wikipedia/commons/6/6c/Tate_Modern_viewed_from_Thames_Pleasure_Boat_-_geograph.org.uk_-_307445.jpg",
+  description:"The gallery was founded in 1897, as the National Gallery of British Art. When its role was changed to include the national collection of modern art as well as the national collection of British art, in 1932, it was renamed the Tate Gallery after sugar magnate Henry Tate of Tate & Lyle, who had laid the foundations for the collection. The Tate Gallery was housed in the current building occupied by Tate Britain, which is situated in Millbank, London. In 2000, the Tate Gallery transformed itself into the current-day Tate, which consists of a network of four museums: Tate Britain, which displays the collection of British art from 1500 to the present day; Tate Modern, also in London, which houses the Tate's collection of British and international modern and contemporary art from 1900 to the present day; Tate Liverpool (founded in 1988), which has the same purpose as Tate Modern but on a smaller scale; and Tate St Ives in Cornwall (founded in 1993), which displays modern and contemporary art by artists who have connections with the area. All four museums share the Tate Collection. One of the Tate's most publicised art events is the awarding of the annual Turner Prize, which takes place at Tate Britain."
+
+
+
+
+
+
+
+  )
+
+stop7 = Stop.create!(
+  name: "Shakespeare's Globe",
+  content: "Many of Shakespeare’s plays were first performed at the Globe, although his plays were performed at other theatres and many playwrights wrote for the Globe.",
+  latitude: 51.508390,
+  longitude: -0.097473,
+  image: "https://images.unsplash.com/photo-1562342101-ec26556bb233?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
+  description:"Shakespeare's Globe is a reconstruction of the Globe Theatre, an Elizabethan playhouse for which William Shakespeare wrote his plays, in the London Borough of Southwark, on the south bank of the River Thames. The original theatre was built in 1599, destroyed by fire in 1613, rebuilt in 1614, and then demolished in 1644. The modern Globe Theatre is an academic approximation based on available evidence of the 1599 and 1614 buildings. It is considered quite realistic, though contemporary safety requirements mean that it accommodates only 1,400 spectators compared to the original theatre’s 3,000.
+
+  Shakespeare's Globe was founded by the actor and director Sam Wanamaker, built about 230 metres (750 ft) from the site of the original theatre and opened to the public in 1997, with a production of Henry V. The site also includes the Sam Wanamaker Playhouse, an indoor theatre which opened in January 2014. This is a smaller, candle-lit space based on the indoor playhouses of Jacobean London. The Sackler Studios, an educational and rehearsal studio complex, is situated just around the corner from the main site."
+
+
+
+
+
+
+
+
+  )
+
+stop8 = Stop.create!(
+  name: "Monument to the Great Fire of London",
+  content:"311 spiral steps lead up to the public viewing platform, where visitors can get breath-taking views of London from 160 feet (48.7 metres) above ground.",
+  latitude: 51.510150,
+  longitude: -0.086167,
+  image: "https://www.themonument.info/wp-content/uploads/2019/07/The-Monument-column-and-cage-in-the-City-of-London.jpg",
+  description:"The Monument to the Great Fire of London, more commonly known simply as the Monument, is a Doric column in London, United Kingdom, situated near the northern end of London Bridge. Commemorating the Great Fire of London, it stands at the junction of Monument Street and Fish Street Hill, 202 feet (62 m) in height and 202 feet west of the spot in Pudding Lane where the Great Fire started on 2 September 1666. Constructed between 1671 and 1677, it was built on the site of St. Margaret's, Fish Street, the first church to be destroyed by the Great Fire. It is Grade I listed and is a scheduled monument.[1] Another monument, the Golden Boy of Pye Corner, marks the point near Smithfield where the fire was stopped.
+
+The Monument comprises a fluted Doric column built of Portland stone topped with a gilded urn of fire. It was designed by Christopher Wren and Robert Hooke. Its height marks its distance from the site of the shop of Thomas Farriner (or Farynor), the king's baker, where the blaze began.
+
+The viewing platform near the top of the Monument is reached by a narrow winding staircase of 311 steps. A mesh cage was added in the mid-19th century to prevent people jumping to the ground, after six people had committed suicide there between 1788 and 1842."
+
+
+
+
+
+
+  )
+
+
+
 puts "Creating reviews..."
 
 mohammad_review = Review.create!(
   stars: 5,
-  content: "great tour!",
+  content: "Great tour!",
   user: mohammad,
   guide: paris_guide
   )
 
 francesca_review = Review.create!(
   stars: 4,
-  content: "loved the adventures",
+  content: "Loved the adventures",
   user: francesca,
   guide: paris_guide
   )

@@ -33,12 +33,12 @@ fetch(`https://api.mapbox.com/directions/v5/mapbox/cycling/${urlCoordinates}?acc
               "line-cap": "round"
             },
             "paint": {
-              "line-color": "#888",
-              "line-width": 8
+              "line-color": "#151736",
+              "line-width": 4
           }
         });
       })
-      const moreInfo = `Distance: ${(geometry["0"]["distance"]/1000).toFixed(2)} km, Duration: ${Math.round(geometry["0"]["duration"]/60)*1.5} min `
+      const moreInfo = `Distance: ${(geometry["0"]["distance"]/1000).toFixed(2)} km   Duration: ${Math.round(geometry["0"]["duration"]/60)*1.5} min `
       document.querySelector("#distance-time").insertAdjacentHTML("beforeend", moreInfo)
     });
 
