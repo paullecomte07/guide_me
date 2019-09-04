@@ -20,6 +20,10 @@
 
 .btn-dark {
   background-color: $action-dark;
+
+  a {
+    color: $white;
+  }
 }
 
 .btn-light {

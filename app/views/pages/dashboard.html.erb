@@ -14,14 +14,42 @@
   <div class="separator mt-3 mb-3"></div>
 
   <div id="orders-section">
-    <% if current_user.orders.empty? %>
+    <% if @orders.empty? %>
       <h3 class="section-title"><span><i class="fas fa-shopping-cart"></i></span>You haven't purchased any guides yet!</h3>
       <%= link_to guides_path do %>
         <div class="btn btn-small btn-light whiter mt-3 mb-3">Explore</div>
       <% end %>
     <% else %>
       <h3 class="section-title"><span><i class="fas fa-shopping-cart"></i></span>Your purchases</h4>
-      <%= render 'shared/order_cards', guides: @orders %>
+      <div class="cards-container">
+
+        <% @orders.each do |order| %>
+          <div class="card-box">
+
+            <div class="image" style="background-image: url(<%= order.guide.image %>);">
+              <p id="card-location"><span><i class="fas fa-map-marker-alt"></i></span><%= order.guide.location %></p>
+            </div>
+
+            <div class="contentz">
+              <div class="info">
+                <h3><%= link_to order.guide.title , guide_path(order.guide), class: "card-title"%></h3>
+                <p><%= order.guide.overview %></p>
+              </div>
+              <div class="links-container">
+                <% if current_user == order.guide.user %>
+                  <%= link_to "Edit", edit_guide_path(guide), class: 'link' %>
+                  <%= link_to 'Itinerary', guide_path_path(guide), class: 'link' %>
+                <% else %>
+                <%= image_tag "https://kitt.lewagon.com/placeholder/users/cveneziani", class: "avatar", alt: "      avatar" %>
+                  <%= link_to conversations_path(sender_id: current_user, recipient_id: order.guide.user), class: "link",      method: :post do %>
+                    <i class="fas fa-paper-plane"></i>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
     <% end %>
   </div>
 

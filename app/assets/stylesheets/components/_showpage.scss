@@ -67,10 +67,6 @@ h3, p{
   & h5 {
     margin: 0;
   }
-  & .sho-icon {
-    font-size: 45px;
-    color: $action-dark;
-  }
 }
 
 
@@ -90,11 +86,13 @@ h3, p{
 }
 
 
+.info-item {
+  color: $dark-gray;
+}
 
-
-
-
-
+#subtitle-bold {
+  font-weight: 500;
+}
 
 
 
