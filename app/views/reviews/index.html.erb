@@ -1,0 +1,32 @@
+<div class="reviews-container">
+  <h2 class="m-3 text-left">All the reviews for <%= @guide.title %></h2>
+
+  <div class="d-flex align-items-center justify-content-between pl-3 m-1">
+    <div>
+      <%= render 'shared/reviews' %>
+    </div>
+    <div id="new-review" class="mx-3 my-1">
+      <%= link_to new_guide_review_path(@guide), remote: true do %>
+        <div class="btn-circle btn-light whiter"><i class="fas fa-plus"></i></div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="separator mt-0.5 mb-3" id="top"></div>
+
+
+  <div id="reviews">
+    <% if @reviews.blank? %>
+      <p> Be the first to leave a review for <%= @guide.title %></p>
+    <% else %>
+      <ul id="review-list">
+        <% @reviews.each do |review| %>
+          <div class="d-flex align-items-center pb-3">
+            <%= image_tag(review.user.avatar, class: "avatar-large pr-2 m-3", alt: "avatar") %>
+            <%= render 'reviews/review', review: review %>
+          </div>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+</div>

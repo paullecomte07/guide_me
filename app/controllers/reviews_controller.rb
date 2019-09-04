@@ -1,4 +1,13 @@
 class ReviewsController < ApplicationController
+  def index
+    @guide = Guide.find(params[:guide_id])
+    @reviews = Review.where(guide: @guide)
+    ratings = @reviews.map do |review|
+      review.stars
+    end
+    @average = ratings.sum.to_f / @reviews.count
+  end
+
   def new
     @guide = Guide.find(params[:guide_id])
     @review = Review.new

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :guides do
-    resources :reviews, only: [:new, :create]
+    resources :reviews, only: [:index, :new, :create]
     resources :stops, only: [:index, :new, :create] do
       resources :itineraries, only: [:new, :create]
     end

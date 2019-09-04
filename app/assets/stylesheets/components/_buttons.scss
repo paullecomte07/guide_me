@@ -1,3 +1,18 @@
+.btn-small:link {
+  text-decoration: none;
+}
+
+.btn-small:hover {
+  text-decoration: none;
+  color: $light-gray;
+}
+
+.btn-small:active {
+  text-decoration: none;
+  color: $light-gray;
+}
+
+
 .btn-large {
   display: flex;
   align-items: center;
@@ -29,6 +44,10 @@
 
 .btn-light {
   background-color: $action-light;
+
+  a {
+    color: $white;
+  }
 }
 
 .btn-circle {
