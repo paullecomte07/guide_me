@@ -4,10 +4,12 @@
   <h2 class="mb-3">Sign in</h2>
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-    <%= f.input :email, required: false, autofocus: true%>
-    <%= f.input :password, required: false %>
-    <%= f.button :submit, "Log in", class: "btn-light btn-large whiter" %>
-    <%= link_to "Forgot you password", new_user_password_path, class: "dfbdb" %>
+
+<%= f.input :email, required: false, autofocus: true%>
+<%= f.input :password, required: false %>
+<%= f.button :submit, "Log in", class: "btn-large whiter btn-light" %>
+<br>
+<%= link_to "Forgot you password", new_user_password_path, class: "dfbdb" %>
 
 
     <div class="bottom-text">

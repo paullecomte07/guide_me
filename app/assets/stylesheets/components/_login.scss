@@ -1,72 +1,70 @@
-.login-container {
-  padding: 20px;
-  & h2 {
-    text-align: center;
-  }
-}
-.login-form{
-  width: 360px;
-  background: white;
-  height: 580px;
-  padding: 80px 40px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%,-50%);
-}
+// .login-container {
+//   padding: 20px;
+//   & h2 {
+//     text-align: center;
+//   }
+// }
+// .login-form{
+//   width: 360px;
+//   background: white;
+//   height: 580px;
+//   padding: 80px 40px;
+//   position: absolute;
+//   left: 50%;
+//   top: 50%;
+//   transform: translate(-50%,-50%);
+// }
 
-.login-form h1{
-  text-align: center;
-  margin-bottom: 60px;
-}
+// .login-form h1{
+//   text-align: center;
+//   margin-bottom: 60px;
+// }
 
-.login-form a{
-  color: $gray;
-  margin-bottom: 60px;
-}
+// .login-form a{
+//   color: $gray;
+//   margin-bottom: 60px;
+// }
 
-.txtb{
-  border-bottom: 2px solid $action-light;
-  position: relative;
-  margin: 30px 0;
-}
-
-
-.txtb input{
-  font-size: 15px;
-  color: #fff;
-  border: none;
-  width: 100%;
-  outline: none;
-  background: none;
-  padding: 0 5px;
-  height: 40px;
-  -webkit-appearance: none;
-}
+// .txtb{
+//   border-bottom: 2px solid $action-light;
+//   position: relative;
+//   margin: 30px 0;
+// }
 
 
+// .txtb input{
+//   font-size: 15px;
+//   color: #fff;
+//   border: none;
+//   width: 100%;
+//   outline: none;
+//   background: none;
+//   padding: 0 5px;
+//   height: 40px;
+//   -webkit-appearance: none;
+// }
 
 
-.logbtns{
 
 
-  width: 100%;
-  height: 50px;
-  border: none;
-  background-color: $action-dark;
-  color: white;
-  border: none;
-  border-radius: 20px;
-}
+// .logbtns{
+//   width: 100%;
+//   height: 50px;
+//   border: none;
+//   background-color: $action-dark;
+//   color: white;
+//   border: none;
+//   border-radius: 20px;
+// }
 
 
-.bottom-text{
-  margin-top: 60px;
-  text-align: center;
-  font-size: 13px;
-}
+// .bottom-text{
+//   margin-top: 60px;
+//   text-align: center;
+//   font-size: 13px;
+// }
 
-.form-control:focus {
-  background-color: $action-lighter;
-  -webkit-appearance: none;
-}
+// .form-control:focus {
+//   background-color: $action-lighter;
+//   -webkit-appearance: none;
+// }
