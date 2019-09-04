@@ -17,13 +17,13 @@ margin: 15px;
 
 .msg-container {
   padding: 1rem;
-  background: #def7f778;
+  background: #ECF0F1;
   flex-shrink: 2;
   overflow-y: auto;
-  box-shadow:
-    inset 0 2rem 2rem -2rem rgba(black, 0.05),
-    inset 0 -2rem 2rem -2rem rgba(black, 0.05);
-
+}
+.rep-container {
+  padding: 0 15px;
+  background-color: #ECF0F1;
 }
 .msg-input {
       border: none;
@@ -36,6 +36,8 @@ margin: 15px;
       box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1), 0rem 1rem 1rem -1rem rgba(0, 0, 0, 0.2);
       font-weight: 400;
       letter-spacing: 0.025em;
+      height: 40px;
+      width: 250px;
     }
  .msg-msg {
     box-sizing: border-box;
@@ -46,6 +48,7 @@ margin: 15px;
       min-height: 2.25rem;
       width: fit-content;
       max-width: 66%;
+      box-shadow: 0px 0px 35px -15px rgba(255,255,255,1);
   }
   .sender {
         margin: 1rem 1rem 1rem auto ;
@@ -55,5 +58,65 @@ margin: 15px;
       }
 .msg-reply {
   display: flex;
-
+  position: relative;
 }
+
+.our-button{
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  background-color: #007BEF;
+  margin-right: 10px;
+  position: absolute;
+  top: 0px;
+  right: 0;
+  border: none;
+}
+
+
+
+.center{
+  position:absolute;
+  width:400px;
+  height:400px;
+  top:50%;left:50%;
+  margin-left:-200px;
+  margin-top:-200px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding:30px;
+  color:#333;
+  & .dfbdb {
+    text-align: center;
+    margin: auto 5px;
+    font-size: 10px;
+  }
+
+  input{
+    width:100%;
+    padding:15px;
+    margin:5px;
+    border:1px solid #ccc;
+    font-family:inherit;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

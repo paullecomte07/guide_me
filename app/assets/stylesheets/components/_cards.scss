@@ -18,7 +18,7 @@
 }
 
 .image {
-    border-radius: 7px;
+    border-radius: 7px 0px 0px 7px;
     width: 120px;
     height: inherit;
     background-size: cover;
@@ -31,8 +31,9 @@
     left: 5px;
     color: $action-dark;
     padding-top: 5px;
+    font-size: 0.75rem;
     i {
-    padding-right: 5px;
+      padding-right: 5px;
     }
   }
 }
@@ -59,7 +60,7 @@
   }
   & .card-title {
     text-align: left;
-    font-size: 1rem;
+    font-size: 0.75rem;
     color: $action-dark;
   }
 }
@@ -69,6 +70,7 @@
 
   p {
     text-align: justify;
+    font-size: 0.75rem;
   }
 }
 
@@ -114,9 +116,9 @@
     position: absolute;
     width: 63px;
     height: 100%;
-    left: calc(100% - 9.5vh);
+    left: calc(100% - 49px);
     top: 0;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.7) 100%);
   }
 }
 
@@ -135,12 +137,15 @@
 }
 
 .category {
-  margin: auto 5px;
+  margin: auto 3px;
   border-radius: 7px;
   width: 160px;
   height: 180px;
   background-size: cover;
   background-position: center;
+  &:last-child{
+    margin-right: 20vw;
+  }
 }
 
 

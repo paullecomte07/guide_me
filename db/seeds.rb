@@ -14,7 +14,8 @@ mohammad = User.create!(
   last_name: "Gholami",
   email: "mohammad@gmail.com",
   password: 123456,
-  address: "London"
+  address: "London",
+  avatar: "https://kitt.lewagon.com/placeholder/users/gholamim",
   )
 
 paul = User.create!(
@@ -22,7 +23,8 @@ paul = User.create!(
   last_name: "Lecomte",
   email: "paul@gmail.com",
   password: 123456,
-  address: "Paris"
+  address: "Paris",
+  avatar: "https://kitt.lewagon.com/placeholder/users/paullecomte07",
   )
 
 francesca = User.create!(
@@ -30,10 +32,42 @@ francesca = User.create!(
   last_name: "Vago",
   email: "francesca@gmail.com",
   password: 123456,
-  address: "Milan"
+  address: "Milan",
+  avatar: "https://kitt.lewagon.com/placeholder/users/francesca-vago",
+  )
+
+alex = User.create!(
+  first_name: "Alex",
+  last_name: "Suprun",
+  email: "alex@gmail.com",
+  password: 123456,
+  address: "Berlin",
+  avatar: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+  )
+
+linda = User.create!(
+  first_name: "Linda",
+  last_name: "Leed",
+  email: "linda@gmail.com",
+  password: 123456,
+  address: "Greece",
+  avatar: "https://images.unsplash.com/photo-1534352909952-981bf1070b3c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
   )
 
 puts "Creating guides..."
+
+berlin_guide = Guide.create!(
+  title: "Berlin Beer Tour",
+  user: alex,
+  duration: 3,
+  distance: 4,
+  location: "Berlin",
+  category: "food",
+  price_cents: 350,
+  image: "https://images.unsplash.com/photo-1538685634737-24b83e3fa2f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80",
+  overview: "Journey through the history of beer and see why it’s so popular among the Berlin locals.
+            Savor the flavors and aromas while listening to stories of Berlin’s neighborhoods."
+  )
 
 paris_guide = Guide.create!(
   title: "Hidden Adventures in Paris",
@@ -47,11 +81,37 @@ paris_guide = Guide.create!(
   image: "https://images.pexels.com/photos/739407/pexels-photo-739407.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
   )
 
+
+versailles_guide = Guide.create!(
+  title: "Explore the Garden of Versailles",
+  user: paul,
+  duration: 5,
+  distance: 4,
+  location: "Paris",
+  category: "nature",
+  price_cents: 250,
+  image: "https://images.unsplash.com/photo-1563827367882-3a0c0eb79d19?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+  overview: "The best way to see Versailles' gardens. You'll get to see highlights of Versailles that most visitors miss, including Marie Antoinette's Hameau, the Petit Trianon and the Grand Trianon."
+  )
+
+berlin_dungeon_guide = Guide.create!(
+  title: "Horror Tour of Berlin Dungeon",
+  user: mohammad,
+  duration: 1,
+  distance: 2,
+  location: "Berlin",
+  category: "horror",
+  price_cents: 450,
+  image: "https://images.unsplash.com/photo-1562500652-dd7ae0d2870f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+  overview: "Screaming and laughing through Berlin’s dark past.
+            A journey through over 800 years of Berlin’s history – from the medieval times to the 20th century."
+  )
+
 milan_guide = Guide.create!(
-  title: "History of Milan",
+  title: "The Duomo of Milan",
   user: francesca,
   duration: 2,
-  overview: "Find out about the History of Milan",
+  overview: "Visit the Duomo from every angle: explore its exteriors, reach the rooftop for a breathtaking view of the city. Admire the interior of this Gothic masterpiece, one of the biggest churches in Italy. ",
   location: "Milan",
   distance: 3,
   category: "history",
@@ -78,6 +138,31 @@ london_guide = Guide.create!(
   overview: "Only one day in London? This tour explores the most important and historic attractions in the city",
   image: "https://images.unsplash.com/photo-1448906654166-444d494666b3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
   price_cents:199,
+  )
+
+rome_guide = Guide.create!(
+  title: "Ancient Rome: Colosseum Gladiator's Gate & Roman Forum",
+  user: alex,
+  duration: 3,
+  distance: 4,
+  location: "Rome",
+  price_cents: 199,
+  image: "https://images.unsplash.com/photo-1533604848340-30ce9aeeb0be?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+  overview: "Walk in the footsteps of gladiators and Roman emperors. Wander along the Sacred Way (Via Sacra) as you immerse yourself in the vivid Roman history that surrounds you.",
+  category: "history",
+  )
+
+louvre_guide = Guide.create!(
+  title: "Louvre Museum Walking Tour",
+  user: paul,
+  duration: 4,
+  distance: 1,
+  location: "Paris",
+  overview: "Experience culture and art through the ages with this tour of Paris’ epic Louvre Museum.
+            Spend four hours learning about some of the museum’s 35,000 artworks across eight themed galleries.",
+  category: "history",
+  price_cents: 399,
+  image: "https://images.unsplash.com/photo-1560518700-7a5559afb10c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
   )
 
 puts "Creating our stops..."

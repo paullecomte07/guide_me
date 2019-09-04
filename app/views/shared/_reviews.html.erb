@@ -2,10 +2,10 @@
   <p>There are no reviews yet for this guide</p>
 <% else %>
   <% @average.to_i.times do %>
-    <span><i class="fas fa-star"></i></span>
+    <span><i class="fas fa-star" id="star-icon"></i></span>
   <% end %>
   <% (5 - @average.to_i).times do %>
-    <span><i class="far fa-star"></i></span>
+    <span><i class="far fa-star" id="star-icon"></i></span>
   <% end %>
   <span><%= @average %>(<%= @reviews.count %>)</span>
 <% end %>

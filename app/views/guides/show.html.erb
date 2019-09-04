@@ -2,14 +2,23 @@
   <div class="banner image-banner", style="background-image: url(<%= @guide.image %>);">
     <p id="show-location"><span><i class="fas fa-map-marker-alt"></i></span><%= @guide.location %></p>
   </div>
-  <div class="btn-heart">
+  <% if @guide.user == current_user  %>
+    <div class="btn-icon">
+      <%= link_to edit_guide_path(@guide) do %>
+        <span><i class="fas fa-pen" id="pen-icon"></i></span>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="btn-icon">
       <%= link_to guide_wishes_path(@guide), method: :post, remote: true do %>
         <span><i class="fas fa-heart" id="heart-icon"></i></span>
       <% end %>
     </div>
+  <% end %>
 </div>
 
 <div class="show-container">
+
 
   <div class="reviews">
     <%= render 'shared/reviews' %>
@@ -18,44 +27,44 @@
   <div class="show-title mt-2">
     <h3><%= @guide.title %></h3>
   </div>
+  <div class="d-flex">
+    <div class="info-item d-flex pr-1 py-2">
+      <span class="info-icon px-1"><i class="fas fa-route"></i></span>
+      <p><strong><%= @guide.distance %> km</strong></p>
+    </div>
+    <div class="info-item d-flex px-1 py-2">
+      <span class="info-icon px-1"><i class="far fa-clock"></i></span>
+      <p> <strong><%= @guide.duration %> hs</strong></p>
+    </div>
+    <div class="info-item d-flex px-1 py-2">
+      <span class="info-icon px-1"><i class="fas fa-mountain"></i></span>
+      <p><strong><%= @guide.category %> </strong></p>
+    </div>
+  </div>
 
   <div class="show-overview mt-2">
+    <p id="subtitle-bold"><strong>Overview</strong></p>
     <p><%= @guide.overview %></p>
   </div>
 
   <div class="user-profile mt-2">
-    <%= image_tag "https://kitt.lewagon.com/placeholder/users/cveneziani", class: "avatar", alt: "avatar" %>
+    <%= image_tag(@guide.user.avatar, class: "avatar", alt: "avatar") %>
     <p>Your guide is <%= @guide.user.full_name %></p>
   </div>
 
-
-  <div class="sho-box-view">
-    <div class="sho-box-item">
-      <h5><%= @guide.distance %> KM</h5>
-      <span class="sho-icon"><i class="fas fa-route"></i></span>
-    </div>
-    <div class="sho-box-item">
-      <h5><%= @guide.duration %> KM</h5>
-      <span class="sho-icon"><i class="far fa-clock"></i></span>
-    </div>
-    <div class="sho-box-item">
-      <h5><%= @guide.category %></h5>
-      <span class="sho-icon"><i class="fas fa-mountain"></i></span>
-    </div>
-  </div>
-
   <% if @guide.user == current_user  %>
-    <%= link_to "Edit", edit_guide_path(@guide), class: "myButton"%>
-    <%= link_to "Delete", guide_path(@guide), method: :delete, class: "myButton",
-        data: { confirmation: "Are you sure?"} %>
+    <div class="btn-large btn-light whiter my-2">
+      <%= link_to guide_path_path(@guide) do %>
+      Itinerary
+      <% end %>
+    </div>
   <% else %>
-    <div class="btn-large btn-dark">
+    <div class="btn-large btn-light my-2">
       <%= form_tag orders_path do %>
         <%= hidden_field_tag "guide_id", @guide.id %>
         <%= submit_tag "Purchase", class: "no-input whiter" %>
       <% end %>
     </div>
   <% end %>
-
 </div>
 

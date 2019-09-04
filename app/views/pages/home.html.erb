@@ -9,27 +9,27 @@
         <%= link_to "Explore Now", guides_path, class: "btn-small btn-light whiter col-sm-4 m-3"%>
       </div>
       <div class="row d-flex justify-content-center">
-        <%= link_to "log in", new_user_session_path, class: "btn-small btn-light-outline col-sm-4 m-3" %>
+        <%= link_to "Log in", new_user_session_path, class: "btn-small btn-light-outline col-sm-4 m-3" %>
       </div>
     </div>
   </div>
 
-  <div class="row instructions-container">
-      <div class="instruction col-sm-12 col-md-4">
+  <div class="row m-0">
+      <div class="instruction col-sm-12 col-md-4 mt-3">
         <h3>Browse</h3>
-        <img src="">
+        <%= image_tag "browse.png" , class: "illustration-image" %>
         <p>Browse among hundreds of guided tours available</p>
       </div>
 
-      <div class="instruction col-sm-12 col-md-4">
+      <div class="instruction col-sm-12 col-md-4 mt-3">
         <h3>Create</h3>
-        <img src="">
+        <%= image_tag "create.png" , class: "illustration-image" %>
         <p>Or create your own personal itinerary</p>
       </div>
 
-      <div class="instruction col-sm-12 col-md-4">
+      <div class="instruction col-sm-12 col-md-4 mt-3 mb-3">
         <h3>Share</h3>
-        <img src="">
+        <%= image_tag "share.png" , class: "illustration-image" %>
         <p>Share it with your friends!</p>
       </div>
   </div>

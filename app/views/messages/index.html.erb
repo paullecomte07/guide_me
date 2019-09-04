@@ -1,6 +1,14 @@
 
 <div class="msg-container" id="msg-js-id">
-  <h4 style="text-align: center;"><%= @conversation.created_at %></h4>
+
+
+  <h4 style="text-align: center;">
+      <%  if @conversation.sender_id == current_user.id %>
+    <%= User.find(@conversation.recipient_id).first_name %>
+    <% else %>
+      <%= User.find(@conversation.sender_id).first_name %>
+    <% end %>
+    </h4>
   <% @messages.each do |message| %>
     <% if message.body %>
       <% if message.user_id == current_user.id%>
@@ -13,16 +21,17 @@
     <% end %>
   <% end %>
 </div>
+<div class="rep-container">
 <div class="msg-reply">
 <%= form_for [@conversation, @message], remote: true do |f| %>
     <%= f.text_area :body, class: "msg-input" %>
 
     <%= f.text_field :user_id, value: current_user.id, type: "hidden"  %>
 
-    <%= f.submit "Add Reply", class: "btn btn-primary" %>
-
+    <%= f.submit "Send", class: "our-button" %>
 
 <% end %>
+</div>
 </div>
 <% content_for :after_js do %>
   <script>
@@ -37,5 +46,14 @@
         }
       }
     )
+    var inputer = document.querySelector(".msg-input");
+    inputer.addEventListener("click", function(){
+      // document.body.scrollTop = document.documentElement.scrollTop = 10;
+      window.scrollTo({
+        bottom: 1,
+        left: 1,
+        behavior: 'smooth'
+      });
+    });
   </script>
 <% end %>
