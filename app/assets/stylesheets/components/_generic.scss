@@ -1,3 +1,6 @@
+* {
+  font-family: inherit;
+}
 .convo-title {
 margin: 15px;
 }
@@ -76,12 +79,6 @@ margin: 15px;
 
 
 .center{
-  position:absolute;
-  width:400px;
-  height:400px;
-  top:50%;left:50%;
-  margin-left:-200px;
-  margin-top:-200px;
   display:flex;
   flex-direction: column;
   justify-content: center;
@@ -94,19 +91,27 @@ margin: 15px;
     font-size: 10px;
   }
 
-  input{
+  input, textarea {
     width:100%;
     padding:15px;
     margin:5px;
-    border-radius:1px;
     border:1px solid #ccc;
-    font-family:inherit;
   }
+}
+#guide_overview {
+  border: 1px solid lightgray;
+}
+
+#new_user {
+  width: 370px;
 }
 
 
-
-
+.bottom-text{
+  margin-top: 60px;
+  text-align: center;
+  font-size: 10px;
+}
 
 
 

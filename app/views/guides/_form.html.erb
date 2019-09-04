@@ -1,9 +1,20 @@
-<%= simple_form_for guide do |f| %>
-  <%= f.input :title %>
-  <%= f.input :location %>
-  <%= f.input :overview %>
-  <%= f.input :category %>
-  <%= f.submit %>
-<% end %>
+
+<div class="login-container">
+
+<div class="center">
+  <h2 class="mb-3">Fill in Guide details</h2>
+  <%= simple_form_for guide do |f| %>
+
+    <%= f.input :title %>
+    <%= f.input :location %>
+    <%= f.input :category %>
+    <%= f.input :overview, id: "singler" %>
+    <%= f.button :submit, "Create", class: "btn-large whiter btn-light" %>
 
 
+
+    <div class="bottom-text">
+      By clicking 'create' you agree to Guide Me's terms and conditions
+    </div>
+  <% end %>
+</div>
