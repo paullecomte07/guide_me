@@ -114,9 +114,9 @@
     position: absolute;
     width: 50px;
     height: 100%;
-    left: calc(100% - 105px);
+    left: calc(100% - 49px);
     top: 0;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.7) 100%);
   }
 }
 
@@ -135,12 +135,15 @@
 }
 
 .category {
-  margin: auto 5px;
+  margin: auto 3px;
   border-radius: 7px;
   width: 160px;
   height: 180px;
   background-size: cover;
   background-position: center;
+  &:last-child{
+    margin-right: 20vw;
+  }
 }
 
 
