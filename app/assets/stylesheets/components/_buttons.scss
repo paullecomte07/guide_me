@@ -117,11 +117,13 @@
 
 .bigger-heart {
   font-weight: 900 !important;
-  animation: beating 0.5s;
+  animation: beating 0.3s;
 }
 @keyframes beating {
     from {font-size: 22px;}
-    50% {font-size: 30px;} /* ignored */
+    50% {font-size: 30px;
+         right: -15px;
+         top: -11px;}
     to {font-size: 22px;}
 }
 
