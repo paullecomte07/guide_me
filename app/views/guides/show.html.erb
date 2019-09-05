@@ -1,6 +1,11 @@
 <div class="img-container">
   <div class="banner image-banner", style="background-image: url(<%= @guide.image %>);">
-    <p id="show-location"><span><i class="fas fa-map-marker-alt"></i></span><%= @guide.location %></p>
+    <div class="image-top">
+      <%= link_to guides_path do %>
+        <p><i class="fas fa-chevron-left pt-2 pl-3" style="color: #585A5A"></i></p>
+      <% end %>
+      <p id="show-location"><span><i class="fas fa-map-marker-alt"></i></span><%= @guide.location %></p>
+    </div>
   </div>
   <% if @guide.user == current_user  %>
     <div class="btn-icon">
@@ -58,7 +63,7 @@
     <p><%= @guide.overview %></p>
   </div>
 
-  <div class="user-profile mt-2">
+  <div class="user-profile mt-4 mb-4">
     <%= image_tag(@guide.user.avatar, class: "avatar", alt: "avatar") %>
 
       <p>Your guide is <%= link_to conversations_path(sender_id: current_user, recipient_id: @guide.user), class: "link", method: :post do %>

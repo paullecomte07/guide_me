@@ -8,6 +8,7 @@ function addStop(stopHTML) {
 function disableButton() {
   const input = document.querySelector(".add-input-<%= @stop.id %>");
   // input.disabled = true;
+  input.insertAdjacentHTML('afterend', `<i class="fas fa-check-circle fa-2x" style="color: #68B1FF;"></i>`)
   input.remove();
   // const hiddenInput = document.querySelector(`input[value="<%= @stop.id %>"]`);
   // const inputHTML = `<input type="submit" name="commit" value="Add" class="add-input-<%= @stop.id %>" data-disable-with="Add" disabled>`;
