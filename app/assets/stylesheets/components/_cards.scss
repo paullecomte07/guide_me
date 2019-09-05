@@ -1,3 +1,7 @@
+.guide-link:active, .guide-link:focus {
+  text-decoration: none;
+}
+
 .cards-container {
   width: auto;
   height: auto;
@@ -160,6 +164,20 @@
     font-size: 0.75rem;
   }
 }
+
+.image-top{
+    display: flex;
+    width: inherit;
+    justify-content: space-between;
+    align-items: center;
+    #show-location {
+      border-radius: 11px;
+      background-color: rgba(211, 211, 211, 0.7);
+      padding: 5px;
+      margin: 8px;
+    }
+}
+
 
 
 
