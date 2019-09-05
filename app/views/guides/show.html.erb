@@ -66,8 +66,8 @@
   <div class="user-profile mt-4 mb-4">
     <%= image_tag(@guide.user.avatar, class: "avatar", alt: "avatar") %>
 
-      <p>Your guide is <%= link_to conversations_path(sender_id: current_user, recipient_id: @guide.user), class: "link", method: :post do %>
-         <%= @guide.user.full_name %>
+      <p> Message <%= link_to conversations_path(sender_id: current_user, recipient_id: @guide.user), class: "link", method: :post do %>
+         <%= @guide.user.first_name %>
         <% end %>
       </p>
   </div>
