@@ -220,7 +220,7 @@ london_guide = Guide.create!(
   location: "London",
   duration: 3,
   distance: 4,
-  category: "history"
+  category: "history",
   overview: "Only one day in London? This tour explores the most important attractions in the city. Fascinating architecture, ancient history and surprising secrets are all packed into this 3-hour walking tour.",
   image: "https://images.unsplash.com/photo-1448906654166-444d494666b3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
   price_cents:199,
