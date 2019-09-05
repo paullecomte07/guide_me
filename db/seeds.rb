@@ -199,7 +199,7 @@ milan_guide = Guide.create!(
   distance: 3,
   category: "history",
   price_cents:200,
-  image: "https://images.pexels.com/photos/2097092/pexels-photo-2097092.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  image: "https://images.pexels.com/photos/2097092/pexels-photo-2097092.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
   )
 
 porto_guide = Guide.create!(

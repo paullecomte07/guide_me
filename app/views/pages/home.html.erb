@@ -8,9 +8,11 @@
       <div class="row d-flex justify-content-center">
         <%= link_to "Explore Now", guides_path, class: "btn-small btn-light whiter col-sm-4 m-3"%>
       </div>
-      <div class="row d-flex justify-content-center">
-        <%= link_to "Log in", new_user_session_path, class: "btn-small btn-light-outline col-sm-4 m-3" %>
-      </div>
+      <% if current_user.nil? %>
+        <div class="row d-flex justify-content-center">
+          <%= link_to "Log in", new_user_session_path, class: "btn-small btn-light-outline col-sm-4 m-3" %>
+        </div>
+      <% end %>
     </div>
   </div>
 
