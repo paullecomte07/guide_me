@@ -37,12 +37,9 @@
                 <% end %>
                 <p><strong><%= guide.category %> </strong></p>
               </div>
-            
+
         <div class="links-container">
           <% if current_user == guide.user %>
-<!--             <%= link_to edit_guide_path(guide), class: "" do %>
-              <span><i class="fas fa-pen" id="pen-icon"></i></span>
-            <% end %> -->
             <%= link_to 'Itinerary', guide_path_path(guide), class: 'link' %>
           <% else %>
             <div class="avatar-position mt-2">
