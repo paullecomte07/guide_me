@@ -11,7 +11,6 @@
         <div class="image" style="background-image: url(<%= guide.image %>);">
           <p id="card-location"><span><i class="fas fa-map-marker-alt"></i></span><%= guide.location %></p>
         </div>
-
         <div class="contentz p-2">
           <div class="info">
             <h3 class="card-title"><%=guide.title%></h3>
@@ -38,6 +37,18 @@
                 <% end %>
                 <p><strong><%= guide.category %> </strong></p>
               </div>
+            
+        <div class="links-container">
+          <% if current_user == guide.user %>
+<!--             <%= link_to edit_guide_path(guide), class: "" do %>
+              <span><i class="fas fa-pen" id="pen-icon"></i></span>
+            <% end %> -->
+            <%= link_to 'Itinerary', guide_path_path(guide), class: 'link' %>
+          <% else %>
+            <div class="avatar-position mt-2">
+              <%= image_tag(guide.user.avatar, class: "avatar pr-1", alt: "avatar") %>
+              <p><%= guide.user.full_name %></p>
+
             </div>
           </div>
           <div class="links-container">
