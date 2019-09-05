@@ -42,8 +42,8 @@
             <%= link_to 'Itinerary', guide_path_path(guide), class: 'link' %>
           <% else %>
             <div class="avatar-position mt-2">
-              <%= image_tag(guide.user.avatar, class: "avatar pr-1", alt: "avatar") %>
-              <p><%= guide.user.full_name %></p>
+              <%= image_tag(guide.user.avatar, class: "avatar", alt: "avatar") %>
+              <p class="pl-1"><%= guide.user.full_name %></p>
             </div>
           <% end %>
         </div>

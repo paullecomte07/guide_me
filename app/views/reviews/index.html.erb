@@ -22,7 +22,7 @@
       <ul id="review-list">
         <% @reviews.each do |review| %>
           <div class="d-flex align-items-start pb-3 pr-3">
-            <%= image_tag(review.user.avatar, class: "avatar-large pr-2 m-3", alt: "avatar") %>
+            <%= image_tag(review.user.avatar, class: "avatar-large m-3", alt: "avatar") %>
             <%= render 'reviews/review', review: review %>
           </div>
         <% end %>
