@@ -1,38 +1,38 @@
-
-<div class="msg-container" id="msg-js-id">
-
-
-  <h4 style="text-align: center;">
-      <%  if @conversation.sender_id == current_user.id %>
-    <%= User.find(@conversation.recipient_id).first_name %>
-    <% else %>
-      <%= User.find(@conversation.sender_id).first_name %>
-    <% end %>
-    </h4>
-  <% @messages.each do |message| %>
-    <% if message.body %>
-      <% if message.user_id == current_user.id%>
-        <% user = User.find(message.user_id) %>
-          <div class="msg-msg sender"> <%= message.body%></div>
+<div class="message-wrapper">
+  <div class="msg-container" id="msg-js-id">
+    <h4 style="text-align: center;">
+        <%  if @conversation.sender_id == current_user.id %>
+      <%= User.find(@conversation.recipient_id).first_name %>
       <% else %>
-        <% user = User.find(message.user_id) %>
-           <div class="msg-msg reciever"> <%= message.body%></div>
+        <%= User.find(@conversation.sender_id).first_name %>
+      <% end %>
+      </h4>
+    <% @messages.each do |message| %>
+      <% if message.body %>
+        <% if message.user_id == current_user.id%>
+          <% user = User.find(message.user_id) %>
+            <div class="msg-msg sender"> <%= message.body%></div>
+        <% else %>
+          <% user = User.find(message.user_id) %>
+             <div class="msg-msg reciever"> <%= message.body%></div>
+        <% end %>
       <% end %>
     <% end %>
-  <% end %>
-</div>
-<div class="rep-container">
-<div class="msg-reply">
-<%= form_for [@conversation, @message], remote: true do |f| %>
-    <%= f.text_area :body, class: "msg-input" %>
+  </div>
+  <div class="rep-container">
+    <div class="msg-reply">
+      <%= form_for [@conversation, @message], remote: true do |f| %>
+          <%= f.text_area :body, class: "msg-input" %>
 
-    <%= f.text_field :user_id, value: current_user.id, type: "hidden"  %>
+          <%= f.text_field :user_id, value: current_user.id, type: "hidden"  %>
 
-    <%= f.submit "Send", class: "our-button" %>
+          <%= f.submit "Send", class: "our-button" %>
 
-<% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
-</div>
+
 <% content_for :after_js do %>
   <script>
     App['conversation_<%= @conversation.id %>'] =
@@ -47,13 +47,16 @@
       }
     )
     var inputer = document.querySelector(".msg-input");
+    messageBox = document.querySelector(".msg-container")
     inputer.addEventListener("click", function(){
+      // messageBox.style.height = 300 + 'px'
       // document.body.scrollTop = document.documentElement.scrollTop = 10;
-      window.scrollTo({
-        bottom: 1,
-        left: 1,
-        behavior: 'smooth'
-      });
+      // window.scrollTo({
+      //   bottom: 1,
+      //   left: 1,
+      //   behavior: 'smooth'
+      // });
     });
+    send = document.querySelector(".our-button")
   </script>
 <% end %>
