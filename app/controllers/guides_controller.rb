@@ -16,7 +16,7 @@ class GuidesController < ApplicationController
     ratings = @reviews.map do |review|
       review.stars
     end
-    @average = ratings.sum.to_f / @reviews.count
+    @average = ((ratings.sum.to_f) / @reviews.count).round(1)
   end
 
   def new

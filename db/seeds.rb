@@ -38,27 +38,99 @@ francesca = User.create!(
 
 alex = User.create!(
   first_name: "Alex",
-  last_name: "Suprun",
+  last_name: "Flamant",
   email: "alex@gmail.com",
   password: 123456,
-  address: "Berlin",
-  avatar: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+  address: "Mexico",
+  avatar: "https://kitt.lewagon.com/placeholder/users/alexandreflamant",
   )
 
-linda = User.create!(
-  first_name: "Linda",
-  last_name: "Leed",
-  email: "linda@gmail.com",
+raquel = User.create!(
+  first_name: "Raquel",
+  last_name: "Minasi",
+  email: "raquel@gmail.com",
   password: 123456,
-  address: "Greece",
-  avatar: "https://images.unsplash.com/photo-1534352909952-981bf1070b3c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+  address: "Brazil",
+  avatar: "https://kitt.lewagon.com/placeholder/users/rminasi",
+  )
+
+benoit = User.create!(
+  first_name: "Benoit",
+  last_name: "De Oliveira",
+  email: "ben@gmail.com",
+  password: 123456,
+  address: "France",
+  avatar: "https://kitt.lewagon.com/placeholder/users/BenoitDeo",
+  )
+
+evia = User.create!(
+  first_name: "Evia",
+  last_name: "Horoneko",
+  email: "evia@gmail.com",
+  password: 123456,
+  address: "Latvia",
+  avatar: "https://kitt.lewagon.com/placeholder/users/missevia"
+  )
+
+susan = User.create!(
+  first_name: "Susan",
+  last_name: "Renaud",
+  email: "susan@gmail.com",
+  password: 123456,
+  address: "Texas",
+  avatar: "https://kitt.lewagon.com/placeholder/users/susan-renaud"
+  )
+
+melissa = User.create!(
+  first_name: "Melissa",
+  last_name: "Connors",
+  email: "melissa@gmail.com",
+  password: 123456,
+  address: "Hawaii",
+  avatar: "https://kitt.lewagon.com/placeholder/users/MauiMel"
+  )
+
+ghita = User.create!(
+  first_name: "Ghita",
+  last_name: "Tahiri",
+  email: "ghita@gmail.com",
+  password: 123456,
+  address: "Morocco",
+  avatar: "https://kitt.lewagon.com/placeholder/users/GhitaTa",
+  )
+
+dan = User.create!(
+  first_name: "Daniel",
+  last_name: "Goran",
+  email: "dan@gmail.com",
+  password: 123456,
+  address: "London",
+  avatar: "https://kitt.lewagon.com/placeholder/users/2DGH",
+  )
+
+charlie = User.create!(
+  first_name: "Charlie",
+  last_name: "Meacher",
+  email: "charlie@gmail.com",
+  password: 123456,
+  address: "London",
+  avatar: "https://kitt.lewagon.com/placeholder/users/Freetrades"
+  )
+
+moritz = User.create!(
+  first_name: "Moritz",
+  last_name: "Indenhuck",
+  email: "moritz@gmail.com",
+  password: 123456,
+  address: "Berlin",
+  avatar: "https://kitt.lewagon.com/placeholder/users/akellos",
   )
 
 puts "Creating guides..."
 
 berlin_guide = Guide.create!(
   title: "Berlin Beer Tour",
-  user: alex,
+  user: moritz,
   duration: 3,
   distance: 4,
   location: "Berlin",
@@ -67,6 +139,18 @@ berlin_guide = Guide.create!(
   image: "https://images.unsplash.com/photo-1538685634737-24b83e3fa2f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80",
   overview: "Journey through the history of beer and see why it’s so popular among the Berlin locals.
             Savor the flavors and aromas while listening to stories of Berlin’s neighborhoods."
+  )
+
+pub_tour_london = Guide.create!(
+  title: "London's Historic Pubs",
+  user: charlie,
+  duration: 4,
+  distance: 2,
+  location: "London",
+  category: "adventure",
+  price_cents: 400,
+  image: "https://images.unsplash.com/photo-1559070581-ec616bb3a176?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80",
+  overview: "A trip to London would not be complete without visiting a pub. So why not have a private pub experience with a London insider?"
   )
 
 paris_guide = Guide.create!(
@@ -81,10 +165,9 @@ paris_guide = Guide.create!(
   image: "https://images.pexels.com/photos/739407/pexels-photo-739407.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
   )
 
-
 versailles_guide = Guide.create!(
   title: "Explore the Garden of Versailles",
-  user: paul,
+  user: benoit,
   duration: 5,
   distance: 4,
   location: "Paris",
@@ -96,7 +179,7 @@ versailles_guide = Guide.create!(
 
 berlin_dungeon_guide = Guide.create!(
   title: "Horror Tour of Berlin Dungeon",
-  user: mohammad,
+  user: evia,
   duration: 1,
   distance: 2,
   location: "Berlin",
@@ -118,24 +201,27 @@ milan_guide = Guide.create!(
   price_cents:200,
   image: "https://images.pexels.com/photos/2097092/pexels-photo-2097092.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
   )
+
 porto_guide = Guide.create!(
-  title: "History of Porto",
-  user: paul,
+  title: "Discover the best of Porto",
+  user: melissa,
   duration: 2,
-  overview: "Get a great dose of culture, architecture and top-notch food.",
+  overview: "Get a great dose of culture, architecture and top-notch food with this tour of the best city in Portugal.",
   location: "Porto",
   distance: 3,
-  category: "history",
+  category: "adventure",
   price_cents:200,
-  image: "https://images.pexels.com/photos/2097092/pexels-photo-2097092.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  image: "https://images.unsplash.com/photo-1555881400-69a2384edcd4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
   )
-
 
 london_guide = Guide.create!(
   title: "One Day Tour of London",
   user: mohammad,
   location: "London",
-  overview: "Only one day in London? This tour explores the most important and historic attractions in the city",
+  duration: 3,
+  distance: 4,
+  category: "history"
+  overview: "Only one day in London? This tour explores the most important attractions in the city. Fascinating architecture, ancient history and surprising secrets are all packed into this 3-hour walking tour.",
   image: "https://images.unsplash.com/photo-1448906654166-444d494666b3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
   price_cents:199,
   )
@@ -152,9 +238,21 @@ rome_guide = Guide.create!(
   category: "history",
   )
 
+horror_london_guide = Guide.create!(
+  title: "Grim Reaper Walking Tour",
+  user: raquel,
+  duration: 2,
+  distance: 3,
+  location: "London",
+  overview: "Discover how traitors and criminals were punished, why the Ripper was never caught and what life was really like for people living and dying here.",
+  category: "horror",
+  price_cents: 499,
+  image: "https://images.pexels.com/photos/2591276/pexels-photo-2591276.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  )
+
 louvre_guide = Guide.create!(
   title: "Louvre Museum Walking Tour",
-  user: paul,
+  user: ghita,
   duration: 4,
   distance: 1,
   location: "Paris",
@@ -163,6 +261,18 @@ louvre_guide = Guide.create!(
   category: "history",
   price_cents: 399,
   image: "https://images.unsplash.com/photo-1560518700-7a5559afb10c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+  )
+
+old_london_guide = Guide.create!(
+  title: "London Old City Walking Tour",
+  user: charlie,
+  duration: 3,
+  distance: 6,
+  location: "London",
+  overview: "Learn about the city’s long and sometimes dark past from your guide’s insightful commentary and see a new side to one of the world’s most visited cities.",
+  category: "history",
+  price_cents: 299,
+  image: "https://images.unsplash.com/photo-1505761671935-60b3a7427bad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
   )
 
 puts "Creating our stops..."
@@ -269,14 +379,10 @@ stop6 = Stop.create!(
   latitude: 51.506961,
   longitude: -0.097865,
   image: "https://upload.wikimedia.org/wikipedia/commons/6/6c/Tate_Modern_viewed_from_Thames_Pleasure_Boat_-_geograph.org.uk_-_307445.jpg",
-  description:"The gallery was founded in 1897, as the National Gallery of British Art. When its role was changed to include the national collection of modern art as well as the national collection of British art, in 1932, it was renamed the Tate Gallery after sugar magnate Henry Tate of Tate & Lyle, who had laid the foundations for the collection. The Tate Gallery was housed in the current building occupied by Tate Britain, which is situated in Millbank, London. In 2000, the Tate Gallery transformed itself into the current-day Tate, which consists of a network of four museums: Tate Britain, which displays the collection of British art from 1500 to the present day; Tate Modern, also in London, which houses the Tate's collection of British and international modern and contemporary art from 1900 to the present day; Tate Liverpool (founded in 1988), which has the same purpose as Tate Modern but on a smaller scale; and Tate St Ives in Cornwall (founded in 1993), which displays modern and contemporary art by artists who have connections with the area. All four museums share the Tate Collection. One of the Tate's most publicised art events is the awarding of the annual Turner Prize, which takes place at Tate Britain."
-
-
-
-
-
-
-
+  description:"The gallery was founded in 1897, as the National Gallery of British Art. When its role was changed to include the national collection of modern art as well as the national collection of British art, in 1932, it was renamed the Tate Gallery after sugar magnate Henry Tate of Tate & Lyle, who had laid the foundations for the collection. The Tate Gallery was housed in the current building occupied by Tate Britain, which is situated in Millbank, London.
+                In 2000, the Tate Gallery transformed itself into the current-day Tate, which consists of a network of four museums: Tate Britain, which displays the collection of British art from 1500 to the present day; Tate Modern, also in London, which houses the Tate's collection of British and international modern and contemporary art from 1900 to the present day; Tate Liverpool (founded in 1988), which has the same purpose as Tate Modern but on a smaller scale; and Tate St Ives in Cornwall (founded in 1993), which displays modern and contemporary art by artists who have connections with the area.
+                All four museums share the Tate Collection.
+                One of the Tate's most publicised art events is the awarding of the annual Turner Prize, which takes place at Tate Britain."
   )
 
 stop7 = Stop.create!(
@@ -288,13 +394,6 @@ stop7 = Stop.create!(
   description:"Shakespeare's Globe is a reconstruction of the Globe Theatre, an Elizabethan playhouse for which William Shakespeare wrote his plays, in the London Borough of Southwark, on the south bank of the River Thames. The original theatre was built in 1599, destroyed by fire in 1613, rebuilt in 1614, and then demolished in 1644. The modern Globe Theatre is an academic approximation based on available evidence of the 1599 and 1614 buildings. It is considered quite realistic, though contemporary safety requirements mean that it accommodates only 1,400 spectators compared to the original theatre’s 3,000.
 
   Shakespeare's Globe was founded by the actor and director Sam Wanamaker, built about 230 metres (750 ft) from the site of the original theatre and opened to the public in 1997, with a production of Henry V. The site also includes the Sam Wanamaker Playhouse, an indoor theatre which opened in January 2014. This is a smaller, candle-lit space based on the indoor playhouses of Jacobean London. The Sackler Studios, an educational and rehearsal studio complex, is situated just around the corner from the main site."
-
-
-
-
-
-
-
 
   )
 
@@ -310,30 +409,97 @@ The Monument comprises a fluted Doric column built of Portland stone topped with
 
 The viewing platform near the top of the Monument is reached by a narrow winding staircase of 311 steps. A mesh cage was added in the mid-19th century to prevent people jumping to the ground, after six people had committed suicide there between 1788 and 1842."
 
-
-
-
-
-
   )
-
 
 
 puts "Creating reviews..."
 
-mohammad_review = Review.create!(
+
+Review.create!(
   stars: 5,
-  content: "Great tour!",
-  user: mohammad,
-  guide: paris_guide
+  content: "Super fun! Great way to learn about some of the creepier side of London.",
+  user: alex,
+  guide: horror_london_guide
   )
 
-francesca_review = Review.create!(
-  stars: 4,
-  content: "Loved the adventures",
-  user: francesca,
-  guide: paris_guide
+Review.create!(
+  stars: 5,
+  content: "Excellent guided tour about the shady history of London!",
+  user: paul,
+  guide: horror_london_guide
   )
+
+Review.create!(
+  stars: 4,
+  content: "I thorougly enjoyed the tour. Linda, the tour guide, was very knowledgeable and a great storyteller.",
+  user: benoit,
+  guide: horror_london_guide
+  )
+
+Review.create!(
+  stars: 5,
+  content: "Linda was a fantastic guide! Great storytelling of the darker history of London. Highly recommended to all",
+  user: evia,
+  guide: horror_london_guide
+  )
+
+Review.create!(
+  stars: 3,
+  content: "I’ve bought the Grim Reaper Tour, but unfortunately I was a bit disappointed.
+            Maybe I had bad luck, but I wouldn’t recommend the tour for this price.",
+  user: susan,
+  guide: horror_london_guide
+  )
+
+Review.create!(
+  stars: 5,
+  content: "Great tour!",
+  user: dan,
+  guide: london_guide
+  )
+
+Review.create!(
+  stars: 4,
+  content: "Awesome and fun tour! It was a great combination of history, comedy and a little bit of theater.",
+  user: alex,
+  guide: london_guide
+  )
+
+Review.create!(
+  stars: 5,
+  content: "Excellent free tour. It was great, he mixed humour with history very successfully, strongly recommend.",
+  user: susan,
+  guide: london_guide
+  )
+
+Review.create!(
+  stars: 5,
+  content: "Thanks to Mohammad for an amazing tour of old London. His expertise and experience were visible throughout the entire time walking! ",
+  user: raquel,
+  guide: london_guide
+  )
+
+Review.create!(
+  stars: 4,
+  content: "The tour was really relaxed and covered most of the focus points. Mohammad brought good vibes and a lot of humour. I can recommend it!",
+  user: moritz,
+  guide: london_guide
+  )
+
+Review.create!(
+  stars: 4,
+  content: "A very good walking tour with our guide Mohammad full of enthusiasm and knowledge, taking us to some places and streets that we wouldn't have seen by ourselves. ",
+  user: melissa,
+  guide: london_guide
+  )
+
+Review.create!(
+  stars: 5,
+  content: "It was very interesting to discover this area of the city with a guide who could show us the best route to visit and give us a lot of information.",
+  user: evia,
+  guide: london_guide
+  )
+
 
 puts "creating tags..."
 
