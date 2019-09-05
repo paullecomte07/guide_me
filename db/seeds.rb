@@ -129,7 +129,7 @@ moritz = User.create!(
 puts "Creating guides..."
 
 berlin_guide = Guide.create!(
-  title: "Berlin Beer Tour",
+  title: "Berlin Beer Tour: Drink Like a Local",
   user: moritz,
   duration: 3,
   distance: 4,
@@ -141,23 +141,11 @@ berlin_guide = Guide.create!(
             Savor the flavors and aromas while listening to stories of Berlin’s neighborhoods."
   )
 
-pub_tour_london = Guide.create!(
-  title: "London's Historic Pubs",
-  user: charlie,
-  duration: 4,
-  distance: 2,
-  location: "London",
-  category: "adventure",
-  price_cents: 400,
-  image: "https://images.unsplash.com/photo-1559070581-ec616bb3a176?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80",
-  overview: "A trip to London would not be complete without visiting a pub. So why not have a private pub experience with a London insider?"
-  )
-
 paris_guide = Guide.create!(
   title: "Hidden Adventures in Paris",
   user: paul,
   duration: 3,
-  overview: "Discover new adventures in Paris",
+  overview: "Discover new undiscovered adventures in Paris with your friends",
   location: "Paris",
   distance: 6,
   category: "adventure",
@@ -165,8 +153,20 @@ paris_guide = Guide.create!(
   image: "https://images.pexels.com/photos/739407/pexels-photo-739407.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
   )
 
+pub_tour_london = Guide.create!(
+  title: "London's Historic Pubs Crawl",
+  user: charlie,
+  duration: 4,
+  distance: 2,
+  location: "London",
+  category: "adventure",
+  price_cents: 400,
+  image: "https://images.unsplash.com/photo-1559070581-ec616bb3a176?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80",
+  overview: "Find out about the stories behind London's most ancient pubs while getting drunk with your friends."
+  )
+
 versailles_guide = Guide.create!(
-  title: "Explore the Garden of Versailles",
+  title: "Romantic Garden of Versailles",
   user: benoit,
   duration: 5,
   distance: 4,
@@ -174,11 +174,11 @@ versailles_guide = Guide.create!(
   category: "nature",
   price_cents: 250,
   image: "https://images.unsplash.com/photo-1563827367882-3a0c0eb79d19?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
-  overview: "The best way to see Versailles' gardens. You'll get to see highlights of Versailles that most visitors miss, including Marie Antoinette's Hameau, the Petit Trianon and the Grand Trianon."
+  overview: "The best way to see Versailles' gardens... With your best half!"
   )
 
 berlin_dungeon_guide = Guide.create!(
-  title: "Horror Tour of Berlin Dungeon",
+  title: "Horror in the Berlin Dungeon",
   user: evia,
   duration: 1,
   distance: 2,
@@ -191,7 +191,7 @@ berlin_dungeon_guide = Guide.create!(
   )
 
 milan_guide = Guide.create!(
-  title: "The Duomo of Milan",
+  title: "Sunset from Milan",
   user: francesca,
   duration: 2,
   overview: "Visit the Duomo from every angle: explore its exteriors, reach the rooftop for a breathtaking view of the city. Admire the interior of this Gothic masterpiece, one of the biggest churches in Italy. ",
@@ -203,7 +203,7 @@ milan_guide = Guide.create!(
   )
 
 porto_guide = Guide.create!(
-  title: "Discover the best of Porto",
+  title: "The best of Porto with your friends",
   user: melissa,
   duration: 2,
   overview: "Get a great dose of culture, architecture and top-notch food with this tour of the best city in Portugal.",
@@ -215,7 +215,7 @@ porto_guide = Guide.create!(
   )
 
 london_guide = Guide.create!(
-  title: "One Day Tour of London",
+  title: "A London Guide for Families",
   user: mohammad,
   location: "London",
   duration: 3,
@@ -227,7 +227,7 @@ london_guide = Guide.create!(
   )
 
 rome_guide = Guide.create!(
-  title: "Colosseum Gladiator's Gate",
+  title: "Live the Colosseum like a Gladiator",
   user: alex,
   duration: 3,
   distance: 4,
@@ -239,7 +239,7 @@ rome_guide = Guide.create!(
   )
 
 horror_london_guide = Guide.create!(
-  title: "Grim Reaper Walking Tour",
+  title: "The Creepiest Tour in London",
   user: raquel,
   duration: 2,
   distance: 3,
@@ -251,7 +251,7 @@ horror_london_guide = Guide.create!(
   )
 
 louvre_guide = Guide.create!(
-  title: "Louvre Museum Walking Tour",
+  title: "Solo Visit of the Louvre Museum ",
   user: ghita,
   duration: 4,
   distance: 1,
@@ -264,7 +264,7 @@ louvre_guide = Guide.create!(
   )
 
 old_london_guide = Guide.create!(
-  title: "London Old City Walking Tour",
+  title: "London Old City like a Londoner",
   user: charlie,
   duration: 3,
   distance: 6,
