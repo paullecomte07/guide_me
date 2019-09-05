@@ -13,8 +13,7 @@
 
     <% @orders.each do |order| %>
       <div class="card-box">
-
-        <div class="image" style="background-image: url(<%= order.guide.image %>);">
+        <div class="image" style="background-image: url(<%= order.guide.image %>); width: 100px;"> hello
           <p id="card-location"><span><i class="fas fa-map-marker-alt"></i></span><%= order.guide.location %></p>
         </div>
 
