@@ -1,6 +1,7 @@
 <div class="message-wrapper">
   <div class="msg-container" id="msg-js-id">
     <h4 style="text-align: center;">
+      <span><i class="fas fa-circle online-icon"></i></span>
         <%  if @conversation.sender_id == current_user.id %>
       <%= User.find(@conversation.recipient_id).first_name %>
       <% else %>
