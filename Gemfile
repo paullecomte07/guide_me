@@ -32,6 +32,6 @@ group :development, :test do
   gem 'dotenv-rails'
 end
 
-gem "geocoder", "~> 1.5"
+gem "geocoder", "~> 1.6"
 
 gem "pg_search", "~> 2.3"
